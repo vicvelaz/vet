@@ -1,0 +1,24 @@
+<header>
+  <nav aria-label="Main Navigation">
+    <img
+      src="/logo/logo.png"
+      alt="Logo"
+      class="logo"
+    />
+
+    <ul
+      class="nav-list"
+      [class.active]="menuOpen"
+    >
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+    <button
+      class="menu-btn"
+      (click)="toggleMenu()"
+    >
+      ☰
+    </button>
+  </nav>
+</header>

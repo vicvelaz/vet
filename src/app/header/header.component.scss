@@ -1,0 +1,75 @@
+header {
+  background: #f5bc87;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  display: inline;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background: #eda561;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logo {
+  height: 50px; /* Ajusta según tu necesidad */
+  width: auto;
+}
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: none;
+}
+
+/* ✅ Mostrar menú hamburguesa solo en móvil */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #f5bc87;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+}
