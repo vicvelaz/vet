@@ -1,6 +1,5 @@
 header {
   background: #f5bc87;
-  padding: 10px 20px;
 }
 
 nav {
@@ -53,6 +52,7 @@ nav {
 @media (max-width: 768px) {
   nav {
     justify-content: space-between;
+    margin: 0 1rem;
   }
 
   .menu-btn {
@@ -65,11 +65,13 @@ nav {
     width: 100%;
     background: #f5bc87;
     position: absolute;
-    top: 60px;
+    top: 49px;
     left: 0;
   }
 
   .nav-list.active {
     display: flex;
+    align-items: center;
+    padding-bottom: 10px;
   }
 }

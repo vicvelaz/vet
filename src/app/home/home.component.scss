@@ -1,0 +1,57 @@
+:root {
+  display: flex;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+app-header {
+  position: fixed; /* Esto mantiene el header fijo en la parte superior */
+  width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
+  top: 0; /* Asegura que esté en la parte superior */
+  left: 0; /* Asegura que esté alineado a la izquierda */
+  z-index: 1000; /* Esto asegura que el header esté por encima de otros elementos */
+  box-shadow: 0 4px 2px -2px gray; /* Un poco de sombra para darle un toque visual */
+}
+
+main {
+  margin-top: 50px; /* Espacio para el header fijo, ajusta según la altura del header */
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  height: 20rem;
+  background-color: rgb(255, 219, 127);
+  overflow: hidden; /* Oculta el contenido que sobresale */
+}
+
+.section-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%; /* Ajusta el ancho al contenedor */
+  height: 100%; /* Ajusta la altura al contenedor */
+  //   object-fit: cover; /* Recorta el exceso para mantener proporción */
+  //   display: flex;
+  object-fit: cover; /* Recorta los excesos para que no se deforme */
+  object-position: center; /* Centra la imagen dentro del recorte */
+}
+
+@media (max-width: 768px) {
+  section {
+    height: 20rem;
+  }
+}
+
+section:nth-child(even) {
+  background-color: rgb(255, 255, 255); /* Color para las secciones pares */
+}
+
+section:nth-child(odd) {
+  background-color: #00aaa7; /* Color para las secciones impares */
+}
