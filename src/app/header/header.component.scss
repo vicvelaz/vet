@@ -16,10 +16,6 @@ nav {
   margin: 0;
 }
 
-.nav-list li {
-  display: inline;
-}
-
 .nav-list a {
   text-decoration: none;
   color: white;
@@ -36,7 +32,7 @@ nav {
 }
 
 .logo {
-  height: 50px; /* Ajusta según tu necesidad */
+  height: 50px;
   width: auto;
 }
 .menu-btn {
@@ -48,7 +44,6 @@ nav {
   display: none;
 }
 
-/* ✅ Mostrar menú hamburguesa solo en móvil */
 @media (max-width: 768px) {
   nav {
     justify-content: space-between;
@@ -73,5 +68,10 @@ nav {
     display: flex;
     align-items: center;
     padding-bottom: 10px;
+  }
+
+  .nav-overlay.active {
+    background-color: none;
+    height: 100vh;
   }
 }
