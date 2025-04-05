@@ -1,9 +1,8 @@
 .header {
   position: sticky;
   top: 0;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--primary-color);
+
+  border-bottom: 1px solid var(--primary-color);
 
   background-color: hsl(0 0% 100% / 0.6);
   backdrop-filter: blur(8px);
@@ -18,8 +17,13 @@
 
 a {
   color: black;
-  margin-left: 20px;
+  font-weight: 500;
   text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links a:hover {

@@ -164,33 +164,3 @@ button.mat-raised-button {
 .service-description {
   color: #6c6c6c;
 }
-
-/* Footer Section */
-.footer {
-  background-color: #2f2f2f;
-  color: white;
-  padding: 20px 0;
-}
-
-.footer-left {
-  display: flex;
-  align-items: center;
-}
-
-.footer-left p {
-  margin-left: 10px;
-}
-
-.footer-right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.footer-right a {
-  color: white;
-  margin-left: 20px;
-}
-
-.footer-right a:hover {
-  color: #c8e6c9;
-}
