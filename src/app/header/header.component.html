@@ -1,29 +1,21 @@
-<header>
-  <nav aria-label="Main Navigation">
-    <img
-      src="/logo/logo.png"
-      alt="Logo"
-      class="logo"
-    />
-    <ul
-      class="nav-list"
-      [class.active]="menuOpen"
-    >
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-    </ul>
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <h1 class="logo-text">VetCare</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
     <button
-      class="menu-btn"
-      (click)="toggleMenu()"
+      class="contact-btn"
+      mat-flat-button
+      href="#contacto"
     >
-      ☰
+      Solicitar Cita
     </button>
-  </nav>
+  </div>
 </header>
-<div
-  class="nav-overlay"
-  [class.active]="menuOpen"
-  (touchstart)="toggleMenu()"
-></div>
-<!-- (mousedown)="toggleMenu()" -->
