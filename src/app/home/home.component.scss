@@ -55,17 +55,16 @@ html {
 // }
 
 /* General styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
 
 .container {
-  // width: 100%;
-  // margin: 0 auto;
-  // padding: 0 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding-bottom: 3rem;
+  flex-grow: 1;
 }
 
 .flex {
