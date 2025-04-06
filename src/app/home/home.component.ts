@@ -4,15 +4,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { HeroComponent } from '../sections/hero/hero.component';
+import { ContactComponent } from '../sections/contact/contact.component';
+import { LocationComponent } from '../sections/location/location.component';
+import { ServicesComponent } from '../sections/services/services.component';
+import { TimetableComponent } from '../sections/timetable/timetable.component';
 
 @Component({
   selector: 'app-home',
   imports: [
     HeaderComponent,
     HeroComponent,
+    ServicesComponent,
+    TimetableComponent,
+    LocationComponent,
+    ContactComponent,
     FooterComponent,
-    MatIconModule,
-    MatFormFieldModule,
+    
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
