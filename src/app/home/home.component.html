@@ -1,120 +1,23 @@
-<div class="container">
-  <app-header></app-header>
+<app-header
+  class="sticky-header"
+  [data]="data().header"
+></app-header>
 
+<div class="content">
   <!-- Hero Section -->
-  <section
-    id="inicio"
-    class="hero"
-  >
-    <div class="flex-center">
-      <h2 class="hero-title">Bienvenido a VetCare</h2>
-      <p class="hero-description">La clínica veterinaria especializada en el cuidado y bienestar de tu mascota.</p>
-      <!-- <a
-        mat-raised-button
-        color="primary"
-        href="#contacto"
-        >Solicitar Cita</a
-       > -->
-    </div>
-  </section>
-  <div class="content">
-    <!-- Services Section -->
-    <section
-      id="servicios"
-      class="services"
-    >
-      <div class="">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <p class="section-description">Servicios profesionales para el cuidado de tu mascota</p>
-        <div class="service-cards">
-          <div class="service-card">
-            <h3 class="service-title">Consulta General</h3>
-            <p class="service-description">Evaluación general de la salud de tu mascota para prevenir enfermedades.</p>
-          </div>
-          <div class="service-card">
-            <h3 class="service-title">Cirugía</h3>
-            <p class="service-description">Cirugías de rutina y emergencias, realizadas por especialistas.</p>
-          </div>
-          <!-- <div class="service-card">
-          <h3 class="service-title">Vacunación</h3>
-          <p class="service-description">Mantén a tu mascota protegida con las vacunas recomendadas.</p>
-        </div> -->
-        </div>
-      </div>
-    </section>
+  <app-hero [data]="data().sections.hero"></app-hero>
 
-    <!-- Team Section -->
-    <!-- <section
-    id="equipo"
-    class="team"
-  >
-    <div class="">
-      <h2 class="section-title">Nuestro Equipo</h2>
-      <p class="section-description">Profesionales cualificados y apasionados por el cuidado animal</p>
-      <div class="team-cards">
-        <div class="team-card">
-          <img
-            src="/placeholder.svg?height=128&width=128"
-            alt="Dr. Ana García"
-            class="team-image"
-          />
-          <h3 class="team-member-name">Dra. Ana García</h3>
-          <p class="team-member-role">Directora Veterinaria</p>
-          <p class="team-member-description">Especialista en medicina interna con más de 15 años de experiencia.</p>
-        </div>
-        <div class="team-card">
-          <img
-            src="/placeholder.svg?height=128&width=128"
-            alt="Dr. Carlos Martínez"
-            class="team-image"
-          />
-          <h3 class="team-member-name">Dr. Carlos Martínez</h3>
-          <p class="team-member-role">Cirujano Veterinario</p>
-          <p class="team-member-description">Especializado en cirugía general y ortopédica.</p>
-        </div>
-        <div class="team-card">
-          <img
-            src="/placeholder.svg?height=128&width=128"
-            alt="Laura Sánchez"
-            class="team-image"
-          />
-          <h3 class="team-member-name">Laura Sánchez</h3>
-          <p class="team-member-role">Auxiliar Veterinaria</p>
-          <p class="team-member-description">Dedicada al cuidado y atención de los pacientes.</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-    <!-- Location Section -->
-    <section
-      id="ubicacion"
-      class="ubicacion"
-    >
-      <div class="">
-        <h2 class="section-title">Nuestra Ubicación</h2>
-        <p class="section-description">Estamos ubicados en una zona de fácil acceso con amplio estacionamiento.</p>
-        <div class="ubicacion-details">
-          <div class="ubicacion-detail">
-            <mat-icon>location_on</mat-icon>
-            <p>Dirección: Calle Principal 123, Ciudad</p>
-          </div>
-          <div class="ubicacion-detail">
-            <mat-icon>phone</mat-icon>
-            <p>Teléfono: +34 123 456 789</p>
-          </div>
-          <div class="ubicacion-detail">
-            <mat-icon>mail</mat-icon>
-            <p>Email: info.com</p>
-          </div>
-        </div>
-        <div class="ubicacion-map">
-          <!-- <img
-          src="/placeholder.svg?height=450&width=800"
-          alt="Mapa de ubicación"
-        /> -->
-        </div>
-      </div>
-    </section>
-  </div>
-  <app-footer></app-footer>
+  <!-- Services Section -->
+  <app-services [data]="data().sections.services"></app-services>
+
+  <!-- Timetible Section -->
+  <app-timetable></app-timetable>
+
+  <!-- Location Section -->
+  <app-location></app-location>
+
+  <!-- Contact Section -->
+  <app-contact></app-contact>
 </div>
+
+<app-footer [data]="data().footer"></app-footer>

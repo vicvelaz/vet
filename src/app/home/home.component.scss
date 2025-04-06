@@ -1,111 +1,17 @@
-:root {
+html,
+body {
+  height: 100vh;
+  margin: 0;
   display: flex;
+  flex-direction: column;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.container {
-  min-height: 100vh;
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .content {
-  padding-bottom: 3rem;
-  flex-grow: 1;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.flex-center {
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.section-description {
-  font-size: 1.2rem;
-  color: #6c6c6c;
-  margin-bottom: 40px;
-}
-
-/* Header styles */
-.header {
-  // background-color: #b7b7b7;
-  padding: 16px 0;
-}
-
-.logo-text {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.nav-links a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: #c8e6c9;
-}
-
-/* Hero Section */
-.hero {
-  // background-color: #d9d9d9;
-  // color: white;
-  padding: 80px 0;
-}
-
-.hero-title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero-description {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-}
-
-button.mat-raised-button {
-  margin-top: 20px;
-}
-
-/* Services Section */
-.services {
-  background-color: #f1f1f1;
-  padding: 60px 0;
-}
-
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.service-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.service-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.service-description {
-  color: #6c6c6c;
+  flex: 1;
 }

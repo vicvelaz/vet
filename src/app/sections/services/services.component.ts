@@ -2,11 +2,11 @@ import { Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-services',
   imports: [MatIconModule],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  templateUrl: './services.component.html',
+  styleUrl: './services.component.scss',
 })
-export class FooterComponent {
+export class ServicesComponent {
   data = input.required<any>({});
 }

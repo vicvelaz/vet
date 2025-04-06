@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -9,8 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
 })
 export class HeaderComponent {
-  menuOpen = false;
+  data = input.required<any>({});
 
+  menuOpen = false;
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }

@@ -1,0 +1,21 @@
+<section
+  id="servicios"
+  class="services"
+>
+  <div class="section-texts">
+    <h2 class="section-title">{{ data().title }}</h2>
+    <p class="section-description">{{ data().subtitle }}</p>
+  </div>
+  <div class="service-cards">
+    @for (item of data().items; track item.title) {
+    <div class="service-card">
+      <mat-icon
+        aria-label="Example home icon"
+        [fontIcon]="item.icon"
+      ></mat-icon>
+      <h3 class="service-title">{{ item.title }}</h3>
+      <!-- <p class="service-description">{{ item.description }}</p> -->
+    </div>
+    }
+  </div>
+</section>
