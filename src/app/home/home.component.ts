@@ -30,7 +30,6 @@ export class HomeComponent {
       links: [
         { label: 'Inicio', url: '#inicio' },
         { label: 'Servicios', url: '#servicios' },
-        { label: 'Equipo', url: '#equipo' },
         { label: 'Ubicación', url: '#ubicacion' },
         { label: 'Contacto', url: '#contacto' },
       ],
