@@ -5,13 +5,20 @@
 
 .service-cards {
   display: flex;
-
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 .service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
   background-color: #ffffff;
-  padding: 20px;
+  width: 300px;
+  height: 200px;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
