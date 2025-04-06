@@ -1,28 +1,27 @@
 .services {
-    background-color: #f1f1f1;
-    padding: 60px 0;
-  }
-  
-  .service-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .service-card {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .service-description {
-    color: #6c6c6c;
-  }
-  
+  background-color: #f1f1f1;
+  padding: 60px 0;
+}
+
+.service-cards {
+  display: flex;
+
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  color: #6c6c6c;
+}

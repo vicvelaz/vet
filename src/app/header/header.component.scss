@@ -1,6 +1,7 @@
 .header {
   position: sticky;
   top: 0;
+  z-index: 1000;
 
   border-bottom: 1px solid var(--primary-color);
 
@@ -15,15 +16,14 @@
   font-weight: bold;
 }
 
-a {
-  color: black;
-  font-weight: 500;
-  text-decoration: none;
-}
-
 .nav-links {
   display: flex;
   gap: 1.5rem;
+  a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+  }
 }
 
 .nav-links a:hover {
@@ -39,6 +39,7 @@ a {
   margin-left: auto;
   padding-right: 2rem;
   padding-left: 2rem;
+  max-width: 1400px;
 }
 
 .contact-btn {
@@ -54,22 +55,5 @@ a {
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #f5bc87;
-    position: absolute;
-    top: 49px;
-    left: 0;
-  }
-
-  .nav-list.active {
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
-  }
-
-  .nav-overlay.active {
-    background-color: none;
-    height: 100vh;
   }
 }

@@ -1,22 +1,20 @@
-<div class="container">
-  <!-- Header Section -->
-  <app-header></app-header>
+<app-header [data]="data().header"></app-header>
 
+<div class="content">
   <!-- Hero Section -->
-  <app-hero></app-hero>
+  <app-hero [data]="data().sections.hero"></app-hero>
 
   <!-- Services Section -->
-  <app-services></app-services>
+  <app-services [data]="data().sections.services"></app-services>
 
   <!-- Timetible Section -->
-   <app-timetable></app-timetable>
+  <app-timetable></app-timetable>
 
-   <!-- Location Section -->
+  <!-- Location Section -->
   <app-location></app-location>
 
   <!-- Contact Section -->
   <app-contact></app-contact>
-
-  <!-- Footer -->
-  <app-footer></app-footer>
 </div>
+
+<app-footer [data]="data().footer"></app-footer>

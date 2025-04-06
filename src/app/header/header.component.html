@@ -1,21 +1,18 @@
 <header class="header">
   <div class="container">
     <div class="logo">
-      <h1 class="logo-text">VetCare</h1>
+      <h1 class="logo-text">{{ data().name }}</h1>
     </div>
     <nav class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#contacto">Contacto</a>
+      @for (link of data().links; track link.label){
+      <a [href]="link.url"> {{ link.label }}</a>
+      }
     </nav>
     <button
       class="contact-btn"
       mat-flat-button
-      href="#contacto"
     >
-      Solicitar Cita
+      <a [href]="data().button.url"> {{ data().button.label }}</a>
     </button>
   </div>
 </header>

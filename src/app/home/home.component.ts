@@ -1,10 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { HeroComponent } from '../sections/hero/hero.component';
 import { ContactComponent } from '../sections/contact/contact.component';
+import { HeroComponent } from '../sections/hero/hero.component';
 import { LocationComponent } from '../sections/location/location.component';
 import { ServicesComponent } from '../sections/services/services.component';
 import { TimetableComponent } from '../sections/timetable/timetable.component';
@@ -19,7 +17,6 @@ import { TimetableComponent } from '../sections/timetable/timetable.component';
     LocationComponent,
     ContactComponent,
     FooterComponent,
-    
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -28,43 +25,42 @@ import { TimetableComponent } from '../sections/timetable/timetable.component';
 export class HomeComponent {
   data = signal({
     header: {
-      name: 'VerCare',
+      name: 'VetCare',
       // logo: 'assets/images/logo.png',
       links: [
-        { label: 'Inicio', link: '/#inicio' },
-        { label: 'Servicios', link: '/#servicios' },
-        { label: 'Equipo', link: '/#equipo' },
-        { label: 'Ubicación', link: '/#ubicacion' },
-        { label: 'Contacto', link: '/#contacto' },
+        { label: 'Inicio', url: '#inicio' },
+        { label: 'Servicios', url: '#servicios' },
+        { label: 'Equipo', url: '#equipo' },
+        { label: 'Ubicación', url: '#ubicacion' },
+        { label: 'Contacto', url: '#contacto' },
       ],
       button: {
-        name: 'Solicitar Cita',
-        link: '/#contacto',
+        label: 'Solicitar Cita',
+        url: '#contacto',
       },
     },
     sections: {
       hero: {
-        title: 'Clinica Veterinaria VetCare',
+        title: 'Clínica Veterinaria VetCare',
         subtitle: 'Cuidamos de tus mascotas como si fueran nuestras',
         button: {
           primary: {
             label: 'Pedir Cita',
-            link: '/#contacto',
+            link: '#contacto',
           },
           secondary: {
             label: 'Nuestros Servicios',
-            link: '/#servicios',
+            link: '#servicios',
           },
           moreInfo: {
             label: 'Descubre más',
-            link: '/#servicios',
+            link: '#servicios',
           },
         },
       },
       services: {
         title: 'Nuestros Servicios',
-        subtitle:
-          'Ofrecemos una amplia gama de servicios para el cuidado de tu mascota.',
+        subtitle: 'Ofrecemos una amplia gama de servicios para el cuidado de tu mascota.',
         items: [
           {
             icon: 'pets',
@@ -133,7 +129,7 @@ export class HomeComponent {
           link: '',
         },
       },
-      contact:{
+      contact: {
         title: 'Contáctanos',
         subtitle: 'Estamos aquí para responder a tus preguntas. No dudes en contactarnos.',
         phone: {
@@ -142,13 +138,13 @@ export class HomeComponent {
         },
         email: {
           icon: 'email',
-          value: 'email@vetcare.com'
+          value: 'email@vetcare.com',
         },
         location: {
           icon: 'place',
           value: 'Calle Veterinaria, 123, Ciudad, País',
         },
-        timetable:{
+        timetable: {
           icon: 'access_time',
           value: 'Lunes a Viernes: 9:00 AM - 8:00 PM, Sábado: 10:00 AM - 4:00 PM, Domingo: Cerrado',
         },
@@ -165,16 +161,15 @@ export class HomeComponent {
             icon: 'tikTok',
             link: 'https://tiktok.com/',
           },
-        ]
-      }
+        ],
+      },
     },
     footer: {
-      message:
-        '&copy; 2025 Clínica Veterinaria VetCare. Todos los derechos reservados.',
+      message: '© 2025 Clínica Veterinaria VetCare. Todos los derechos reservados.',
       links: [
-        { label: 'Política de Privacidad', link: '/#' },
-        { label: 'Términos y Condiciones', link: '/#' },
-        { label: 'Cookies', link: '/#' },
+        { label: 'Política de Privacidad', url: '#' },
+        { label: 'Términos y Condiciones', url: '#' },
+        { label: 'Cookies', url: '#' },
       ],
     },
   });

@@ -1,15 +1,27 @@
 <section
-id="inicio"
-class="hero"
+  id="inicio"
+  class="hero"
 >
-<div class="flex-center">
-  <h2 class="hero-title">Bienvenido a VetCare</h2>
-  <p class="hero-description">La clínica veterinaria especializada en el cuidado y bienestar de tu mascota.</p>
-  <!-- <a
-    mat-raised-button
-    color="primary"
-    href="#contacto"
-    >Solicitar Cita</a
-   > -->
-</div>
+  <div class="container">
+    <div class="flex-center">
+      <h2 class="hero-title">{{ data().title }}</h2>
+      <p class="hero-description">{{ data().subtitle }}</p>
+    </div>
+    <div>
+      <button mat-flat-button>
+        <a [href]="data().button.primary.url"> {{ data().button.primary.label }}</a>
+      </button>
+      <button mat-stroked-button>
+        <a [href]="data().button.primary.url"> {{ data().button.primary.label }}</a>
+      </button>
+    </div>
+    <a
+      class="hero-link"
+      [href]="data().button.moreInfo.url"
+    >
+      {{ data().button.moreInfo.label }}
+      <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+    </a>
+  </div>
+  <div class="banner"></div>
 </section>
