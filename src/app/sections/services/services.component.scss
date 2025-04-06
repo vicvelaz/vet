@@ -1,6 +1,28 @@
 .services {
   background-color: #f1f1f1;
   padding: 60px 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.section-texts {
+  text-align: center;
+
+  .section-title {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .section-description {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color-footer);
+    margin-top: calc(2rem);
+  }
 }
 
 .service-cards {
@@ -8,6 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-top: calc(3rem * calc(1 - 0));
 }
 
 .service-card {
