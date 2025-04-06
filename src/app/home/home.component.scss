@@ -6,78 +6,23 @@ html {
   scroll-behavior: smooth;
 }
 
-// app-header {
-//   position: fixed;
-//   width: 100%;
-//   top: 0;
-//   left: 0;
-//   z-index: 1000;
-//   box-shadow: 0 4px 2px -2px gray;
-// }
-
-// main {
-//   margin-top: 50px;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// section {
-//   height: 20rem;
-//   background-color: rgb(255, 219, 127);
-//   overflow: hidden;
-// }
-
-// .section-map {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   object-position: center;
-// }
-
-// @media (max-width: 768px) {
-//   section {
-//     height: 20rem;
-//   }
-// }
-
-// section:nth-child(even) {
-//   background-color: rgb(255, 255, 255);
-// }
-
-// section:nth-child(odd) {
-//   background-color: #00aaa7;
-// }
-
-/* General styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+.container {
+  min-height: 100vh;
 }
 
-.container {
-  // width: 100%;
-  // margin: 0 auto;
-  // padding: 0 16px;
+.content {
+  padding-bottom: 3rem;
+  flex-grow: 1;
 }
 
 .flex {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -95,7 +40,7 @@ body {
 
 /* Header styles */
 .header {
-  background-color: #4caf50;
+  // background-color: #b7b7b7;
   padding: 16px 0;
 }
 
@@ -117,8 +62,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background-color: #4caf50;
-  color: white;
+  // background-color: #d9d9d9;
+  // color: white;
   padding: 80px 0;
 }
 

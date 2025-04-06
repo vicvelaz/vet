@@ -1,5 +1,7 @@
 footer {
   border-top: 1px solid var(--primary-color);
+  width: 100%;
+  background-color: var(--primary-soft-background);
 }
 
 .container {
@@ -9,7 +11,7 @@ footer {
   margin: auto 2rem;
   height: inherit;
   gap: 1rem;
-  background-color: var(--primaty-soft-background);
+  color: var(--text-color-footer);
 }
 
 .footer-left {
@@ -20,11 +22,11 @@ footer {
 .footer-right {
   display: flex;
   justify-content: flex-end;
+  gap: 1rem;
 }
 
 a {
-  color: black;
-  margin-left: 20px;
+  color: var(--text-color-footer);
   text-decoration: none;
 
   &:hover {
