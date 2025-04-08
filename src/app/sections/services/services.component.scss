@@ -36,22 +36,45 @@
 .service-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
   background-color: #ffffff;
   width: 300px;
   height: 200px;
   border-radius: 8px;
-  text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+
+  .icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-soft-background);
+    border-radius: 50%;
+
+    .fa-icon {
+      // width: 1.5rem;
+      // height: 1.5rem;
+      // color: var(--primary-color);
+    }
+  }
+
+  h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: var(--text-color-footer);
+    font-size: 16px;
+  }
 }
 
-.service-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.service-description {
-  color: #6c6c6c;
+::ng-deep .svg-inline--fa {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary-color);
 }

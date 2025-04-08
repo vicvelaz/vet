@@ -30,7 +30,6 @@ export class HomeComponent {
       links: [
         { label: 'Inicio', url: '#inicio' },
         { label: 'Servicios', url: '#servicios' },
-        { label: 'Equipo', url: '#equipo' },
         { label: 'Ubicación', url: '#ubicacion' },
         { label: 'Contacto', url: '#contacto' },
       ],
@@ -46,73 +45,80 @@ export class HomeComponent {
         button: {
           primary: {
             label: 'Pedir Cita',
-            link: '#contacto',
+            url: '#contacto',
           },
           secondary: {
             label: 'Nuestros Servicios',
-            link: '#servicios',
+            url: '#servicios',
           },
           moreInfo: {
             label: 'Descubre más',
-            link: '#servicios',
+            url: '#servicios',
           },
         },
       },
       services: {
         title: 'Nuestros Servicios',
-        subtitle: 'Ofrecemos una amplia gama de servicios para el cuidado de tu mascota.',
+        subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
         items: [
           {
-            icon: 'pets',
-            title: 'Consulta Veterinaria',
-            description: 'Consulta veterinaria general y especializada.',
+            icon: 'stethoscope',
+            title: 'Medicina interna',
+            description:
+              'Servicio de consulta, diagnóstico, tratamiento y seguimiento de las patologías que afectan a nuestras mascotas.',
           },
           {
-            icon: 'vaccines',
-            title: 'Vacunación',
-            description: 'Vacunación y desparasitacion de mascotas.',
+            icon: 'syringe',
+            title: 'Medicina preventiva',
+            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP',
           },
           {
-            icon: 'sick',
-            title: 'Urgencias',
-            description: 'Atención de urgencias y emergencias veterinarias.',
+            icon: 'bone',
+            title: 'Asesoramiento nutricional',
+            description:
+              'Recomendaciones dietéticas personalizadas en función de edad, metabolismo, condición corporal y estado de salud.',
           },
           {
-            icon: 'local_hospital',
-            title: 'Hospitalización',
-            description: 'Hospitalización y cuidados intensivos.',
+            icon: 'heartPulse',
+            title: 'Diagnóstico por imagen',
+            description: 'Pruebas radiológicas y ecográficas interpretadas por especialistas en imagen.',
+          },
+          {
+            icon: 'faCut',
+            title: 'Cirugía',
+            description: 'Procedimientos quirúrgicos de rutina en Clínica colaboradora y de urgencias en Hospital colaborador.',
+          },
+          {
+            icon: 'shield-dog',
+            title: 'Seguros',
+            description: 'Planes de salud para perros y gatos cachorros, adultos, seniors y con patologías crónicas anuales.',
           },
         ],
       },
       timetable: {
         title: 'Horario de Atención',
-        subtitle: 'Estamos aquí para cuidar de tus mascotas.',
         items: [
           {
             day: 'Lunes a Viernes',
-            hours: '9:00 AM - 8:00 PM',
+            hours: '10:00 - 13:00 / 18:00 - 21:00',
           },
           {
-            day: 'Sábado',
-            hours: '10:00 AM - 4:00 PM',
-          },
-          {
-            day: 'Domingo',
+            day: 'Sabado y Domingo',
             hours: 'Cerrado',
           },
         ],
         recomendation: {
-          icon: 'info',
+          icon: 'fa-clock',
           text: 'Recomendamos pedir cita previa para evitar esperas.',
         },
       },
       location: {
         title: 'Nuestra Ubicación',
-        subtitle: 'Visítanos en nuestra clínica veterinaria.',
+        subtitle: 'Estamos ubicados en una zona de fácil acceso con amplio aparcamiento.',
         address: {
           icon: 'place',
           label: 'Dirección:',
-          value: 'Calle Veterinaria, 123, Ciudad, País',
+          value: 'Calle Anita Martínez nº8',
         },
         phone: {
           icon: 'phone',

@@ -3,16 +3,16 @@
   class="hero"
 >
   <div class="container">
-    <div class="flex-center">
-      <h2 class="hero-title">{{ data().title }}</h2>
+    <div class="hero-content">
+      <h1 class="hero-title">{{ data().title }}</h1>
       <p class="hero-description">{{ data().subtitle }}</p>
     </div>
-    <div>
+    <div class="actions">
       <button mat-flat-button>
         <a [href]="data().button.primary.url"> {{ data().button.primary.label }}</a>
       </button>
       <button mat-stroked-button>
-        <a [href]="data().button.primary.url"> {{ data().button.primary.label }}</a>
+        <a [href]="data().button.secondary.url"> {{ data().button.secondary.label }}</a>
       </button>
     </div>
     <a
@@ -23,5 +23,10 @@
       <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
     </a>
   </div>
-  <div class="banner"></div>
+  <div class="banner">
+    <img
+      src="img/banner.png"
+      alt="Banner"
+    />
+  </div>
 </section>
