@@ -5,18 +5,27 @@
   align-items: center;
   text-align: center;
   padding-top: 6rem;
-  padding-bottom: 6rem;
-  gap: 1rem;
+  padding-bottom: 3rem;
+  gap: 1.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 48px;
+  line-height: 1;
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  font-size: 20px;
+  color: var(--text-color-footer);
 }
 
 .banner {
@@ -25,11 +34,23 @@
   background-color: var(--primary-color);
 }
 
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+
+  button {
+    border-radius: calc(0.5rem - 2px);
+  }
+}
+
 .hero-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
