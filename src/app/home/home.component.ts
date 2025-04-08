@@ -45,15 +45,15 @@ export class HomeComponent {
         button: {
           primary: {
             label: 'Pedir Cita',
-            link: '#contacto',
+            url: '#contacto',
           },
           secondary: {
             label: 'Nuestros Servicios',
-            link: '#servicios',
+            url: '#servicios',
           },
           moreInfo: {
             label: 'Descubre más',
-            link: '#servicios',
+            url: '#servicios',
           },
         },
       },
