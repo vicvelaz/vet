@@ -97,33 +97,28 @@ export class HomeComponent {
       },
       timetable: {
         title: 'Horario de Atención',
-        subtitle: 'Estamos aquí para cuidar de tus mascotas.',
         items: [
           {
             day: 'Lunes a Viernes',
-            hours: '9:00 AM - 8:00 PM',
+            hours: '10:00 - 13:00 / 18:00 - 21:00',
           },
           {
-            day: 'Sábado',
-            hours: '10:00 AM - 4:00 PM',
-          },
-          {
-            day: 'Domingo',
+            day: 'Sabado y Domingo',
             hours: 'Cerrado',
           },
         ],
         recomendation: {
-          icon: 'info',
+          icon: 'fa-clock',
           text: 'Recomendamos pedir cita previa para evitar esperas.',
         },
       },
       location: {
         title: 'Nuestra Ubicación',
-        subtitle: 'Visítanos en nuestra clínica veterinaria.',
+        subtitle: 'Estamos ubicados en una zona de fácil acceso con amplio aparcamiento.',
         address: {
           icon: 'place',
           label: 'Dirección:',
-          value: 'Calle Veterinaria, 123, Ciudad, País',
+          value: 'Calle Anita Martínez nº8',
         },
         phone: {
           icon: 'phone',
