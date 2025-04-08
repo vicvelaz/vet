@@ -59,27 +59,39 @@ export class HomeComponent {
       },
       services: {
         title: 'Nuestros Servicios',
-        subtitle: 'Ofrecemos una amplia gama de servicios para el cuidado de tu mascota.',
+        subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
         items: [
           {
-            icon: 'pets',
-            title: 'Consulta Veterinaria',
-            description: 'Consulta veterinaria general y especializada.',
+            icon: 'stethoscope',
+            title: 'Medicina interna',
+            description:
+              'Servicio de consulta, diagnóstico, tratamiento y seguimiento de las patologías que afectan a nuestras mascotas.',
           },
           {
-            icon: 'vaccines',
-            title: 'Vacunación',
-            description: 'Vacunación y desparasitacion de mascotas.',
+            icon: 'syringe',
+            title: 'Medicina preventiva',
+            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP',
           },
           {
-            icon: 'sick',
-            title: 'Urgencias',
-            description: 'Atención de urgencias y emergencias veterinarias.',
+            icon: 'bone',
+            title: 'Asesoramiento nutricional',
+            description:
+              'Recomendaciones dietéticas personalizadas en función de edad, metabolismo, condición corporal y estado de salud.',
           },
           {
-            icon: 'local_hospital',
-            title: 'Hospitalización',
-            description: 'Hospitalización y cuidados intensivos.',
+            icon: 'heartPulse',
+            title: 'Diagnóstico por imagen',
+            description: 'Pruebas radiológicas y ecográficas interpretadas por especialistas en imagen.',
+          },
+          {
+            icon: 'faCut',
+            title: 'Cirugía',
+            description: 'Procedimientos quirúrgicos de rutina en Clínica colaboradora y de urgencias en Hospital colaborador.',
+          },
+          {
+            icon: 'shield-dog',
+            title: 'Seguros',
+            description: 'Planes de salud para perros y gatos cachorros, adultos, seniors y con patologías crónicas anuales.',
           },
         ],
       },

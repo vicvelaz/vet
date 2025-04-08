@@ -19,6 +19,8 @@ html {
   --primary-soft-background: #f8f2f8;
   --text-color-footer: #64748b;
   --mdc-outlined-button-outline-color: var(--mat-sys-primary);
+  --mat-icon-color: var(--mat-sys-primary);
+  --border-color: #ad118f3b;
 }
 
 * {
@@ -31,6 +33,8 @@ body {
   margin: 0;
   font-family: Inter, Inter Fallback;
   font-size: 14px;
+
+  min-width: 400px;
 }
 
 a {
