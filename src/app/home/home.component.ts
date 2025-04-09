@@ -115,24 +115,21 @@ export class HomeComponent {
       location: {
         title: 'Nuestra Ubicación',
         subtitle: 'Estamos ubicados en una zona de fácil acceso con amplio aparcamiento.',
-        address: {
-          icon: 'place',
-          label: 'Dirección:',
-          value: 'Calle Anita Martínez nº8',
-        },
-        phone: {
-          icon: 'phone',
-          label: 'Teléfono:',
-          value: '+34 123 456 789',
-        },
-        email: {
-          icon: 'email',
-          label: 'Email:',
-          value: 'info@vetcare.com',
-        },
+        items: [
+          {
+            icon: 'place',
+            label: 'Dirección:',
+            value: 'Calle Anita Martínez nº8',
+          },
+          {
+            icon: 'phone',
+            label: 'Teléfono:',
+            value: '+34 123 456 789',
+          },
+        ],
         button: {
           label: 'Cómo llegar',
-          link: '',
+          url: '',
         },
       },
       contact: {

@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, input } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-location',
-  imports: [MatIconModule],
+  imports: [FontAwesomeModule],
   templateUrl: './location.component.html',
-  styleUrl: './location.component.scss'
+  styleUrl: './location.component.scss',
 })
 export class LocationComponent {
+  data = input.required<any>({});
 
+  //TODO: Add icons to the component
+  icons = {
+    // 'fa-clock': faClock,
+  } as any;
 }

@@ -1,29 +1,32 @@
 <section
-id="ubicacion"
-class="ubicacion"
+  id="ubicacion"
+  class="ubicacion"
 >
-<div class="">
-  <h2 class="section-title">Nuestra Ubicación</h2>
-  <p class="section-description">Estamos ubicados en una zona de fácil acceso con amplio estacionamiento.</p>
-  <div class="ubicacion-details">
-    <div class="ubicacion-detail">
-      <mat-icon>location_on</mat-icon>
-      <p>Dirección: Calle Principal 123, Ciudad</p>
+  <div class="">
+    <h2 class="section-title">{{ data().title }}</h2>
+    <p class="section-description">{{ data().subtitle }}</p>
+    <div class="ubicacion-details">
+      @for(item of data().items; track $index){
+      <div class="ubicacion-detail">
+        <fa-icon
+          [icon]="icons[item.icon]"
+          class="fa-icon"
+        ></fa-icon>
+        <div>
+          <p>{{ item.label }}</p>
+          <p>{{ item.value }}</p>
+        </div>
+      </div>
+      }
+      <button mat-stroked-button>
+        <a [href]="data().button.url"> {{ data().button.label }}</a>
+      </button>
     </div>
-    <div class="ubicacion-detail">
-      <mat-icon>phone</mat-icon>
-      <p>Teléfono: +34 123 456 789</p>
-    </div>
-    <div class="ubicacion-detail">
-      <mat-icon>mail</mat-icon>
-      <p>Email: info.com</p>
-    </div>
-  </div>
-  <div class="ubicacion-map">
-    <!-- <img
+    <div class="ubicacion-map">
+      <!-- <img
     src="/placeholder.svg?height=450&width=800"
     alt="Mapa de ubicación"
   /> -->
+    </div>
   </div>
-</div>
 </section>
