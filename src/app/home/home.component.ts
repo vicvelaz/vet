@@ -106,6 +106,10 @@ export class HomeComponent {
             day: 'Sabado y Domingo',
             hours: 'Cerrado',
           },
+          {
+            day: 'Urgencias',
+            hours: 'Hospital Veterinario Europeo / Hospital Vetsia',
+          },
         ],
         recomendation: {
           icon: 'fa-clock',
