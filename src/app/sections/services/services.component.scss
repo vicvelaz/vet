@@ -38,7 +38,6 @@
   flex-direction: column;
   background-color: #ffffff;
   width: 300px;
-  height: 200px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -52,12 +51,7 @@
     align-items: center;
     background-color: var(--primary-soft-background);
     border-radius: 50%;
-
-    .fa-icon {
-      // width: 1.5rem;
-      // height: 1.5rem;
-      // color: var(--primary-color);
-    }
+    color: var(--primary-color);
   }
 
   h3 {
@@ -71,10 +65,4 @@
     color: var(--text-color-footer);
     font-size: 16px;
   }
-}
-
-::ng-deep .svg-inline--fa {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--primary-color);
 }
