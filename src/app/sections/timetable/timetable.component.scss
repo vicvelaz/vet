@@ -35,9 +35,10 @@ h2 {
 
   padding-top: 0.5rem;
 
-  &:first-child(2) {
+  &:nth-child(1) {
     border-bottom-width: 0px;
   }
+
   &:nth-last-child(2) {
     border-bottom-width: 0px;
   }
