@@ -112,7 +112,11 @@ export class HomeComponent {
           },
           {
             day: 'Urgencias',
-            hours: 'Hospital Veterinario Europeo / Hospital Vetsia',
+            hours: 'Hospital Veterinario Europeo',
+          },
+          {
+            day: '',
+            hours: 'Hospital Vetsia',
           },
         ],
         recomendation: {
