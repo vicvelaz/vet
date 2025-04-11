@@ -10,10 +10,10 @@
     @for (item of data().items; track item.title) {
     <div class="service-card">
       <div class="icon">
-        <!-- <mat-icon> {{ item.icon }}</mat-icon> -->
         <fa-icon
           [icon]="icons[item.icon]"
           class="fa-icon"
+          size="xl"
         ></fa-icon>
       </div>
       <h3>{{ item.title }}</h3>

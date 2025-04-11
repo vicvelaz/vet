@@ -1,18 +1,30 @@
 <section id="horario">
-  <h2>{{ data().title }}</h2>
-  <div>
-    @for(item of data().items; track $index){
-    <div>
-      <div>{{ item.day }}</div>
-      <div>{{ item.hours }}</div>
+  <div class="container">
+    <div class="left-content">
+      <h2>{{ data().title }}</h2>
+      <div class="hours-table">
+        @for(item of data().items; track $index){
+        <div class="hours-row">
+          <div>{{ item.day }}</div>
+          <div>{{ item.hours }}</div>
+        </div>
+        }
+      </div>
+      <div class="recomendation">
+        <fa-icon
+          [icon]="icons[data().recomendation.icon]"
+          class="fa-icon"
+          size="sm"
+          [style]="{ color: 'var(--text-color-footer)' }"
+        ></fa-icon>
+        <span>{{ data().recomendation.text }}</span>
+      </div>
     </div>
-    }
-  </div>
-  <div>
-    <fa-icon
-      [icon]="icons[data().recomendation.icon]"
-      class="fa-icon"
-    ></fa-icon>
-    <span>{{ data().recomendation.text }}</span>
+    <div class="right-content">
+      <img
+        src="img/banner.png"
+        alt="Banner"
+      />
+    </div>
   </div>
 </section>

@@ -2,31 +2,37 @@
   id="ubicacion"
   class="ubicacion"
 >
-  <div class="">
-    <h2 class="section-title">{{ data().title }}</h2>
-    <p class="section-description">{{ data().subtitle }}</p>
-    <div class="ubicacion-details">
-      @for(item of data().items; track $index){
-      <div class="ubicacion-detail">
-        <fa-icon
-          [icon]="icons[item.icon]"
-          class="fa-icon"
-        ></fa-icon>
-        <div>
-          <p>{{ item.label }}</p>
-          <p>{{ item.value }}</p>
-        </div>
-      </div>
-      }
-      <button mat-stroked-button>
-        <a [href]="data().button.url"> {{ data().button.label }}</a>
-      </button>
+  <div class="container">
+    <div class="right-content">
+      <img
+        src="img/banner.png"
+        alt="Banner"
+      />
     </div>
-    <div class="ubicacion-map">
-      <!-- <img
-    src="/placeholder.svg?height=450&width=800"
-    alt="Mapa de ubicación"
-  /> -->
+    <div class="left-content">
+      <h2 class="section-title">{{ data().title }}</h2>
+      <p class="color-gray">{{ data().subtitle }}</p>
+      <div class="ubication-details">
+        @for(item of data().items; track $index){
+        <div class="ubication-detail">
+          <fa-icon
+            [icon]="icons[item.icon]"
+            size="sm"
+            class="fa-icon"
+          ></fa-icon>
+          <div class="ubication-text">
+            <p>{{ item.label }}</p>
+            <p class="color-gray">{{ item.value }}</p>
+          </div>
+        </div>
+        }
+        <button
+          mat-stroked-button
+          class="button-ubication"
+        >
+          <a [href]="data().button.url"> {{ data().button.label }}</a>
+        </button>
+      </div>
     </div>
   </div>
 </section>

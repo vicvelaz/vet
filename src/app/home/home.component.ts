@@ -100,7 +100,11 @@ export class HomeComponent {
         items: [
           {
             day: 'Lunes a Viernes',
-            hours: '10:00 - 13:00 / 18:00 - 21:00',
+            hours: '10:00 - 13:00 ',
+          },
+          {
+            day: '',
+            hours: '18:00 - 21:00',
           },
           {
             day: 'Sabado y Domingo',
@@ -108,7 +112,11 @@ export class HomeComponent {
           },
           {
             day: 'Urgencias',
-            hours: 'Hospital Veterinario Europeo / Hospital Vetsia',
+            hours: 'Hospital Veterinario Europeo',
+          },
+          {
+            day: '',
+            hours: 'Hospital Vetsia',
           },
         ],
         recomendation: {
