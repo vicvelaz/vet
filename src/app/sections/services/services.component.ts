@@ -1,11 +1,10 @@
 import { Component, input } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBolt, faBone, faCut, faHeartPulse, faShieldDog, faStethoscope, faSyringe } from '@fortawesome/free-solid-svg-icons';
+import { faBone, faCut, faHeartPulse, faShieldDog, faStethoscope, faSyringe } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-services',
-  imports: [MatIconModule, FontAwesomeModule],
+  imports: [FontAwesomeModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss',
 })

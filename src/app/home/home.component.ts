@@ -106,6 +106,10 @@ export class HomeComponent {
             day: 'Sabado y Domingo',
             hours: 'Cerrado',
           },
+          {
+            day: 'Urgencias',
+            hours: 'Hospital Veterinario Europeo / Hospital Vetsia',
+          },
         ],
         recomendation: {
           icon: 'fa-clock',
@@ -115,48 +119,47 @@ export class HomeComponent {
       location: {
         title: 'Nuestra Ubicación',
         subtitle: 'Estamos ubicados en una zona de fácil acceso con amplio aparcamiento.',
-        address: {
-          icon: 'place',
-          label: 'Dirección:',
-          value: 'Calle Anita Martínez nº8',
-        },
-        phone: {
-          icon: 'phone',
-          label: 'Teléfono:',
-          value: '+34 123 456 789',
-        },
-        email: {
-          icon: 'email',
-          label: 'Email:',
-          value: 'info@vetcare.com',
-        },
+        items: [
+          {
+            icon: 'place',
+            label: 'Dirección:',
+            value: 'Calle Anita Martínez nº8',
+          },
+          {
+            icon: 'phone',
+            label: 'Teléfono:',
+            value: '+34 123 456 789',
+          },
+        ],
         button: {
           label: 'Cómo llegar',
-          link: '',
+          url: '',
         },
       },
       contact: {
         title: 'Contáctanos',
         subtitle: 'Estamos aquí para responder a tus preguntas. No dudes en contactarnos.',
-        phone: {
-          icon: 'phone',
-          value: '+34 123 456 789',
-        },
-        email: {
-          icon: 'email',
-          value: 'email@vetcare.com',
-        },
-        location: {
-          icon: 'place',
-          value: 'Calle Veterinaria, 123, Ciudad, País',
-        },
-        timetable: {
-          icon: 'access_time',
-          value: 'Lunes a Viernes: 9:00 AM - 8:00 PM, Sábado: 10:00 AM - 4:00 PM, Domingo: Cerrado',
-        },
+        items: [
+          {
+            icon: 'phone',
+            value: '+34 123 456 789',
+          },
+          {
+            icon: 'email',
+            value: 'email@vetcare.com',
+          },
+          {
+            icon: 'place',
+            value: 'Calle Veterinaria, 123, Ciudad, País',
+          },
+          {
+            icon: 'clock',
+            value: 'Lunes a Viernes: 9:00 AM - 8:00 PM, Sábado: 10:00 AM - 4:00 PM, Domingo: Cerrado',
+          },
+        ],
         socialMedia: [
           {
-            icon: 'facebook',
+            icon: 'facebook-f',
             link: 'https://www.facebook.com/',
           },
           {
@@ -164,8 +167,13 @@ export class HomeComponent {
             link: 'https://www.instagram.com/',
           },
           {
-            icon: 'tikTok',
+            icon: 'tiktok',
             link: 'https://tiktok.com/',
+          },
+          {
+            icon: 'whatsapp',
+            // link: ' https://wa.me/123456789',
+            link: '',
           },
         ],
       },

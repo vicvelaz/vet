@@ -2,5 +2,31 @@
   id="contacto"
   class="contacto"
 >
-  <p>contact works!</p>
+  <div>
+    <h2>{{ data().title }}</h2>
+    <p>{{ data().subtitle }}</p>
+  </div>
+  <div>
+    <div class="">
+      @for(item of data().items; track $index){
+      <div>
+        <fa-icon
+          [icon]="icons[item.icon]"
+          class="fa-icon"
+        ></fa-icon>
+        <span>{{ item.value }}</span>
+      </div>
+      }
+    </div>
+    <div class="social-media">
+      @for(item of data().socialMedia; track $index){
+      <button mat-stroked-button>
+        <i
+          class="fa-brands"
+          [ngClass]="'fa-' + item.icon"
+        ></i>
+      </button>
+      }
+    </div>
+  </div>
 </section>
