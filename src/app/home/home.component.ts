@@ -70,7 +70,7 @@ export class HomeComponent {
           {
             icon: 'syringe',
             title: 'Medicina preventiva',
-            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP',
+            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP.',
           },
           {
             icon: 'bone',
@@ -104,7 +104,7 @@ export class HomeComponent {
           },
           {
             day: '',
-            hours: '18:00 - 21:00',
+            hours: '16:00 - 21:00',
           },
           {
             day: 'Sabado y Domingo',
@@ -136,7 +136,7 @@ export class HomeComponent {
           {
             icon: 'phone',
             label: 'Teléfono:',
-            value: '+34 123 456 789',
+            value: '+34123456789',
           },
         ],
         button: {
@@ -150,7 +150,7 @@ export class HomeComponent {
         items: [
           {
             icon: 'phone',
-            value: '+34 123 456 789',
+            value: '+34123456789',
           },
           {
             icon: 'email',
@@ -162,7 +162,7 @@ export class HomeComponent {
           },
           {
             icon: 'clock',
-            value: 'Lunes a Viernes: 9:00 AM - 8:00 PM, Sábado: 10:00 AM - 4:00 PM, Domingo: Cerrado',
+            value: 'Lun-Vie: 10:00-13:00, 16:00-21:00',
           },
         ],
         socialMedia: [
@@ -192,6 +192,83 @@ export class HomeComponent {
         { label: 'Política de Privacidad', url: '#' },
         { label: 'Términos y Condiciones', url: '#' },
         { label: 'Cookies', url: '#' },
+      ],
+    },
+    promotions: {
+      title: 'Promociones Especiales',
+      subtitle: 'Aprovecha nuestras ofertas exclusivas para el cuidado de tus mascotas',
+      items: [
+        {
+          title: 'Primera Consulta',
+          description: '20% de descuento en tu primera visita. Incluye revisión completa y asesoramiento personalizado.',
+          offer: '-20%',
+          date: 'Válido hasta: 31/12/2025',
+          label: 'Más información',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          date: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          date: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          date: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          date: ' ',
+          label: ' ',
+        },
+      ],
+    },
+    insurances: {
+      title: 'Promociones Especiales',
+      subtitle: 'Aprovecha nuestras ofertas exclusivas para el cuidado de tus mascotas',
+      items: [
+        {
+          title: 'Seguro Vacunal',
+          description: 'Texto que describa esta baina.',
+          offer: '190€',
+          label: 'Más información',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          label: ' ',
+        },
+        {
+          title: ' ',
+          description: ' ',
+          offer: ' ',
+          label: ' ',
+        },
       ],
     },
   });
