@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
+import { InsurancesComponent } from '../insurances/insurances.component';
+import { PromotionsComponent } from '../promotions/promotions.component';
 import { ContactComponent } from '../sections/contact/contact.component';
 import { HeroComponent } from '../sections/hero/hero.component';
 import { LocationComponent } from '../sections/location/location.component';
@@ -17,6 +19,8 @@ import { TimetableComponent } from '../sections/timetable/timetable.component';
     LocationComponent,
     ContactComponent,
     FooterComponent,
+    PromotionsComponent,
+    InsurancesComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -70,7 +74,7 @@ export class HomeComponent {
           {
             icon: 'syringe',
             title: 'Medicina preventiva',
-            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP',
+            description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP.',
           },
           {
             icon: 'bone',
@@ -104,7 +108,7 @@ export class HomeComponent {
           },
           {
             day: '',
-            hours: '18:00 - 21:00',
+            hours: '16:00 - 21:00',
           },
           {
             day: 'Sabado y Domingo',
@@ -136,7 +140,7 @@ export class HomeComponent {
           {
             icon: 'phone',
             label: 'Teléfono:',
-            value: '+34 123 456 789',
+            value: '+34123456789',
           },
         ],
         button: {
@@ -150,7 +154,7 @@ export class HomeComponent {
         items: [
           {
             icon: 'phone',
-            value: '+34 123 456 789',
+            value: '+34123456789',
           },
           {
             icon: 'email',
@@ -162,7 +166,7 @@ export class HomeComponent {
           },
           {
             icon: 'clock',
-            value: 'Lunes a Viernes: 9:00 AM - 8:00 PM, Sábado: 10:00 AM - 4:00 PM, Domingo: Cerrado',
+            value: 'Lun-Vie: 10:00-13:00, 16:00-21:00',
           },
         ],
         socialMedia: [
@@ -182,6 +186,83 @@ export class HomeComponent {
             icon: 'whatsapp',
             // link: ' https://wa.me/123456789',
             link: '',
+          },
+        ],
+      },
+      promotions: {
+        title: 'Promociones Especiales',
+        subtitle: 'Aprovecha nuestras ofertas exclusivas para el cuidado de tus mascotas',
+        items: [
+          {
+            title: 'Primera Consulta',
+            description: '20% de descuento en tu primera visita. Incluye revisión completa y asesoramiento personalizado.',
+            offer: '-20%',
+            date: 'Válido hasta: 31/12/2025',
+            label: 'Más información',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            date: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            date: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            date: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            date: ' ',
+            label: ' ',
+          },
+        ],
+      },
+      insurances: {
+        title: 'Promociones Especiales',
+        subtitle: 'Aprovecha nuestras ofertas exclusivas para el cuidado de tus mascotas',
+        items: [
+          {
+            title: 'Seguro Vacunal',
+            description: 'Texto que describa esta baina.',
+            offer: '190€',
+            label: 'Más información',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            label: ' ',
+          },
+          {
+            title: ' ',
+            description: ' ',
+            offer: ' ',
+            label: ' ',
           },
         ],
       },
