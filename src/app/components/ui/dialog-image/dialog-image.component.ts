@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -9,4 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './dialog-image.component.html',
   styleUrl: './dialog-image.component.scss',
 })
-export class DialogImageComponent {}
+export class DialogImageComponent {
+  readonly data = inject<{ imageName: string }>(MAT_DIALOG_DATA);
+}
