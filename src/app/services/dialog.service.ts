@@ -12,6 +12,8 @@ export class DialogService {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',
       closeOnNavigation: true,
+      disableClose: false,
+      panelClass: 'custom-dialog-container',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

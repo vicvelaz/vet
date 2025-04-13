@@ -1,23 +1,25 @@
+::ng-deep .custom-dialog-container {
+  width: calc(100% - 3rem);
+
+  @media (min-width: 768px) {
+    width: calc(100% - 3rem);
+  }
+
+  @media (min-width: 1024px) {
+    width: calc(100% - 10rem);
+  }
+
+  @media (min-width: 1280px) {
+    width: calc(100% - 20rem);
+  }
+}
+
 ::ng-deep .mat-mdc-dialog-surface {
-  width: auto;
-
-  height: auto;
-  //   max-width: calc(100% - 15rem);
   border-radius: var(--border-radius);
-
-  //   @media (max-width: 768px) {
-  //     max-width: calc(100% - 3rem);
-  //   }
-
-  //   @media (min-width: 1024px) {
-  //     max-width: calc(100% - 15rem);
-  //   }
 }
 
 ::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
   max-width: 100%;
-
-  //   padding: 3rem 3rem;
 }
 
 .container {
