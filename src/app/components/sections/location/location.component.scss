@@ -1,5 +1,5 @@
 section {
-  //   padding-top: 6rem;
+  padding-top: 6rem;
   padding-bottom: 6rem;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@ section {
 .container {
   width: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 3rem;
   padding: 3rem 2rem;
 }
@@ -30,12 +30,14 @@ h2 {
 .right-content {
   width: 100%;
   height: 300px;
-  //   background-color: var(--primary-color);
-  img {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+
+  iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2rem;
   }
 }
 

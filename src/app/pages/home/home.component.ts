@@ -33,8 +33,9 @@ export class HomeComponent {
       name: 'VetCare',
       // logo: 'assets/images/logo.png',
       links: [
-        { label: 'Inicio', url: '#inicio' },
         { label: 'Servicios', url: '#servicios' },
+        { label: 'Promociones', url: '#promociones' },
+        { label: 'Horario', url: '#horario' },
         { label: 'Ubicación', url: '#ubicacion' },
         { label: 'Contacto', url: '#contacto' },
       ],
