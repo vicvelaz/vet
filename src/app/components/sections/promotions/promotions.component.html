@@ -1,2 +1,28 @@
-<p>-------------------Aquí irá la sección de seguros-------------------</p>
-<p>---------------------------------------------------------------------</p>
+<section
+  id="promociones"
+  class="promotions"
+>
+  <div class="section-texts">
+    <h2 class="section-title">{{ data().title }}</h2>
+    <p class="section-description">{{ data().subtitle }}</p>
+  </div>
+  <div class="promotions-cards">
+    @for (item of data().items; track $index) {
+    <div class="promotions-card">
+      <div class="offer">{{ item.offer }}</div>
+      <div class="card-content">
+        <h3>{{ item.title }}</h3>
+        <p class="gray-text">{{ item.description }}</p>
+        <span class="gray-text">{{ item.date }}</span>
+        <button
+          class="info-button"
+          mat-flat-button
+          (click)="openDialog(item)"
+        >
+          {{ item.label }}
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>
