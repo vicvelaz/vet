@@ -13,8 +13,7 @@ export class PromotionsComponent {
 
   data = input.required<any>({});
 
-  openDialog(item: any) {
-    console.log(item);
-    this.dialogService.openDialog();
+  openDialog(imageName: string) {
+    this.dialogService.openDialog(imageName);
   }
 }

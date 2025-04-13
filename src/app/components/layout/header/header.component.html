@@ -1,7 +1,9 @@
 <header class="header">
   <div class="container">
     <div class="logo">
-      <h1 class="logo-text">{{ data().name }}</h1>
+      <h1 class="logo-text">
+        <a href="#inicio">{{ data().name }}</a>
+      </h1>
     </div>
     <nav class="nav-links">
       @for (link of data().links; track link.label){

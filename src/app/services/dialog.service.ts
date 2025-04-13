@@ -7,17 +7,19 @@ import { DialogImageComponent } from '../components/ui';
 export class DialogService {
   readonly dialog = inject(MatDialog);
 
-  openDialog() {
+  openDialog(imageName: string) {
+    console.log('Opening DialogService:', imageName);
     const dialogRef = this.dialog.open(DialogImageComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',
       closeOnNavigation: true,
       disableClose: false,
       panelClass: 'custom-dialog-container',
+      data: {
+        imageName: imageName,
+      },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe();
   }
 }

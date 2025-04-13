@@ -44,6 +44,13 @@
   overflow: hidden;
   position: relative;
 
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+  }
+
   .card-content {
     display: flex;
     flex-direction: column;

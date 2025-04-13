@@ -10,14 +10,16 @@
     @for (item of data().items; track $index) {
     <div class="promotions-card">
       <div class="offer">{{ item.offer }}</div>
-      <div class="card-content">
-        <h3>{{ item.title }}</h3>
-        <p class="gray-text">{{ item.description }}</p>
-        <span class="gray-text">{{ item.date }}</span>
+      <div class="card">
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          <p class="gray-text">{{ item.description }}</p>
+          <span class="gray-text">{{ item.date }}</span>
+        </div>
         <button
           class="info-button"
           mat-flat-button
-          (click)="openDialog(item)"
+          (click)="openDialog(item.image)"
         >
           {{ item.label }}
         </button>
