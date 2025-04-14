@@ -31,11 +31,11 @@ export class HomeComponent {
       name: 'VetCare',
       // logo: 'assets/images/logo.png',
       links: [
-        { label: 'Servicios', url: '#servicios' },
-        { label: 'Promociones', url: '#promociones' },
-        { label: 'Horario', url: '#horario' },
-        { label: 'Planes', url: '#seguros' },
-        { label: 'Contacto', url: '#contacto' },
+        { label: 'Servicios', url: 'servicios' },
+        { label: 'Promociones', url: 'promociones' },
+        { label: 'Horario', url: 'horario' },
+        { label: 'Planes', url: 'seguros' },
+        { label: 'Contacto', url: 'contacto' },
       ],
       button: {
         label: 'Solicitar Cita',
@@ -49,15 +49,15 @@ export class HomeComponent {
         button: {
           primary: {
             label: 'Pedir Cita',
-            url: '#contacto',
+            url: 'contacto',
           },
           secondary: {
             label: 'Nuestros Servicios',
-            url: '#servicios',
+            url: 'servicios',
           },
           moreInfo: {
             label: 'Descubre más',
-            url: '#servicios',
+            url: 'contacto',
           },
         },
       },

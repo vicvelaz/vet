@@ -8,20 +8,27 @@
       <p class="hero-description">{{ data().subtitle }}</p>
     </div>
     <div class="actions">
-      <button mat-flat-button>
-        <a [href]="data().button.primary.url"> {{ data().button.primary.label }}</a>
+      <button
+        mat-flat-button
+        (click)="scrollToSection(data().button.primary.url)"
+      >
+        {{ data().button.primary.label }}
       </button>
-      <button mat-stroked-button>
-        <a [href]="data().button.secondary.url"> {{ data().button.secondary.label }}</a>
+      <button
+        mat-stroked-button
+        (click)="scrollToSection(data().button.secondary.url)"
+      >
+        {{ data().button.secondary.label }}
       </button>
     </div>
-    <a
+    <!-- <button
       class="hero-link"
-      [href]="data().button.moreInfo.url"
+      mat-button
+      (click)="scrollToSection(data().button.moreInfo.url)"
     >
       {{ data().button.moreInfo.label }}
       <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
-    </a>
+    </button> -->
   </div>
   <div class="banner">
     <img

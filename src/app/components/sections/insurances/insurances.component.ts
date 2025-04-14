@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogService } from '../../../services/dialog.service';
+import { UtilsService } from '../../../services/utils.service';
 
 @Component({
   selector: 'app-insurances',
@@ -9,7 +9,7 @@ import { DialogService } from '../../../services/dialog.service';
   styleUrl: './insurances.component.scss',
 })
 export class InsurancesComponent {
-  readonly dialogService = inject(DialogService);
+  readonly dialogService = inject(UtilsService);
 
   data = input.required<any>({});
 

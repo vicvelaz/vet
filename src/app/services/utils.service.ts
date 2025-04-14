@@ -4,7 +4,7 @@ import { DialogImageComponent } from '../components/ui';
 @Injectable({
   providedIn: 'root',
 })
-export class DialogService {
+export class UtilsService {
   readonly dialog = inject(MatDialog);
 
   openDialog(imageName: string) {
@@ -21,5 +21,13 @@ export class DialogService {
     });
 
     dialogRef.afterClosed().subscribe();
+  }
+
+  scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    console.log('section', sectionId, section);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
