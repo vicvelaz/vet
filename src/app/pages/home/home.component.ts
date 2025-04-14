@@ -4,7 +4,6 @@ import {
   ContactComponent,
   HeroComponent,
   InsurancesComponent,
-  LocationComponent,
   PromotionsComponent,
   ServicesComponent,
   TimetableComponent,
@@ -17,7 +16,6 @@ import {
     HeroComponent,
     ServicesComponent,
     TimetableComponent,
-    LocationComponent,
     ContactComponent,
     FooterComponent,
     PromotionsComponent,
@@ -36,7 +34,7 @@ export class HomeComponent {
         { label: 'Servicios', url: '#servicios' },
         { label: 'Promociones', url: '#promociones' },
         { label: 'Horario', url: '#horario' },
-        { label: 'Ubicación', url: '#ubicacion' },
+        { label: 'Planes', url: '#seguros' },
         { label: 'Contacto', url: '#contacto' },
       ],
       button: {
@@ -130,30 +128,14 @@ export class HomeComponent {
           text: 'Recomendamos pedir cita previa para evitar esperas.',
         },
       },
-      location: {
-        title: 'Nuestra Ubicación',
-        subtitle: 'Estamos ubicados en una zona de fácil acceso con amplio aparcamiento.',
+      contact: {
+        title: 'Dónde Estamos',
+        subtitle: 'Encuentra fácilmente nuestra clínica y las formas de ponerte en contacto con nosotros.',
         items: [
           {
             icon: 'place',
-            label: 'Dirección:',
-            value: 'Calle Anita Martínez nº8',
+            value: 'Calle Veterinaria, 123, Ciudad, País',
           },
-          {
-            icon: 'phone',
-            label: 'Teléfono:',
-            value: '+34123456789',
-          },
-        ],
-        button: {
-          label: 'Cómo llegar',
-          url: '',
-        },
-      },
-      contact: {
-        title: 'Contáctanos',
-        subtitle: 'Estamos aquí para responder a tus preguntas. No dudes en contactarnos.',
-        items: [
           {
             icon: 'phone',
             value: '+34123456789',
@@ -161,10 +143,6 @@ export class HomeComponent {
           {
             icon: 'email',
             value: 'email@vetcare.com',
-          },
-          {
-            icon: 'place',
-            value: 'Calle Veterinaria, 123, Ciudad, País',
           },
           {
             icon: 'clock',
