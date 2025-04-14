@@ -53,10 +53,11 @@
 
 .hero-link {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
