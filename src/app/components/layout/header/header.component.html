@@ -2,19 +2,19 @@
   <div class="container">
     <div class="logo">
       <h1 class="logo-text">
-        <a href="#inicio">{{ data().name }}</a>
+        <a (click)="scrollToSection('inicio')">{{ data().name }}</a>
       </h1>
     </div>
     <nav class="nav-links">
       @for (link of data().links; track link.label){
-      <a [href]="link.url"> {{ link.label }}</a>
+      <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
     </nav>
     <button
       class="contact-btn"
       mat-flat-button
     >
-      <a [href]="data().button.url"> {{ data().button.label }}</a>
+      <a (click)="scrollToSection(data().button.url)"> {{ data().button.label }}</a>
     </button>
   </div>
 </header>
