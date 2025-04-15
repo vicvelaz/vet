@@ -35,7 +35,7 @@ export class AppDataService {
           },
           moreInfo: {
             label: 'Descubre más',
-            url: 'contacto',
+            url: 'promociones',
           },
         },
       },
