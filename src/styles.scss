@@ -16,6 +16,8 @@ html {
 
 :root {
   --primary-color: var(--mat-sys-primary);
+  --primary-contrast-color: var(--mat-sys-on-primary);
+  --primary-darker-color: #731661;
   --primary-soft-background: #f8f2f8;
   --gray-background: #f1f1f1;
   --text-color-footer: #64748b;
@@ -39,7 +41,34 @@ body {
   min-width: 400px;
 }
 
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ocupa el alto de la pantalla
+}
+
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+
+  h1,
+  h2 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+
+    strong {
+      color: var(--primary-darker-color);
+    }
+  }
 }
