@@ -1,1 +1,10 @@
-<router-outlet />
+<app-header
+  class="sticky-header"
+  [data]="data().header"
+></app-header>
+
+<main class="content">
+  <router-outlet />
+</main>
+
+<app-footer [data]="data().footer"></app-footer>

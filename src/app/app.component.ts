@@ -1,12 +1,31 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { FooterComponent, HeaderComponent } from './components/layout';
+import { AppDataService } from './services/app-data.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'vet';
+  readonly appDataService = inject(AppDataService);
+  readonly route = inject(ActivatedRoute);
+  readonly router = inject(Router);
+  data = signal<any>(null);
+
+  ngOnInit() {
+    this.data.set(this.appDataService.data());
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          setTimeout(() => {
+            document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+          }, 0);
+        }
+      }
+    });
+  }
 }

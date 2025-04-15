@@ -14,6 +14,6 @@ export class HeroComponent {
   readonly utilsService = inject(UtilsService);
 
   scrollToSection(sectionId: string) {
-    this.utilsService.scrollToSection(sectionId);
+    this.utilsService.navigateToFragment(sectionId);
   }
 }

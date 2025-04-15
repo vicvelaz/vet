@@ -1,26 +1,17 @@
-<app-header
-  class="sticky-header"
-  [data]="data().header"
-></app-header>
+<!-- Hero Section -->
+<app-hero [data]="data().sections.hero"></app-hero>
 
-<main class="content">
-  <!-- Hero Section -->
-  <app-hero [data]="data().sections.hero"></app-hero>
+<!-- Services Section -->
+<app-services [data]="data().sections.services"></app-services>
 
-  <!-- Services Section -->
-  <app-services [data]="data().sections.services"></app-services>
+<!-- Promotions Section -->
+<app-promotions [data]="data().sections.promotions"></app-promotions>
 
-  <!-- Promotions Section -->
-  <app-promotions [data]="data().sections.promotions"></app-promotions>
+<!-- Timetible Section -->
+<app-timetable [data]="data().sections.timetable"></app-timetable>
 
-  <!-- Timetible Section -->
-  <app-timetable [data]="data().sections.timetable"></app-timetable>
+<!-- Insurance Section -->
+<app-insurances [data]="data().sections.insurances"></app-insurances>
 
-  <!-- Insurance Section -->
-  <app-insurances [data]="data().sections.insurances"></app-insurances>
-
-  <!-- Contact Section -->
-  <app-contact [data]="data().sections.contact"></app-contact>
-</main>
-
-<app-footer [data]="data().footer"></app-footer>
+<!-- Contact Section -->
+<app-contact [data]="data().sections.contact"></app-contact>
