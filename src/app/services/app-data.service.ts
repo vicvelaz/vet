@@ -6,7 +6,7 @@ import { Injectable, signal } from '@angular/core';
 export class AppDataService {
   data = signal({
     header: {
-      name: 'VetCare',
+      name: 'Valdeoso',
       // logo: 'assets/images/logo.png',
       links: [
         { label: 'Servicios', url: 'servicios' },
@@ -22,7 +22,7 @@ export class AppDataService {
     },
     sections: {
       hero: {
-        title: 'Clínica Veterinaria VetCare',
+        title: 'Centro Veterinario Valdeoso',
         subtitle: 'Cuidamos de tus mascotas como si fueran nuestras',
         button: {
           primary: {
@@ -112,7 +112,7 @@ export class AppDataService {
         items: [
           {
             icon: 'place',
-            value: 'Calle Veterinaria, 123, Ciudad, País',
+            value: 'Calle Anita Martinez nº 8',
           },
           {
             icon: 'phone',
@@ -120,7 +120,7 @@ export class AppDataService {
           },
           {
             icon: 'email',
-            value: 'email@vetcare.com',
+            value: 'info@centroveterinariovaldeoso.com',
           },
           {
             icon: 'clock',
@@ -128,18 +128,18 @@ export class AppDataService {
           },
         ],
         socialMedia: [
-          {
-            icon: 'facebook-f',
-            link: 'https://www.facebook.com/',
-          },
+          // {
+          //   icon: 'facebook-f',
+          //   link: 'https://www.facebook.com/',
+          // },
           {
             icon: 'instagram',
             link: 'https://www.instagram.com/',
           },
-          {
-            icon: 'tiktok',
-            link: 'https://tiktok.com/',
-          },
+          // {
+          //   icon: 'tiktok',
+          //   link: 'https://tiktok.com/',
+          // },
           {
             icon: 'whatsapp',
             // link: ' https://wa.me/123456789',
@@ -237,13 +237,12 @@ export class AppDataService {
       },
     },
     footer: {
-      message: '© 2025 Clínica Veterinaria VetCare. Todos los derechos reservados.',
+      message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
       links: [
-        { label: 'Términos y Condiciones', url: '/terminos-condiciones' },
-        { label: 'Aviso legal', url: '/legal' },
+        // { label: 'Términos y Condiciones', url: '/terminos-condiciones' },
+        // { label: 'Aviso legal', url: '/legal' },
       ],
     },
   });
 
-  constructor() {}
 }
