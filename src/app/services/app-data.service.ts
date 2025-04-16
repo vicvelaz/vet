@@ -183,14 +183,6 @@ export class AppDataService {
             label: 'Más información',
             image: 'banner.png',
           },
-          {
-            title: 'Primera Consulta',
-            description: '20% de descuento en tu primera visita. Incluye revisión completa y asesoramiento personalizado.',
-            offer: '-20%',
-            date: 'Válido hasta: 31/12/2025',
-            label: 'Más información',
-            image: 'banner.png',
-          },
         ],
       },
       insurances: {
@@ -244,5 +236,4 @@ export class AppDataService {
       ],
     },
   });
-
 }
