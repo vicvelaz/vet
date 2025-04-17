@@ -112,7 +112,7 @@ export class AppDataService {
         items: [
           {
             icon: 'place',
-            value: 'Calle Anita Martinez nº 8',
+            value: 'C. Anita Martínez, 8, 28918 Leganés, Madrid',
           },
           {
             icon: 'phone',
