@@ -112,7 +112,7 @@ export class AppDataService {
         items: [
           {
             icon: 'place',
-            value: 'Calle Anita Martinez nº 8',
+            value: 'C. Anita Martínez, 8, 28918 Leganés, Madrid',
           },
           {
             icon: 'phone',
@@ -157,7 +157,7 @@ export class AppDataService {
             offer: '-20%',
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Primera Consulta',
@@ -165,7 +165,7 @@ export class AppDataService {
             offer: '-20%',
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Primera Consulta',
@@ -173,7 +173,7 @@ export class AppDataService {
             offer: '-20%',
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Primera Consulta',
@@ -181,7 +181,7 @@ export class AppDataService {
             offer: '-20%',
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
         ],
       },
@@ -194,21 +194,21 @@ export class AppDataService {
             description: 'Incluye un certificado en el que aseguro que no te borraré la web :)',
             offer: '999€',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Plan Anual de Salud',
             description: 'Revisiones periódicas, vacunación, desparasitaciones y descuentos en tratamientos durante todo el año.',
             offer: '290€',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Seguro Dental Felino',
             description: 'Cobertura para limpiezas dentales, revisiones y diagnóstico bucal especializado en gatos.',
             offer: '120€',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Plan Senior para Mascotas Mayores',
@@ -216,14 +216,14 @@ export class AppDataService {
               'Chequeos geriátricos, analíticas preventivas y seguimiento clínico especializado para mascotas mayores de 8 años.',
             offer: '210€',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
           {
             title: 'Seguro de Emergencias',
             description: 'Cobertura básica para consultas urgentes, estabilización y cuidados iniciales en caso de accidente.',
             offer: 'desde 9€/mes',
             label: 'Más información',
-            image: 'banner.png',
+            image: 'banner.webp',
           },
         ],
       },

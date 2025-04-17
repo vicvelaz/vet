@@ -1,11 +1,17 @@
-<header class="header">
+<header
+  class="header"
+  role="banner"
+>
   <div class="container">
     <div class="logo">
       <h1 class="logo-text">
         <a (click)="scrollToSection('inicio')">{{ data().name }}</a>
       </h1>
     </div>
-    <nav class="nav-links">
+    <nav
+      class="nav-links"
+      role="navigation"
+    >
       @for (link of data().links; track link.label){
       <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
