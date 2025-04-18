@@ -34,7 +34,7 @@
 
 .promotions-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #ffffff;
   width: 300px;
   border-radius: var(--border-radius);
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: -webkit-fill-available;
+    gap: 1rem;
   }
 
   .card-content {
@@ -96,4 +96,11 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .promotions-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -9,20 +9,25 @@
   <div class="promotions-cards">
     @for (item of data().items; track $index) {
     <div class="promotions-card">
+      @if(item.offer) {
       <div class="offer">{{ item.offer }}</div>
+      }
       <div class="card">
         <div class="card-content">
           <h3>{{ item.title }}</h3>
           <p class="gray-text">{{ item.description }}</p>
-          <span class="gray-text">{{ item.date }}</span>
         </div>
-        <button
-          class="info-button"
-          mat-flat-button
-          (click)="openDialog(item.image)"
-        >
-          {{ item.label }}
-        </button>
+        <div>
+          <span class="gray-text">{{ item.date }}</span>
+          <button
+            class="info-button"
+            mat-flat-button
+            [disabled]="!item.image"
+            (click)="openDialog(item.image)"
+          >
+            {{ item.label }}
+          </button>
+        </div>
       </div>
     </div>
     }
