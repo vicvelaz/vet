@@ -20,6 +20,7 @@
         <button
           class="info-button"
           mat-flat-button
+          [disabled]="!item.image"
           (click)="openDialog(item.image)"
         >
           {{ item.label }}
