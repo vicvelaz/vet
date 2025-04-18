@@ -3,13 +3,23 @@
   background-color: hsl(0 0% 100% / 0.6);
   backdrop-filter: blur(8px);
   width: 100%;
-  min-height: 20px;
+  // min-height: 20px;
 }
 
-.logo-text {
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
+.logo {
+  display: flex;
+  align-items: center;
+
+  .logo-img {
+    height: 48px;
+    cursor: pointer;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 .nav-links {
@@ -44,7 +54,11 @@
   border-radius: calc(0.5rem - 2px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .logo-text {
+    display: none;
+  }
+
   nav {
     justify-content: space-between;
     margin: 0 1rem;
