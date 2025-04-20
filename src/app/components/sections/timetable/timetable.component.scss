@@ -3,6 +3,7 @@ section {
   padding-bottom: 4rem;
   display: flex;
   justify-content: center;
+  background-color: var(--gray-background);
 
   @media (max-width: 720px) {
     padding-top: 2rem;

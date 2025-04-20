@@ -112,7 +112,7 @@ export class AppDataService {
         items: [
           {
             icon: 'place',
-            value: 'C. Anita Martínez, 8, 28918 Leganés, Madrid',
+            value: 'C/ Anita Martínez, nº8 (Leganés, Madrid)',
           },
           {
             icon: 'phone',
@@ -203,7 +203,7 @@ export class AppDataService {
           },
           {
             title: 'Seguro sanitario gato',
-            description: 'Seguro vacunal, consultas ilimitadas, analítica sanguínea y radiografía simple.',
+            description: 'Seguro vacunal, consultas ilimitadas, analítica sanguínea, analítica de orina y radiografía simple.',
             offer: '200€',
             label: 'Más información',
             image: 'seguro-sanitario-gato.webp',
@@ -219,7 +219,7 @@ export class AppDataService {
             title: 'Seguro crónicos',
             description: 'Batería de pruebas a realizar según patología y consultas y revisiones ilimitadas.',
             label: 'Más información',
-            image: 'seguro-cronicos.webp'
+            image: 'seguro-cronicos.webp',
           },
         ],
       },
