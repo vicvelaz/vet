@@ -1,20 +1,25 @@
 .insurances {
   padding: 60px 0;
   padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
+
+  @media (max-width: 720px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .section-texts {
   text-align: center;
 
   .section-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 4rem);
     line-height: 1;
     font-weight: 700;
   }
 
   .section-description {
-    font-size: 1.25rem;
+    font-size: clamp(0.5rem, 4vw, 1.25rem);
     line-height: 1.75rem;
     max-width: 700px;
     margin-left: auto;
