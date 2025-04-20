@@ -56,7 +56,7 @@ export class AppDataService {
           },
           {
             icon: 'bone',
-            title: 'Asesoramiento nutricional',
+            title: 'Asesoría nutricional',
             description:
               'Recomendaciones dietéticas personalizadas en función de edad, metabolismo, condición corporal y estado de salud.',
           },
@@ -68,12 +68,12 @@ export class AppDataService {
           {
             icon: 'faCut',
             title: 'Cirugía',
-            description: 'Procedimientos quirúrgicos de rutina en Clínica colaboradora y de urgencias en Hospital colaborador.',
+            description: 'Procedimientos quirúrgicos de rutina en clínica colaboradora y de urgencias en hospital colaborador.',
           },
           {
             icon: 'shield-dog',
             title: 'Seguros',
-            description: 'Planes de salud para perros y gatos cachorros, adultos, seniors y con patologías crónicas anuales.',
+            description: 'Planes de salud anuales para perros y gatos cachorros, adultos, senior y con patologías crónicas.',
           },
         ],
       },
@@ -86,7 +86,7 @@ export class AppDataService {
           },
           {
             day: '',
-            hours: '16:00 - 21:00',
+            hours: '16:00 - 20:30',
           },
           {
             day: 'Sabado y Domingo',
@@ -124,7 +124,7 @@ export class AppDataService {
           },
           {
             icon: 'clock',
-            value: 'Lun-Vie: 10:00-13:00, 16:00-21:00',
+            value: 'Lun-Vie: 10:00-13:00, 16:00-20:30',
           },
         ],
         socialMedia: [
@@ -161,9 +161,7 @@ export class AppDataService {
           },
           {
             title: 'Familia numerosa',
-            description:
-              'Descuentos en vacunación, desparasitación, alimentación y consultas si tienes 3 o más mascotas registradas al mismo microchip',
-            // offer: 'DESCUENTOS',
+            description: 'Descuentos en servicios habituales a partir de 3 mascotas registradas en el mismo microchip.',
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
             image: 'familia-numerosa.webp',
@@ -180,50 +178,48 @@ export class AppDataService {
       },
       insurances: {
         title: 'Planes de salud anuales',
-        subtitle: 'Cuida de tu mascota todo el año con nuestros seguros personalizados',
+        subtitle: 'Cuida de tu mascota todo el año con nuestros seguros personalizados.',
         items: [
           {
             title: 'Seguro vacunal perro',
-            description: 'Protocolo vacunal, antiparasitario interno y antiparasitario externo completo',
+            description: 'Protocolo vacunal, antiparasitario interno y antiparasitario externo completo.',
             offer: '190€',
             label: 'Más información',
             image: 'seguro-vacunal.webp',
           },
           {
             title: 'Seguro sanitario perro',
-            description: 'Seguro vacunal, consultas ilimitadas, analítica sanguínea y radiografía simple',
+            description: 'Seguro vacunal, consultas ilimitadas, analítica sanguínea y radiografía simple.',
             offer: '250€',
             label: 'Más información',
             image: 'seguro-sanitario-perro.webp',
           },
           {
             title: 'Seguro cachorro',
-            description: 'Protocolo vacunal completo, microchip, tarjeta QR y descuentos en preoperatorio y alimentación',
+            description: 'Protocolo vacunal completo, microchip, tarjeta QR y descuentos en preoperatorio y alimentación.',
             offer: '210€',
             label: 'Más información',
             image: 'seguro-cachorro.webp',
           },
           {
             title: 'Seguro sanitario gato',
-            description:
-              'Protocolo vacunal y antiparasitario completo, consultas ilimitadas, analítica sanguínea, radiografía simple y analítica de orina',
+            description: 'Seguro vacunal, consultas ilimitadas, analítica sanguínea y radiografía simple.',
             offer: '200€',
             label: 'Más información',
             image: 'seguro-sanitario-gato.webp',
           },
           {
             title: 'Seguro sanitario gatito',
-            description: 'Protocolo vacunal completo, microchp, tarjeta QR y descuentos en preoperatorio y alimentación',
+            description: 'Protocolo vacunal completo, microchp, tarjeta QR y descuentos en preoperatorio y alimentación.',
             offer: '205€',
             label: 'Más información',
             image: 'seguro-gatito.webp',
           },
           {
             title: 'Seguro crónicos',
-            description: 'Batería de pruebas a realizar según patología y consultas y revisiones ilimitadas',
-            // offer: 'CONSULTAR',
+            description: 'Batería de pruebas a realizar según patología y consultas y revisiones ilimitadas.',
             label: 'Más información',
-            image: '',
+            image: 'seguro-cronicos.webp'
           },
         ],
       },

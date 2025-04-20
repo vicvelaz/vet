@@ -7,6 +7,11 @@
   padding-top: 6rem;
   padding-bottom: 3rem;
   gap: 1.5rem;
+
+  @media (max-width: 720px) {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .hero-content {
@@ -19,12 +24,12 @@
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
 }
 
 .hero-description {
-  font-size: 20px;
+  font-size: clamp(0.5rem, 4vw, 1.25rem);
   color: var(--text-color-footer);
 }
 

@@ -1,9 +1,14 @@
 section {
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   display: flex;
   justify-content: center;
   background-color: var(--gray-background);
+
+  @media (max-width: 720px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .container {
@@ -15,7 +20,7 @@ section {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
   margin-bottom: 2rem;
 }
