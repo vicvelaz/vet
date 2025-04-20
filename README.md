@@ -1,5 +1,17 @@
 # Vet
 
+## About the Project
+
+Vet is a web application designed to manage veterinary services efficiently. It provides features for managing appointments, tracking patient records, and organizing client information. Built with Angular, this project leverages modern web technologies to deliver a responsive and user-friendly experience.
+
+## Features
+
+- Manage veterinary appointments.
+- Track patient medical history and records.
+- Organize client and pet information.
+- Responsive design for seamless use on various devices.
+- Built with Angular for a robust and scalable architecture.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
 ## Development server
