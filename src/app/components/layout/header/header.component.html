@@ -6,7 +6,7 @@
     <div class="logo">
       <img
         class="logo-img"
-        src="logo/logo.png"
+        [src]="'logo/' + data().logo"
         alt="Logo"
         (click)="scrollToSection('inicio')"
       />
