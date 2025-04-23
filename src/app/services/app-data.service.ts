@@ -7,7 +7,7 @@ export class AppDataService {
   data = signal({
     header: {
       name: 'Valdeoso',
-      // logo: 'assets/images/logo.png',
+      logo: 'logo.webp',
       links: [
         { label: 'Servicios', url: 'servicios' },
         { label: 'Promociones', url: 'promociones' },
@@ -116,7 +116,7 @@ export class AppDataService {
           },
           {
             icon: 'phone',
-            value: '+34123456789',
+            value: '+34667357720',
           },
           {
             icon: 'email',
@@ -134,7 +134,7 @@ export class AppDataService {
           // },
           {
             icon: 'instagram',
-            link: 'https://www.instagram.com/',
+            url: 'https://www.instagram.com/',
           },
           // {
           //   icon: 'tiktok',
@@ -142,8 +142,8 @@ export class AppDataService {
           // },
           {
             icon: 'whatsapp',
-            // link: ' https://wa.me/123456789',
-            link: '',
+            url: '34667357720',
+            message: 'Hola, me gustaría pedir una cita.',
           },
         ],
       },

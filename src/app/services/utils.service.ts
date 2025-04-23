@@ -10,7 +10,6 @@ export class UtilsService {
   readonly router = inject(Router);
 
   openDialog(imageName: string) {
-    console.log('Opening DialogService:', imageName);
     const dialogRef = this.dialog.open(DialogImageComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',
@@ -25,22 +24,12 @@ export class UtilsService {
     dialogRef.afterClosed().subscribe();
   }
 
-  // scrollToSection(sectionId: string) {
-  //   const section = document.getElementById(sectionId);
-  //   console.log('section', sectionId, section);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }
-
   navigateToFragment(fragment: string) {
     const currentUrl = this.router.url.split('#')[0];
 
     if (currentUrl === '/' || currentUrl === '/home') {
-      // Ya estamos en home, solo hacemos scroll
       document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      // Redirige al home y pasa el fragment como parámetro
       this.router.navigate(['/'], { fragment });
     }
   }
