@@ -23,7 +23,7 @@ export class AppDataService {
     sections: {
       hero: {
         title: 'Centro Veterinario Valdeoso',
-        subtitle: 'Cuidamos de tus mascotas como si fueran nuestras',
+        subtitle: 'Dónde clínica de barrio significa cercanía y calidad médica',
         button: {
           primary: {
             label: 'Pedir Cita',
