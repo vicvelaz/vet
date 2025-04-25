@@ -128,18 +128,10 @@ export class AppDataService {
           },
         ],
         socialMedia: [
-          // {
-          //   icon: 'facebook-f',
-          //   link: 'https://www.facebook.com/',
-          // },
           {
             icon: 'instagram',
-            url: 'https://www.instagram.com/',
+            url: 'https://www.instagram.com/centroveterinariovaldeoso',
           },
-          // {
-          //   icon: 'tiktok',
-          //   link: 'https://tiktok.com/',
-          // },
           {
             icon: 'whatsapp',
             url: '34667357720',
@@ -229,8 +221,8 @@ export class AppDataService {
     footer: {
       message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
       links: [
-        // { label: 'Términos y Condiciones', url: '/terminos-condiciones' },
-        // { label: 'Aviso legal', url: '/legal' },
+        { label: 'Términos y Condiciones', url: '/terminos-condiciones' },
+        { label: 'Aviso legal', url: '/legal' },
       ],
     },
   });
