@@ -128,18 +128,10 @@ export class AppDataService {
           },
         ],
         socialMedia: [
-          // {
-          //   icon: 'facebook-f',
-          //   link: 'https://www.facebook.com/',
-          // },
           {
             icon: 'instagram',
-            url: 'https://www.instagram.com/',
+            url: 'https://www.instagram.com/centroveterinariovaldeoso',
           },
-          // {
-          //   icon: 'tiktok',
-          //   link: 'https://tiktok.com/',
-          // },
           {
             icon: 'whatsapp',
             url: '34667357720',
