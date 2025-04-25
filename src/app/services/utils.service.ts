@@ -9,6 +9,8 @@ export class UtilsService {
   readonly dialog = inject(MatDialog);
   readonly router = inject(Router);
 
+  private imageCache = new Map<string, HTMLImageElement>();
+
   openDialog(imageName: string) {
     const dialogRef = this.dialog.open(DialogImageComponent, {
       enterAnimationDuration: '300ms',
@@ -32,5 +34,17 @@ export class UtilsService {
     } else {
       this.router.navigate(['/'], { fragment });
     }
+  }
+
+  preloadImages(urls: string[]) {
+    urls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      this.imageCache.set(url, img);
+    });
+  }
+
+  getImage(url: string): HTMLImageElement | undefined {
+    return this.imageCache.get(url);
   }
 }
