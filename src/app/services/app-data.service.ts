@@ -17,7 +17,8 @@ export class AppDataService {
       ],
       button: {
         label: 'Solicitar Cita',
-        url: '#contacto',
+        url: '34667357720',
+        message: 'Hola, me gustaría pedir una cita.',
       },
     },
     sections: {
@@ -27,7 +28,8 @@ export class AppDataService {
         button: {
           primary: {
             label: 'Pedir Cita',
-            url: 'contacto',
+            url: '34667357720',
+            message: 'Hola, me gustaría pedir una cita.',
           },
           secondary: {
             label: 'Nuestros Servicios',

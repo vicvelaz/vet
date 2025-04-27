@@ -8,12 +8,16 @@
       <p class="hero-description">{{ data().subtitle }}</p>
     </div>
     <div class="actions">
-      <button
+      <!-- <button mat-flat-button> -->
+      <a
         mat-flat-button
-        (click)="scrollToSection(data().button.primary.url)"
+        [href]="data().button.primary.url"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {{ data().button.primary.label }}
-      </button>
+      </a>
+      <!-- </button> -->
       <button
         mat-stroked-button
         (click)="scrollToSection(data().button.secondary.url)"
