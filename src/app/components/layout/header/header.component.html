@@ -25,11 +25,14 @@
       <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
     </nav>
-    <button
-      class="contact-btn"
+    <a
       mat-flat-button
+      class="contact-btn"
+      [href]="data().button.url"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <a (click)="scrollToSection(data().button.url)"> {{ data().button.label }}</a>
-    </button>
+      {{ data().button.label }}</a
+    >
   </div>
 </header>
