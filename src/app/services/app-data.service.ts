@@ -25,6 +25,7 @@ export class AppDataService {
       hero: {
         title: 'Centro Veterinario Valdeoso',
         subtitle: 'Dónde clínica de barrio significa cercanía y calidad médica',
+        banner: 'banner.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -146,12 +147,20 @@ export class AppDataService {
         subtitle: 'Aprovecha nuestras ofertas exclusivas en prevención',
         items: [
           {
-            title: 'Campaña de rabia',
-            description: 'Vacuna antirrábica y desparasitación interna. Incluye revisión general.',
-            offer: '18€',
-            date: 'Válido hasta: 31/07/2025',
+            title: 'Campaña Limpieza de Boca',
+            description: 'Limpieza de boca y profilaxis dental para un mes. Incluye sedación y preoperatorio básico.',
+            offer: '125€',
+            date: 'Válido hasta: 15/09/2025',
             label: 'Más información',
-            image: 'rabia.webp',
+            image: 'limpieza-bucal.webp',
+          },
+          {
+            title: 'Campaña Tos de las Perreras',
+            description: 'Vacuna frente a tos de las perreras y desparasitacion interna. Incluye revisión general.',
+            offer: '27€',
+            date: 'Válido hasta 15/09/2025',
+            label: 'Más información',
+            image: 'tos-perreras.webp',
           },
           {
             title: 'Familia numerosa',
@@ -160,14 +169,6 @@ export class AppDataService {
             date: 'Válido hasta: 31/12/2025',
             label: 'Más información',
             image: 'familia-numerosa.webp',
-          },
-          {
-            title: 'Campaña de leishmania',
-            description: 'Test y vacuna frente a leishmaniosis. Incluye revisión general',
-            offer: '88€',
-            date: 'Válido hasta 31/06/2025',
-            label: 'Más información',
-            image: 'leishmania.webp',
           },
         ],
       },
