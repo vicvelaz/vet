@@ -2,10 +2,17 @@
   padding: 60px 0;
   padding-top: 6rem;
   padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 720px) {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .container {
+    max-width: 1400px;
   }
 }
 

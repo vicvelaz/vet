@@ -2,31 +2,33 @@
   id="seguros"
   class="insurances"
 >
-  <div class="section-texts">
-    <h2 class="section-title">{{ data().title }}</h2>
-    <p class="section-description">{{ data().subtitle }}</p>
-  </div>
-  <div class="insurances-cards">
-    @for (item of data().items; track $index) {
-    <div class="insurances-card">
-      @if(item.offer) {
-      <div class="offer">{{ item.offer }}</div>
-      }
-      <div class="card-content">
-        <div>
-          <h3>{{ item.title }}</h3>
-          <p class="gray-text">{{ item.description }}</p>
-        </div>
-        <button
-          class="info-button"
-          mat-flat-button
-          [disabled]="!item.image"
-          (click)="openDialog(item.image)"
-        >
-          {{ item.label }}
-        </button>
-      </div>
+  <div class="container">
+    <div class="section-texts">
+      <h2 class="section-title">{{ data().title }}</h2>
+      <p class="section-description">{{ data().subtitle }}</p>
     </div>
-    }
+    <div class="insurances-cards">
+      @for (item of data().items; track $index) {
+      <div class="insurances-card">
+        @if(item.offer) {
+        <div class="offer">{{ item.offer }}</div>
+        }
+        <div class="card-content">
+          <div>
+            <h3>{{ item.title }}</h3>
+            <p class="gray-text">{{ item.description }}</p>
+          </div>
+          <button
+            class="info-button"
+            mat-flat-button
+            [disabled]="!item.image"
+            (click)="openDialog(item.image)"
+          >
+            {{ item.label }}
+          </button>
+        </div>
+      </div>
+      }
+    </div>
   </div>
 </section>

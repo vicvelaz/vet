@@ -2,34 +2,36 @@
   id="promociones"
   class="promotions"
 >
-  <div class="section-texts">
-    <h2 class="section-title">{{ data().title }}</h2>
-    <p class="section-description">{{ data().subtitle }}</p>
-  </div>
-  <div class="promotions-cards">
-    @for (item of data().items; track $index) {
-    <div class="promotions-card">
-      @if(item.offer) {
-      <div class="offer">{{ item.offer }}</div>
-      }
-      <div class="card">
-        <div class="card-content">
-          <h3>{{ item.title }}</h3>
-          <p class="gray-text">{{ item.description }}</p>
-        </div>
-        <div>
-          <span class="gray-text">{{ item.date }}</span>
-          <button
-            class="info-button"
-            mat-flat-button
-            [disabled]="!item.image"
-            (click)="openDialog(item.image)"
-          >
-            {{ item.label }}
-          </button>
+  <div class="container">
+    <div class="section-texts">
+      <h2 class="section-title">{{ data().title }}</h2>
+      <p class="section-description">{{ data().subtitle }}</p>
+    </div>
+    <div class="promotions-cards">
+      @for (item of data().items; track $index) {
+      <div class="promotions-card">
+        @if(item.offer) {
+        <div class="offer">{{ item.offer }}</div>
+        }
+        <div class="card">
+          <div class="card-content">
+            <h3>{{ item.title }}</h3>
+            <p class="gray-text">{{ item.description }}</p>
+          </div>
+          <div>
+            <span class="gray-text">{{ item.date }}</span>
+            <button
+              class="info-button"
+              mat-flat-button
+              [disabled]="!item.image"
+              (click)="openDialog(item.image)"
+            >
+              {{ item.label }}
+            </button>
+          </div>
         </div>
       </div>
+      }
     </div>
-    }
   </div>
 </section>

@@ -2,23 +2,25 @@
   id="servicios"
   class="services"
 >
-  <div class="section-texts">
-    <h2 class="section-title">{{ data().title }}</h2>
-    <p class="section-description">{{ data().subtitle }}</p>
-  </div>
-  <div class="service-cards">
-    @for (item of data().items; track item.title) {
-    <div class="service-card">
-      <div class="icon">
-        <fa-icon
-          [icon]="icons[item.icon]"
-          class="fa-icon"
-          size="xl"
-        ></fa-icon>
-      </div>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
+  <div class="container">
+    <div class="section-texts">
+      <h2 class="section-title">{{ data().title }}</h2>
+      <p class="section-description">{{ data().subtitle }}</p>
     </div>
-    }
+    <div class="service-cards">
+      @for (item of data().items; track item.title) {
+      <div class="service-card">
+        <div class="icon">
+          <fa-icon
+            [icon]="icons[item.icon]"
+            class="fa-icon"
+            size="xl"
+          ></fa-icon>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      }
+    </div>
   </div>
 </section>

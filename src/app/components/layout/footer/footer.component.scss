@@ -8,10 +8,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto 2rem;
+  // margin: auto 2rem;
+  margin-right: auto;
+  margin-left: auto;
   height: inherit;
   gap: 1rem;
   color: var(--text-color-footer);
+  max-width: 1400px;
 }
 
 .footer-left {
