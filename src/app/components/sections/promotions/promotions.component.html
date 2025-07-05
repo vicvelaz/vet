@@ -9,6 +9,8 @@
     </div>
     <div class="promotions-cards">
       @for (item of data().items; track $index) {
+      <!-- Check valid dates -->
+      @if(isValidDate(item.date)) {
       <div class="promotions-card">
         @if(item.offer) {
         <div class="offer">{{ item.offer }}</div>
@@ -19,7 +21,7 @@
             <p class="gray-text">{{ item.description }}</p>
           </div>
           <div>
-            <span class="gray-text">{{ item.date }}</span>
+            <span class="gray-text">Válido hasta: {{ formatDate(item.date) }}</span>
             <button
               class="info-button"
               mat-flat-button
@@ -31,7 +33,7 @@
           </div>
         </div>
       </div>
-      }
+      } }
     </div>
   </div>
 </section>
