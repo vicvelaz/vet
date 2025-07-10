@@ -7,7 +7,7 @@ export class AppDataService {
   data = signal({
     header: {
       name: 'Valdeoso',
-      logo: 'logo_pride.webp',
+      logo: 'logo.webp',
       links: [
         { label: 'Servicios', url: 'servicios' },
         { label: 'Promociones', url: 'promociones' },
