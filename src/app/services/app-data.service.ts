@@ -213,7 +213,7 @@ export class AppDataService {
           },
           {
             title: 'Seguro crónicos',
-            description: 'Batería de pruebas a realizar según patología y consultas y revisiones ilimitadas.',
+            description: 'Batería de pruebas a realizar según patología y consultas y revisiones ilimitadas',
             offer: 'Precio a consultar',
             label: 'Más información',
             image: 'seguro-cronicos.webp',
