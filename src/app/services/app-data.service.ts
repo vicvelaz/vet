@@ -44,7 +44,7 @@ export class AppDataService {
       },
       services: {
         title: 'Nuestros Servicios',
-        subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
+        subtitle: 'Atención profesional y especializada para el bienestar de tu mascota',
         items: [
           {
             icon: 'stethoscope',
