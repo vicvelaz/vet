@@ -5,6 +5,21 @@
   width: 100%;
   // min-height: 20px;
 }
+.header-warning {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background-color: rgb(240 198 240 / 79%);
+  color: var(--primary-color);
+  padding: 0.75em 1em;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  backdrop-filter: blur(8px);
+  border-top: none;
+}
 
 .logo {
   display: flex;
