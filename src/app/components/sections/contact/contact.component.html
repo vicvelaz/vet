@@ -10,11 +10,15 @@
         <div class="items">
           @for(item of data().items; track $index){
           <div class="item">
+            @if(item.icon !== ''){
             <fa-icon
               [icon]="icons[item.icon]"
               class="fa-icon"
-            ></fa-icon>
-            @if(item.icon === 'phone'){
+            />
+            }@else {
+            <span class="fa-icon"></span>
+            <span class="fa-icon"></span>
+            } @if(item.icon === 'phone'){
             <a [href]="'tel:' + item.value">{{ item.value | phoneFormat }}</a>
             }@else if(item.icon === 'email'){
             <a [href]="'mailto:' + item.value">{{ item.value }}</a>

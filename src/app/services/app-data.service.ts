@@ -20,6 +20,7 @@ export class AppDataService {
         url: '34667357720',
         message: 'Hola, me gustaría pedir una cita.',
       },
+      warning: 'Permaneceremos cerrados desde el 14 de agosto y reabriremos el 1 de septiembre.',
     },
     sections: {
       hero: {
@@ -84,6 +85,10 @@ export class AppDataService {
         title: 'Horario de Atención',
         items: [
           {
+            day: '14 Agosto - 1 Septiembre',
+            hours: 'Cerrado',
+          },
+          {
             day: 'Lunes a Viernes',
             hours: '10:00 - 13:00 ',
           },
@@ -128,6 +133,11 @@ export class AppDataService {
           {
             icon: 'clock',
             value: 'Lun-Vie: 10:00-13:00, 16:00-20:30',
+          },
+          {
+            icon: '',
+            // value: 'Lun-Vie: 10:00-13:00, 16:00-20:30',
+            value: '14 ago – 1 sep: Cerrado por vacaciones',
           },
         ],
         socialMedia: [
