@@ -31,7 +31,7 @@ export class AppDataService {
           primary: {
             label: 'Pedir Cita',
             url: '34667357720',
-            message: 'Hola, me gustaría pedir una cita.',
+            message: 'Hola, me gustaría pedir una cita',
           },
           secondary: {
             label: 'Nuestros Servicios',
