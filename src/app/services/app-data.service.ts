@@ -26,7 +26,7 @@ export class AppDataService {
       hero: {
         title: 'Centro Veterinario Valdeoso',
         subtitle: 'Dónde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner.webp',
+        banner: 'banner-texto.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -147,6 +147,15 @@ export class AppDataService {
         title: 'Promociones Especiales',
         subtitle: 'Aprovecha nuestras ofertas exclusivas en prevención',
         items: [
+          {
+            title: 'Campaña Sénior',
+            description:
+              'Análisis de sangre, medición de T4, radiografía de tórax y consulta general en animales mayores de 8 años.',
+            offer: '100€',
+            date: '2026-01-31',
+            label: 'Más información',
+            image: 'promo-senior.webp',
+          },
           {
             title: 'Campaña Limpieza de Boca',
             description: 'Limpieza de boca y profilaxis dental para un mes. Incluye sedación y preoperatorio básico.',
