@@ -10,3 +10,4 @@ import { MatIconModule } from '@angular/material/icon';
 export class FooterComponent {
   data = input.required<any>({});
 }
+// Test
