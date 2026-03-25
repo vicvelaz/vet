@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { TimetableSection } from '../../../services/app-data.interface';
 
 @Component({
   selector: 'app-timetable',
@@ -9,7 +10,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './timetable.component.scss',
 })
 export class TimetableComponent {
-  data = input.required<any>({});
+  data = input.required<TimetableSection>({});
 
   icons = {
     'fa-clock': faClock,

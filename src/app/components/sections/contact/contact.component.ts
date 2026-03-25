@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faClock, faEnvelope, faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { PhoneFormatPipe } from '../../../pipes/phone-format.pipe';
+import { ContactSection, SocialMediaItem } from '../../../services/app-data.interface';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +16,7 @@ import { PhoneFormatPipe } from '../../../pipes/phone-format.pipe';
 export class ContactComponent {
   readonly sanitizer = inject(DomSanitizer);
 
-  data = input.required<any>({});
+  data = input.required<ContactSection>({});
 
   icons = {
     phone: faPhone,
@@ -25,11 +26,11 @@ export class ContactComponent {
   } as any;
 
   ngOnInit() {
-    this.data().socialMedia.forEach((item: any) => {
+    this.data().socialMedia!.forEach((item: SocialMediaItem) => {
       if (item.icon === 'whatsapp') {
-        item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message)}`;
+        item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message!)}`;
       }
-      item.url = this.sanitizer.bypassSecurityTrustUrl(item.url);
+      item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);
     });
   }
 }

@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { FooterComponent, HeaderComponent } from './components/layout';
+import { AppData } from './services/app-data.interface';
 import { AppDataService } from './services/app-data.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent {
   readonly appDataService = inject(AppDataService);
   readonly route = inject(ActivatedRoute);
   readonly router = inject(Router);
-  data = signal<any>(null);
+  data = signal<AppData | null>(null);
 
   ngOnInit() {
     injectSpeedInsights();
