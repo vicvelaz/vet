@@ -1,6 +1,6 @@
 <app-header
   class="sticky-header"
-  [data]="data().header"
+  [data]="data()?.header!"
 ></app-header>
 
 <main
@@ -10,4 +10,4 @@
   <router-outlet />
 </main>
 
-<app-footer [data]="data().footer"></app-footer>
+<app-footer [data]="data()?.footer!"></app-footer>
