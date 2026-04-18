@@ -48,7 +48,7 @@ app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh; // Ocupa el alto de la pantalla
-  width: fit-content;
+  width: 100%;
 }
 
 a {
