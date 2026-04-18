@@ -26,8 +26,8 @@ export class AppDataService {
     sections: {
       hero: {
         title: 'Centro Veterinario Valdeoso',
-        subtitle: 'Dónde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner-texto.webp',
+        subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
+        banner: 'banner-background3.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -193,6 +193,15 @@ export class AppDataService {
             endDate: '2026-04-30',
             label: 'Más información',
             image: 'leishmania.webp',
+          },
+          {
+            title: 'Campaña de esterilización',
+            description: 'Incluye test diagnóstico, vacuna frente a la leishmania y desparasitación interna trimestral.',
+            offer: '-15%',
+            initDate: '',
+            endDate: '2026-05-28',
+            label: 'Más información',
+            image: 'esterilizacion.webp',
           },
         ],
       },
