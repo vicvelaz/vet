@@ -103,7 +103,7 @@ export class AppDataService {
           },
           {
             day: '',
-            hours: 'Hospital Vetsia',
+            hours: 'Hospital La Fortuna',
           },
         ],
         recomendation: {
