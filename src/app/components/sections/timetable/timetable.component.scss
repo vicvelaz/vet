@@ -63,11 +63,12 @@ h2 {
 
 .right-content {
   width: 100%;
-  height: 400px;
+  max-height: 400px;
   display: flex;
   justify-content: center;
   img {
     height: 100%;
+    max-width: 100%;
     object-fit: contain;
     border-radius: 2rem;
     background-color: red;
