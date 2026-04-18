@@ -27,7 +27,7 @@ export class AppDataService {
       hero: {
         title: 'Centro Veterinario Valdeoso',
         subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner-background3.webp',
+        banner: 'banner.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
