@@ -1,8 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { FooterComponent, HeaderComponent } from './components/layout';
-import { AppDataService } from './services/app-data.service';
+import { FirebaseDataService } from './services/firebase-data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,14 @@ import { AppDataService } from './services/app-data.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  readonly appDataService = inject(AppDataService);
+  private readonly fb = inject(FirebaseDataService);
   readonly route = inject(ActivatedRoute);
   readonly router = inject(Router);
-  data = signal<any>(null);
+
+  readonly data = toSignal(this.fb.appData$, { initialValue: null });
 
   ngOnInit() {
     injectSpeedInsights();
-    this.data.set(this.appDataService.data());
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const fragment = this.route.snapshot.fragment;

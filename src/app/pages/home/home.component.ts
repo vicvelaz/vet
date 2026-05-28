@@ -1,4 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import {
   ContactComponent,
   HeroComponent,
@@ -7,7 +8,7 @@ import {
   ServicesComponent,
   TimetableComponent,
 } from '../../components/sections';
-import { AppDataService } from '../../services/app-data.service';
+import { FirebaseDataService } from '../../services/firebase-data.service';
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,6 @@ import { AppDataService } from '../../services/app-data.service';
   standalone: true,
 })
 export class HomeComponent {
-  readonly appDataService = inject(AppDataService);
-  data = signal<any>(null);
-
-  constructor() {
-    this.data.set(this.appDataService.data());
-  }
+  private readonly fb = inject(FirebaseDataService);
+  readonly data = toSignal(this.fb.appData$, { initialValue: null });
 }

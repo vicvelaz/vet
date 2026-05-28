@@ -1,13 +1,15 @@
-<app-header
-  class="sticky-header"
-  [data]="data().header"
-></app-header>
+@if (data(); as appData) {
+  <app-header
+    class="sticky-header"
+    [data]="appData.header"
+  ></app-header>
 
-<main
-  class="content"
-  role="main"
->
-  <router-outlet />
-</main>
+  <main
+    class="content"
+    role="main"
+  >
+    <router-outlet />
+  </main>
 
-<app-footer [data]="data().footer"></app-footer>
+  <app-footer [data]="appData.footer"></app-footer>
+}

@@ -15,6 +15,7 @@
     "@angular/common": "^20.3.16",
     "@angular/compiler": "^20.3.16",
     "@angular/core": "^20.3.16",
+    "@angular/fire": "^20.0.1",
     "@angular/forms": "^20.3.16",
     "@angular/material": "^20.2.14",
     "@angular/platform-browser": "^20.3.16",
@@ -25,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@vercel/speed-insights": "^1.2.0",
+    "firebase": "^12.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
