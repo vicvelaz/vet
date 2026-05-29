@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FirebaseDataService } from '../../../services/firebase-data.service';
 import { UtilsService } from '../../../services/utils.service';
 
 @Component({
@@ -15,9 +16,14 @@ export class HeaderComponent {
 
   readonly sanitizer = inject(DomSanitizer);
   readonly utilsService = inject(UtilsService);
+  private readonly fb = inject(FirebaseDataService);
+
   menuOpen = false;
 
   ngOnInit() {
+    this.fb.header$.subscribe((header) => {
+      console.log('Header Firestore:', header);
+    });
     this.data().button.url = `https://wa.me/${this.data().button.url}?text=${encodeURIComponent(this.data().button.message)}`;
     this.data().button.url = this.sanitizer.bypassSecurityTrustUrl(this.data().button.url);
   }

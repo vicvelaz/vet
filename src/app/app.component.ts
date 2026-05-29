@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
@@ -7,7 +8,7 @@ import { FirebaseDataService } from './services/firebase-data.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -21,8 +21,8 @@
       class="nav-links"
       role="navigation"
     >
-      @for (link of data().links; track link.label){
-      <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
+      @for (link of data().links; track link.label) {
+        <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
     </nav>
     <a
@@ -36,9 +36,9 @@
     >
   </div>
 </header>
-@if(data().warning){
-<div class="header-warning">
-  <span style="display: inline-block; vertical-align: middle; margin-right: 0.5em"> &#9888; </span>
-  {{ data().warning }}
-</div>
+@if (data().warning) {
+  <div class="header-warning">
+    <span style="display: inline-block; vertical-align: middle; margin-right: 0.5em"> &#9888; </span>
+    {{ data().warning }}
+  </div>
 }

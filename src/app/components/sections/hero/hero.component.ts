@@ -16,8 +16,9 @@ export class HeroComponent {
   readonly sanitizer = inject(DomSanitizer);
 
   ngOnInit() {
+    console.log('Hero Data:', this.data());
     this.data().button.primary.url = `https://wa.me/${this.data().button.primary.url}?text=${encodeURIComponent(
-      this.data().button.primary.message
+      this.data().button.primary.message,
     )}`;
     this.data().button.primary.url = this.sanitizer.bypassSecurityTrustUrl(this.data().button.primary.url);
   }

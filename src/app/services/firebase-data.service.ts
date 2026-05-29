@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { doc, docData, Firestore } from '@angular/fire/firestore';
-import { catchError, combineLatest, map, of, shareReplay } from 'rxjs';
-import type { Observable } from 'rxjs';
+import { doc, Firestore, getDoc } from '@angular/fire/firestore';
+import { combineLatest, from, Observable, of } from 'rxjs';
+import { catchError, map, shareReplay } from 'rxjs/operators';
 import type {
   AppData,
   Contact,
@@ -34,13 +34,14 @@ const COLLECTION = 'app-content';
 export class FirebaseDataService {
   private readonly firestore = inject(Firestore);
 
-  // ── Private helper ────────────────────────────────────────────────────────
-
   private getDoc<T>(docId: string): Observable<T> {
     const ref = doc(this.firestore, COLLECTION, docId);
-    return (docData(ref) as Observable<T | undefined>).pipe(
-      map((data) => data ?? ({} as T)),
-      catchError(() => of({} as T)),
+    return from(getDoc(ref)).pipe(
+      map((snap) => (snap.exists() ? (snap.data() as T) : ({} as T))),
+      catchError((err) => {
+        console.error(`[${docId}] Error:`, err);
+        return of({} as T);
+      }),
       shareReplay(1),
     );
   }
