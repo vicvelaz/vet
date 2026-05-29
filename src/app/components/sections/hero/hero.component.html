@@ -2,7 +2,10 @@
   id="inicio"
   class="hero"
 >
-  <div class="container">
+  <div
+    class="container"
+    [style.backgroundImage]="getContainerBackground()"
+  >
     <div class="hero-content">
       <h1 class="hero-title">{{ data().title }}</h1>
       <p class="hero-description">{{ data().subtitle }}</p>
@@ -20,6 +23,7 @@
       <!-- </button> -->
       <button
         mat-stroked-button
+        class="secondary-button"
         (click)="scrollToSection(data().button.secondary.url)"
       >
         {{ data().button.secondary.label }}
@@ -33,10 +37,13 @@
       <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
     </div>
   </div>
-  <div class="banner">
+  <div
+    class="banner"
+    [style.display]="getBannerDisplay()"
+  >
     <img
       [src]="'img/' + data().banner"
-      alt="Banner"
+      [alt]="data().title"
     />
   </div>
 </section>

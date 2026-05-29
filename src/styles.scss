@@ -18,14 +18,16 @@ html {
   --primary-color: var(--mat-sys-primary);
   --primary-contrast-color: var(--mat-sys-on-primary);
   --primary-darker-color: #731661;
-  --primary-soft-background: #f8f2f8;
+  --primary-soft-background: #f2f3f8;
   --gray-background: #f1f1f1;
   --text-color-footer: #424c5c;
   --mdc-outlined-button-outline-color: var(--mat-sys-primary);
+  --mdc-outlined-button-container-color: white;
   --mat-icon-color: var(--mat-sys-primary);
-  --border-color: #ad118f3b;
+  --border-color: #119aad3b;
   --border-radius: 0.5rem;
   --dialog-width: 500px;
+  --mat-button-filled-container-color: var(--mat-sys-primary);
 }
 
 * {
@@ -36,16 +38,17 @@ html {
 html,
 body {
   margin: 0;
-  font-family: Inter, Inter Fallback;
+  font-family:
+    Inter,
+    Inter Fallback;
   font-size: 16px;
-
-  min-width: 400px;
 }
 
 app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh; // Ocupa el alto de la pantalla
+  width: 100%;
 }
 
 a {

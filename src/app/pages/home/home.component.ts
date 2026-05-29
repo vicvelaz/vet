@@ -7,6 +7,7 @@ import {
   ServicesComponent,
   TimetableComponent,
 } from '../../components/sections';
+import { AppData } from '../../services/app-data.interface';
 import { AppDataService } from '../../services/app-data.service';
 
 @Component({
@@ -18,7 +19,7 @@ import { AppDataService } from '../../services/app-data.service';
 })
 export class HomeComponent {
   readonly appDataService = inject(AppDataService);
-  data = signal<any>(null);
+  data = signal<AppData>({} as AppData);
 
   constructor() {
     this.data.set(this.appDataService.data());

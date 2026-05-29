@@ -1,10 +1,11 @@
 import { Injectable, signal } from '@angular/core';
+import { AppData } from './app-data.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppDataService {
-  data = signal({
+  data = signal<AppData>({
     header: {
       name: 'Valdeoso',
       logo: 'logo.webp',
@@ -25,8 +26,8 @@ export class AppDataService {
     sections: {
       hero: {
         title: 'Centro Veterinario Valdeoso',
-        subtitle: 'Dónde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner-texto.webp',
+        subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
+        banner: 'banner.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -102,7 +103,7 @@ export class AppDataService {
           },
           {
             day: '',
-            hours: 'Hospital Vetsia',
+            hours: 'Hospital La Fortuna',
           },
         ],
         recomendation: {
@@ -152,7 +153,8 @@ export class AppDataService {
             description:
               'Análisis de sangre, medición de T4, radiografía de tórax y consulta general en animales mayores de 8 años.',
             offer: '100€',
-            date: '2026-01-31',
+            initDate: '',
+            endDate: '2026-01-31',
             label: 'Más información',
             image: 'promo-senior.webp',
           },
@@ -160,7 +162,8 @@ export class AppDataService {
             title: 'Campaña Limpieza de Boca',
             description: 'Limpieza de boca y profilaxis dental para un mes. Incluye sedación y preoperatorio básico.',
             offer: '125€',
-            date: '2025-09-15',
+            initDate: '',
+            endDate: '2025-09-15',
             label: 'Más información',
             image: 'limpieza-bucal.webp',
           },
@@ -168,7 +171,8 @@ export class AppDataService {
             title: 'Campaña Tos de las Perreras',
             description: 'Vacuna frente a tos de las perreras y desparasitacion interna. Incluye revisión general.',
             offer: '27€',
-            date: '2025-09-15',
+            initDate: '',
+            endDate: '2025-09-15',
             label: 'Más información',
             image: 'tos-perreras.webp',
           },
@@ -176,9 +180,28 @@ export class AppDataService {
             title: 'Familia numerosa',
             description: 'Descuentos en servicios habituales a partir de 3 mascotas registradas en el mismo microchip.',
             offer: 'hasta -20%',
-            date: '2025-12-31',
+            initDate: '',
+            endDate: '2025-12-31',
             label: 'Más información',
             image: 'familia-numerosa.webp',
+          },
+          {
+            title: 'Campaña de leishmania',
+            description: 'Incluye test diagnóstico, vacuna frente a la leishmania y desparasitación interna trimestral.',
+            offer: '88€',
+            initDate: '',
+            endDate: '2026-04-30',
+            label: 'Más información',
+            image: 'leishmania.webp',
+          },
+          {
+            title: 'Campaña de esterilización',
+            description: 'Incluye test diagnóstico, vacuna frente a la leishmania y desparasitación interna trimestral.',
+            offer: '-15%',
+            initDate: '',
+            endDate: '2026-05-28',
+            label: 'Más información',
+            image: 'esterilizacion.webp',
           },
         ],
       },

@@ -47,4 +47,35 @@ export class UtilsService {
   getImage(url: string): HTMLImageElement | undefined {
     return this.imageCache.get(url);
   }
+
+  /**
+   * Check if a promotion is available based on optional init and end dates.
+   * - Returns false if a provided date is invalid or out of range.
+   * - Treats empty string as invalid.
+   */
+  isPromotionAvailable(initDate?: string, endDate?: string): boolean {
+    const today = new Date();
+
+  // Convertimos strings a Date si existen
+  const start = initDate ? new Date(initDate) : null;
+  const end = endDate ? new Date(endDate) : null;
+
+  // Caso 1: hay ambas fechas → hoy debe estar entre ellas
+  if (start && end) {
+    return today >= start && today <= end;
+  }
+
+  // Caso 2: solo hay fecha de inicio → hoy debe ser posterior o igual
+  if (start && !end) {
+    return today >= start;
+  }
+
+  // Caso 3: solo hay fecha de fin → hoy no debe haber pasado esa fecha
+  if (!start && end) {
+    return today <= end;
+  }
+
+  // Caso 4: no hay fechas → no mostrar promoción (puedes cambiarlo si quieres)
+  return false;
+  }
 }
