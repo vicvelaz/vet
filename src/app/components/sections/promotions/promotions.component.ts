@@ -13,16 +13,13 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   readonly utilsService = inject(UtilsService);
 
   data = input.required<PromotionsSection>({});
-  showSection = signal(true);
 
   ngOnInit(): void {
     this.data().items = this.data().items.filter((item: PromotionItem) => this.isPromotionAvaliable(item));
   }
 
   ngAfterViewInit(): void {
-    if (!this.data().items || !this.havePromotionsAvailable()) {
-      console.warn('No hay promociones disponibles');
-      this.showSection.set(false);
+    if (!this.data().items) {
       return;
     }
     const images = this.data().items?.map((promotion: PromotionItem) => 'img/' + promotion.image);
@@ -40,9 +37,5 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   formatDate(date?: string): string {
     const t = date ? Date.parse(date) : NaN;
     return isNaN(t) ? '' : new Date(t).toLocaleDateString();
-  }
-
-  havePromotionsAvailable(): boolean {
-    return !!this.data().items && this.data().items.some((p) => this.isPromotionAvaliable(p));
   }
 }
