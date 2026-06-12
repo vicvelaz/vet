@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, input, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { PromotionItem, PromotionsSection } from '../../../services/app-data.interface';
 import { UtilsService } from '../../../services/utils.service';
@@ -9,11 +9,15 @@ import { UtilsService } from '../../../services/utils.service';
   templateUrl: './promotions.component.html',
   styleUrl: './promotions.component.scss',
 })
-export class PromotionsComponent implements AfterViewInit {
+export class PromotionsComponent implements OnInit, AfterViewInit {
   readonly utilsService = inject(UtilsService);
 
   data = input.required<PromotionsSection>({});
   showSection = signal(true);
+
+  ngOnInit(): void {
+    this.data().items = this.data().items.filter((item: PromotionItem) => this.isPromotionAvaliable(item));
+  }
 
   ngAfterViewInit(): void {
     if (!this.data().items || !this.havePromotionsAvailable()) {
