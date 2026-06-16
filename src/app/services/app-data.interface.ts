@@ -1,6 +1,7 @@
 import { SafeUrl } from '@angular/platform-browser';
 
 export interface AppData {
+  warning?: string;
   header: Header;
   sections: Sections;
   footer: Footer;
@@ -11,7 +12,6 @@ export interface Header {
   logo: string;
   links: HeaderLink[];
   button: ButtonLink;
-  warning?: string;
 }
 
 export interface HeaderLink {

@@ -11,10 +11,11 @@
           @for(item of data().items; track $index){
           <div class="item">
             @if(item.icon !== ''){
-            <fa-icon
+            <!-- TODO: Fix icon values from Sanity -->
+            <!-- <fa-icon
               [icon]="icons[item.icon]"
               class="fa-icon"
-            />
+            /> -->
             }@else {
             <span class="fa-icon"></span>
             <span class="fa-icon"></span>
@@ -28,6 +29,7 @@
           </div>
           }
         </div>
+        <!-- TODO: Hardcode social media icons -->
         <div class="social-media">
           @for(item of data().socialMedia; track $index){
           <button

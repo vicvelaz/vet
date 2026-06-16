@@ -48,21 +48,21 @@ export const buttonLink = defineType({
 // para sobreescribir el default de la app
 // ==========================================
 
-// Header — solo el warning es dinámico
-export const headerSchema = defineType({
-  name: 'header',
-  title: 'Cabecera',
+// AppConfig — configuración global de la app (avisos, etc.)
+export const appConfigSchema = defineType({
+  name: 'appConfig',
+  title: 'Configuración',
   type: 'document',
   fields: [
     defineField({
       name: 'warning',
-      title: 'Aviso',
+      title: 'Aviso global',
       type: 'string',
-      description: 'Mensaje temporal en la cabecera. Déjalo vacío si no hay aviso activo.',
+      description: 'Mensaje de aviso visible en toda la app (cierres, urgencias…). Déjalo vacío si no hay aviso activo.',
     }),
   ],
   preview: {
-    prepare: () => ({title: 'Cabecera'}),
+    prepare: () => ({title: 'Configuración'}),
   },
 })
 

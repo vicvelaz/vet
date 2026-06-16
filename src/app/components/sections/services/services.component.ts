@@ -15,7 +15,7 @@ export class ServicesComponent {
   icons = {
     stethoscope: faStethoscope,
     syringe: faSyringe,
-    bone: faBone,
+    'fa-bone': faBone,
     heartPulse: faHeartPulse,
     faCut: faCut,
     'shield-dog': faShieldDog,

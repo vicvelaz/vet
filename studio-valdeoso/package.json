@@ -18,10 +18,10 @@
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.3.1",
-    "@sanity/vision": "^5.30.0",
+    "@sanity/vision": "^5.31.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sanity": "^5.30.0",
+    "sanity": "^5.31.1",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {

@@ -81,11 +81,12 @@ export class UtilsService {
   }
 
   mergeWithDefaults(defaults: AppData, sanity: any): AppData {
+    console.log(sanity);
     return {
       ...defaults,
+      warning: sanity.warning ?? defaults.warning,
       header: {
         ...defaults.header,
-        warning: sanity.headerWarning ?? defaults.header.warning,
       },
       sections: {
         ...defaults.sections,

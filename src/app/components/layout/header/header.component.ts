@@ -3,10 +3,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Header } from '../../../services/app-data.interface';
 import { UtilsService } from '../../../services/utils.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   standalone: true,
@@ -21,6 +22,7 @@ export class HeaderComponent {
   ngOnInit() {
     this.data().button.url = `https://wa.me/${this.data().button.url}?text=${encodeURIComponent(this.data().button.message!)}`;
     this.data().button.url = this.sanitizer.bypassSecurityTrustUrl(this.data().button.url as string);
+    console.log(this.data());
   }
 
   toggleMenu() {

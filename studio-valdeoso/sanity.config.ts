@@ -1,11 +1,12 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
+import { SANITY_CONFIG } from './sanity.constants'
 
 import {
+  appConfigSchema,
   basicLink,
   buttonLink,
   contactSchema,
-  headerSchema,
   heroSchema,
   insurancesSchema,
   promotionsSchema,
@@ -14,7 +15,7 @@ import {
 } from './schemaTypes/appData'
 
 const SINGLETONS = [
-  'header',
+  'appConfig',
   'hero',
   'servicesSection',
   'timetableSection',
@@ -27,8 +28,8 @@ export default defineConfig({
   name: 'default',
   title: 'Valdeoso',
 
-  projectId: '4e4zozm9',
-  dataset: 'production',
+  projectId: SANITY_CONFIG.projectId,
+  dataset: SANITY_CONFIG.dataset,
 
   schema: {
     types: [
@@ -36,7 +37,7 @@ export default defineConfig({
       basicLink,
       buttonLink,
       // Documentos (singletons)
-      headerSchema,
+      appConfigSchema,
       heroSchema,
       servicesSchema,
       timetableSchema,
@@ -52,8 +53,8 @@ export default defineConfig({
           .title('Contenido')
           .items([
             S.listItem()
-              .title('⚠️ Cabecera — Aviso')
-              .child(S.document().schemaType('header').documentId('header')),
+              .title('ℹ️ Configuración — Aviso global')
+              .child(S.document().schemaType('appConfig').documentId('appConfig')),
             S.listItem()
               .title('🖼️ Hero — Banner')
               .child(S.document().schemaType('hero').documentId('hero')),
