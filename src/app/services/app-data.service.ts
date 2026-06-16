@@ -262,4 +262,31 @@ export class AppDataService {
       ],
     },
   });
+
+  
+}
+
+export const APP_DEFAULTS: AppData = {
+  header: {
+    name: 'Valdeoso',
+    logo: 'logo.webp',
+    links: [...],
+    button: { label: 'Llamar', url: 'tel:+34...' },
+    warning: undefined, // este sí vendrá de Sanity si existe
+  },
+  sections: {
+    hero: {
+      title: 'Tu clínica veterinaria de confianza',
+      subtitle: '...',
+      banner: 'banner.webp', // puede venir de Sanity
+      button: { ... },
+    },
+    services: {
+      title: 'Nuestros servicios',
+      subtitle: undefined,
+      items: [], // siempre de Sanity
+    },
+    // ...
+  },
+  footer: { ... },
 }
