@@ -3,6 +3,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogImageComponent } from '../components/ui';
 import { AppData } from './app-data.interface';
+import { environment } from '../../environments/environment';
+
+type SanityImageLike = {
+  asset?: {
+    _ref?: string;
+    url?: string;
+  };
+  url?: string;
+  src?: string;
+};
+
+export type DialogImageInput = string | SanityImageLike | null | undefined;
+
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +25,11 @@ export class UtilsService {
 
   private imageCache = new Map<string, HTMLImageElement>();
 
-  openDialog(imageName: string) {
+  openDialog(imageName: DialogImageInput): void {
+    if (!imageName) {
+      return;
+    }
+
     const dialogRef = this.dialog.open(DialogImageComponent, {
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',
@@ -26,6 +43,44 @@ export class UtilsService {
     console.log('Dialog opened with image:', imageName);
 
     dialogRef.afterClosed().subscribe();
+  }
+
+  resolveDialogImageSource(imageName: DialogImageInput): string | null {
+    if (!imageName) {
+      return null;
+    }
+
+    if (typeof imageName === 'string') {
+      if (this.isAbsoluteOrRootPath(imageName)) {
+        return imageName;
+      }
+
+      if (imageName.startsWith('image-')) {
+        return this.buildSanityImageUrlFromRef(imageName);
+      }
+
+      return imageName.startsWith('img/') ? imageName : `img/${imageName}`;
+    }
+
+    if (typeof imageName === 'object') {
+      if (imageName.asset?.url) {
+        return imageName.asset.url;
+      }
+
+      if (imageName.url) {
+        return imageName.url;
+      }
+
+      if (imageName.src) {
+        return imageName.src;
+      }
+
+      if (imageName.asset?._ref) {
+        return this.buildSanityImageUrlFromRef(imageName.asset._ref);
+      }
+    }
+
+    return null;
   }
 
   navigateToFragment(fragment: string) {
@@ -48,6 +103,27 @@ export class UtilsService {
 
   getImage(url: string): HTMLImageElement | undefined {
     return this.imageCache.get(url);
+  }
+
+  private isAbsoluteOrRootPath(path: string): boolean {
+    return /^(https?:\/\/|data:|blob:|\/)/i.test(path);
+  }
+
+  private buildSanityImageUrlFromRef(ref: string): string | null {
+    const match = ref.match(/^image-([^-]+)-(\d+x\d+)-([a-z0-9]+)$/i);
+
+    if (!match) {
+      return null;
+    }
+
+    const [, assetId, dimensions, format] = match;
+    const { projectId, dataset } = environment.sanity;
+
+    if (!projectId || !dataset) {
+      return null;
+    }
+
+    return `https://cdn.sanity.io/images/${projectId}/${dataset}/${assetId}-${dimensions}.${format}`;
   }
 
   /**

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { InsurancesSection } from '../../../services/app-data.interface';
-import { UtilsService } from '../../../services/utils.service';
+import { DialogImageInput, UtilsService } from '../../../services/utils.service';
 
 @Component({
   selector: 'app-insurances',
@@ -19,9 +19,7 @@ export class InsurancesComponent implements AfterViewInit {
     // this.utilsService.preloadImages(images);
   }
 
-  openDialog(imageName: any): void {
-    if (imageName) {
-      this.utilsService.openDialog(imageName.asset._ref);
-    }
+  openDialog(imageName: DialogImageInput): void {
+    this.utilsService.openDialog(imageName);
   }
 }
