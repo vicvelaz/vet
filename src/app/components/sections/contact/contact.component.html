@@ -11,7 +11,6 @@
           @for (item of data().items; track $index) {
             <div class="item">
               @if (item.icon !== '') {
-                {{ item.icon }}
                 <i
                   class="fa-icon fa-solid"
                   [ngClass]="item.icon"
