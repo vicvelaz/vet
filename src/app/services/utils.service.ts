@@ -40,7 +40,6 @@ export class UtilsService {
         imageName: imageName,
       },
     });
-    console.log('Dialog opened with image:', imageName);
 
     dialogRef.afterClosed().subscribe();
   }
@@ -158,7 +157,6 @@ export class UtilsService {
   }
 
   mergeWithDefaults(defaults: AppData, sanity: any): AppData {
-    console.log(sanity);
     return {
       ...defaults,
       warning: sanity.warning ?? defaults.warning,
