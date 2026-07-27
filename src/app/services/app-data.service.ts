@@ -262,8 +262,6 @@ export class AppDataService {
       ],
     },
   });
-
-  
 }
 
 export const APP_DEFAULTS: AppData = {
@@ -272,7 +270,7 @@ export const APP_DEFAULTS: AppData = {
     name: 'Valdeoso',
     logo: 'logo.webp',
     links: [],
-    button: { label: 'Llamar', url: 'tel:+34667357720' }
+    button: { label: 'Solicitar Cita', url: 'tel:+34667357720' },
   },
   sections: {
     hero: {
@@ -312,4 +310,4 @@ export const APP_DEFAULTS: AppData = {
     message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
     links: [],
   },
-}
+};
