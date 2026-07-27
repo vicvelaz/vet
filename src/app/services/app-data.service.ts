@@ -270,7 +270,7 @@ export const APP_DEFAULTS: AppData = {
     name: 'Valdeoso',
     logo: 'logo.webp',
     links: [],
-    button: { label: 'Solicitar Cita', url: 'tel:+34667357720' },
+    button: { label: 'Solicitar Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
   },
   sections: {
     hero: {
@@ -285,7 +285,7 @@ export const APP_DEFAULTS: AppData = {
     },
     services: {
       title: 'Nuestros servicios',
-      subtitle: 'Ejemplo de subtitulo desde el default',
+      subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
       items: [],
     },
     timetable: {
