@@ -23,8 +23,6 @@ export class HomeComponent {
   data = toSignal(this.sanityService.appData$, { initialValue: APP_DEFAULTS });
 
   ngOnInit() {
-    this.sanityService.appData$.subscribe((data) => {
-      console.log('[HomeComponent] appData$ subscription active, data:', data);
-    });
+    this.sanityService.appData$.subscribe();
   }
 }

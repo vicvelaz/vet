@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { createClient } from '@sanity/client';
-import { catchError, from, map, Observable, of, shareReplay, tap } from 'rxjs';
+import { catchError, from, map, Observable, of, shareReplay } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AppData } from './app-data.interface';
 import { APP_DEFAULTS } from './app-data.service';
@@ -27,9 +27,9 @@ export class SanityService {
 
   // Merge de defaults + Sanity
   readonly appData$: Observable<AppData> = this.dynamicContent$.pipe(
-    tap((sanity) => console.log('[SanityService] Raw data from Sanity:', sanity)),
+    // tap((sanity) => console.log('[SanityService] Raw data from Sanity:', sanity)),
     map((sanity) => this.utilsService.mergeWithDefaults(APP_DEFAULTS, sanity)),
-    tap((merged) => console.log('[SanityService] Merged app data:', merged)),
+    // tap((merged) => console.log('[SanityService] Merged app data:', merged)),
     catchError((err) => {
       console.error('[SanityService] Error fetching from Sanity, using defaults:', err);
       return of(APP_DEFAULTS);

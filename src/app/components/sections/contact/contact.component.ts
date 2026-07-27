@@ -27,7 +27,7 @@ export class ContactComponent {
 
   ngOnInit() {
     this.data().socialMedia!.forEach((item: SocialMediaItem) => {
-      if (item.icon === 'whatsapp') {
+      if (item.icon.includes('whatsapp')) {
         item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message!)}`;
       }
       item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);

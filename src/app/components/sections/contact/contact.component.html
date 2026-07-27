@@ -36,10 +36,16 @@
               mat-stroked-button
               [attr.aria-label]="item.icon"
             >
-              <i
-                class="fa-icon fa-solid fa-brands"
-                [ngClass]="item.icon"
-              ></i>
+              <a
+                [href]="item.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i
+                  class="fa-icon fa-solid fa-brands"
+                  [ngClass]="item.icon"
+                ></i>
+              </a>
             </button>
           }
         </div>
