@@ -1,10 +1,10 @@
-import { inject, Injectable } from "@angular/core";
-import { Observable, from, map, catchError, of, shareReplay, tap } from "rxjs";
-import { createClient } from "@sanity/client";
-import { AppData } from "./app-data.interface";
-import { APP_DEFAULTS } from "./app-data.service";
-import { UtilsService } from "./utils.service";
-import { environment } from "../../environments/environment";
+import { inject, Injectable } from '@angular/core';
+import { createClient } from '@sanity/client';
+import { catchError, from, map, Observable, of, shareReplay, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { AppData } from './app-data.interface';
+import { APP_DEFAULTS } from './app-data.service';
+import { UtilsService } from './utils.service';
 
 @Injectable({ providedIn: 'root' })
 export class SanityService {
@@ -15,13 +15,14 @@ export class SanityService {
   readonly dynamicContent$: Observable<Partial<AppData>> = from(
     this.client.fetch(`{
       "warning":          *[_type == "appConfig"][0].warning,
+      "logo":             *[_type == "appConfig"][0].logo.asset->url,
       "heroBanner":       *[_type == "hero"][0].banner,
       "services":         *[_type == "servicesSection"][0].items,
       "timetable":        *[_type == "timetableSection"][0].items,
       "contact":          *[_type == "contactSection"][0]{ items, socialMedia },
       "promotions":       *[_type == "promotionsSection"][0].items,
       "insurances":       *[_type == "insurancesSection"][0].items,
-    }`)
+    }`),
   );
 
   // Merge de defaults + Sanity

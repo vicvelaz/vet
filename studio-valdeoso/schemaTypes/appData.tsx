@@ -58,7 +58,16 @@ export const appConfigSchema = defineType({
       name: 'warning',
       title: 'Aviso global',
       type: 'string',
-      description: 'Mensaje de aviso visible en toda la app (cierres, urgencias…). Déjalo vacío si no hay aviso activo.',
+      description:
+        'Mensaje de aviso visible en toda la app (cierres, urgencias…). Déjalo vacío si no hay aviso activo.',
+    }),
+    defineField({
+      name: 'logo',
+      title: 'Logo de la aplicación',
+      type: 'image',
+      options: {hotspot: true},
+      description:
+        'Logo que se mostrará en la barra de navegación y en la pantalla de inicio. Si se deja vacío se usa el logo por defecto.',
     }),
   ],
   preview: {

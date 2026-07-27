@@ -2,6 +2,13 @@
   class="header"
   role="banner"
 >
+  <i class="ph-fill ph-airplane-takeoff"></i>
+  <i class="ph-fill ph-instagram-logo"></i>
+  <i
+    class="ph ph-paw-print"
+    style="font-size: 32px; color: #e74c3c"
+  ></i>
+
   <div class="container">
     <div class="logo">
       <img
@@ -21,8 +28,8 @@
       class="nav-links"
       role="navigation"
     >
-      @for (link of data().links; track link.label){
-      <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
+      @for (link of data().links; track link.label) {
+        <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
     </nav>
     <a

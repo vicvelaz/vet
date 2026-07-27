@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { InsuranceItem, InsurancesSection } from '../../../services/app-data.interface';
+import { InsurancesSection } from '../../../services/app-data.interface';
 import { UtilsService } from '../../../services/utils.service';
 
 @Component({
@@ -15,13 +15,13 @@ export class InsurancesComponent implements AfterViewInit {
   data = input.required<InsurancesSection>({});
 
   ngAfterViewInit(): void {
-    const images = this.data().items.map((promotion: InsuranceItem) => 'img/' + promotion.image);
-    this.utilsService.preloadImages(images);
+    // const images = this.data().items.map((promotion: InsuranceItem) => 'img/' + promotion.image);
+    // this.utilsService.preloadImages(images);
   }
 
-  openDialog(imageName: string | undefined): void {
+  openDialog(imageName: any): void {
     if (imageName) {
-      this.utilsService.openDialog('img/' + imageName);
+      this.utilsService.openDialog(imageName.asset._ref);
     }
   }
 }

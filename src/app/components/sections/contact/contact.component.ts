@@ -3,7 +3,6 @@ import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faClock, faEnvelope, faLocationPin, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { PhoneFormatPipe } from '../../../pipes/phone-format.pipe';
 import { ContactSection, SocialMediaItem } from '../../../services/app-data.interface';
 
@@ -18,12 +17,13 @@ export class ContactComponent {
 
   data = input.required<ContactSection>({});
 
-  icons = {
-    phone: faPhone,
-    email: faEnvelope,
-    place: faLocationPin,
-    clock: faClock,
-  } as any;
+  isPhoneNumber(value: string) {
+    return /^[\+]?[0-9]{10,15}$/.test(value);
+  }
+
+  isEmail(value: string) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
 
   ngOnInit() {
     this.data().socialMedia!.forEach((item: SocialMediaItem) => {

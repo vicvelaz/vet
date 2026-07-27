@@ -23,6 +23,7 @@ export class UtilsService {
         imageName: imageName,
       },
     });
+    console.log('Dialog opened with image:', imageName);
 
     dialogRef.afterClosed().subscribe();
   }
@@ -87,6 +88,7 @@ export class UtilsService {
       warning: sanity.warning ?? defaults.warning,
       header: {
         ...defaults.header,
+        logo: sanity.logo ?? defaults.header.logo,
       },
       sections: {
         ...defaults.sections,
