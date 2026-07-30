@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, effect, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -17,20 +17,22 @@ export class ContactComponent {
 
   data = input.required<ContactSection>({});
 
+  constructor() {
+    effect(() => {
+      this.data().socialMedia?.forEach((item: SocialMediaItem) => {
+        if (item.icon.includes('whatsapp')) {
+          item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message!)}`;
+        }
+        item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);
+      });
+    });
+  }
+
   isPhoneNumber(value: string) {
     return /^[\+]?[0-9]{10,15}$/.test(value);
   }
 
   isEmail(value: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  ngOnInit() {
-    this.data().socialMedia!.forEach((item: SocialMediaItem) => {
-      if (item.icon.includes('whatsapp')) {
-        item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message!)}`;
-      }
-      item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);
-    });
   }
 }
