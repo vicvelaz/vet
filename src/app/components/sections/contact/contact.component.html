@@ -8,40 +8,39 @@
       <p class="subtitle">{{ data().subtitle }}</p>
       <div>
         <div class="items">
-          @for(item of data().items; track $index){
-          <div class="item">
-            @if(item.icon !== ''){
-            <fa-icon
-              [icon]="icons[item.icon]"
-              class="fa-icon"
-            />
-            }@else {
-            <span class="fa-icon"></span>
-            <span class="fa-icon"></span>
-            } @if(item.icon === 'phone'){
-            <a [href]="'tel:' + item.value">{{ item.value | phoneFormat }}</a>
-            }@else if(item.icon === 'email'){
-            <a [href]="'mailto:' + item.value">{{ item.value }}</a>
-            } @else {
-            <span>{{ item.value }}</span>
-            }
-          </div>
+          @for (item of data().items; track $index) {
+            <div class="item">
+              @if (item.icon !== '') {
+                <i
+                  class="fa-icon fa-solid"
+                  [ngClass]="item.icon"
+                ></i>
+              } @else {
+                <span class="fa-icon"></span>
+                <span class="fa-icon"></span>
+              }
+              @if (isPhoneNumber(item.value)) {
+                <a [href]="'tel:' + item.value">{{ item.value | phoneFormat }}</a>
+              } @else if (isEmail(item.value)) {
+                <a [href]="'mailto:' + item.value">{{ item.value }}</a>
+              } @else {
+                <span>{{ item.value }}</span>
+              }
+            </div>
           }
         </div>
         <div class="social-media">
-          @for(item of data().socialMedia; track $index){
-          <button
-            mat-stroked-button
-            [attr.aria-label]="item.icon"
-          >
-            <a
-              class="fa-brands"
-              [ngClass]="'fa-' + item.icon"
-              [href]="item.url"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-          </button>
+          @for (item of data().socialMedia; track $index) {
+            <button
+              mat-stroked-button
+              [attr.aria-label]="item.icon"
+              (click)="openUrl(item.url)"
+            >
+              <i
+                class="fa-icon fa-solid fa-brands"
+                [ngClass]="item.icon"
+              ></i>
+            </button>
           }
         </div>
       </div>

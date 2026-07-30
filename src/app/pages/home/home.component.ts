@@ -1,4 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import {
   ContactComponent,
   HeroComponent,
@@ -7,8 +8,8 @@ import {
   ServicesComponent,
   TimetableComponent,
 } from '../../components/sections';
-import { AppData } from '../../services/app-data.interface';
-import { AppDataService } from '../../services/app-data.service';
+import { APP_DEFAULTS } from '../../services/app-data.service';
+import { SanityService } from '../../services/sanity.service';
 
 @Component({
   selector: 'app-home',
@@ -18,10 +19,10 @@ import { AppDataService } from '../../services/app-data.service';
   standalone: true,
 })
 export class HomeComponent {
-  readonly appDataService = inject(AppDataService);
-  data = signal<AppData>({} as AppData);
+  private readonly sanityService = inject(SanityService);
+  data = toSignal(this.sanityService.appData$, { initialValue: APP_DEFAULTS });
 
-  constructor() {
-    this.data.set(this.appDataService.data());
+  ngOnInit() {
+    this.sanityService.appData$.subscribe();
   }
 }

@@ -6,6 +6,7 @@ import { AppData } from './app-data.interface';
 })
 export class AppDataService {
   data = signal<AppData>({
+    // warning: 'Permaneceremos cerrados desde el 14 de agosto y reabriremos el 1 de septiembre.',
     header: {
       name: 'Valdeoso',
       logo: 'logo_pride.webp',
@@ -21,7 +22,6 @@ export class AppDataService {
         url: '34667357720',
         message: 'Hola, me gustaría pedir una cita.',
       },
-      // warning: 'Permaneceremos cerrados desde el 14 de agosto y reabriremos el 1 de septiembre.',
     },
     sections: {
       hero: {
@@ -263,3 +263,57 @@ export class AppDataService {
     },
   });
 }
+
+export const APP_DEFAULTS: AppData = {
+  warning: '',
+  header: {
+    name: 'Valdeoso',
+    logo: 'logo.webp',
+    links: [
+      { label: 'Servicios', url: 'servicios' },
+      { label: 'Promociones', url: 'promociones' },
+      { label: 'Horario', url: 'horario' },
+      { label: 'Planes', url: 'seguros' },
+      { label: 'Contacto', url: 'contacto' },
+    ],
+    button: { label: 'Solicitar Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
+  },
+  sections: {
+    hero: {
+      title: 'Tu clínica veterinaria de confianza',
+      subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
+      banner: 'banner.webp',
+      button: {
+        primary: { label: 'Pedir Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
+        secondary: { label: 'Nuestros Servicios', url: 'servicios' },
+        moreInfo: { label: 'Descubre más', url: 'promociones' },
+      },
+    },
+    services: {
+      title: 'Nuestros servicios',
+      subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
+      items: [],
+    },
+    timetable: {
+      title: 'Horario de Atención',
+      items: [],
+      recomendation: { icon: 'fa-clock', text: 'Recomendamos pedir cita previa para evitar esperas.' },
+    },
+    contact: {
+      title: 'Dónde Estamos',
+      items: [],
+    },
+    promotions: {
+      title: 'Promociones Especiales',
+      items: [],
+    },
+    insurances: {
+      title: 'Planes de salud anuales',
+      items: [],
+    },
+  },
+  footer: {
+    message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
+    links: [],
+  },
+};

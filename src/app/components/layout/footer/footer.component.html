@@ -4,6 +4,7 @@
       <p>{{ data().message }}</p>
     </div>
     <div class="footer-right">
+      <!-- TODO: Hardcode footer links -->
       @for (link of data().links; track link.label){
       <a [href]="link.url"> {{ link.label }}</a>
       }

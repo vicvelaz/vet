@@ -2,11 +2,18 @@
   class="header"
   role="banner"
 >
+  <i class="ph-fill ph-airplane-takeoff"></i>
+  <i class="ph-fill ph-instagram-logo"></i>
+  <i
+    class="ph ph-paw-print"
+    style="font-size: 32px; color: #e74c3c"
+  ></i>
+
   <div class="container">
     <div class="logo">
       <img
         class="logo-img"
-        [src]="'logo/' + data().logo"
+        [src]="data().logo"
         alt="Logo"
         (click)="scrollToSection('inicio')"
       />
@@ -21,8 +28,8 @@
       class="nav-links"
       role="navigation"
     >
-      @for (link of data().links; track link.label){
-      <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
+      @for (link of data().links; track link.label) {
+        <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
       }
     </nav>
     <a
@@ -36,9 +43,3 @@
     >
   </div>
 </header>
-@if(data().warning){
-<div class="header-warning">
-  <span style="display: inline-block; vertical-align: middle; margin-right: 0.5em"> &#9888; </span>
-  {{ data().warning }}
-</div>
-}

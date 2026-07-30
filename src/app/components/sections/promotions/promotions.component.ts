@@ -22,12 +22,15 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
     if (!this.data().items) {
       return;
     }
-    const images = this.data().items?.map((promotion: PromotionItem) => 'img/' + promotion.image);
+    const images = this.data()
+      .items.map((promotion: PromotionItem) => this.utilsService.resolveDialogImageSource(promotion.image))
+      .filter((image): image is string => !!image);
+
     this.utilsService.preloadImages(images);
   }
 
-  openDialog(imageName: string) {
-    this.utilsService.openDialog('img/' + imageName);
+  openDialog(imageName: PromotionItem['image']): void {
+    this.utilsService.openDialog(imageName);
   }
 
   isPromotionAvaliable(promotion: PromotionItem): boolean {

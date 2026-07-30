@@ -1,0 +1,19 @@
+// El componente no tiene estilos por defecto para no imponer nada.
+// Aplica estilos desde el padre con ::ng-deep o mediante la clase [className].
+//
+// Patrón recomendado para imágenes responsivas:
+//
+// En el componente padre:
+//   <app-sanity-image [image]="hero" className="hero-img" />
+//
+// En el SCSS del padre:
+//   .hero-img {
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     border-radius: 8px;
+//   }
+
+:host {
+  display: contents; // El host no genera caja extra en el layout
+}
