@@ -269,7 +269,13 @@ export const APP_DEFAULTS: AppData = {
   header: {
     name: 'Valdeoso',
     logo: 'logo.webp',
-    links: [],
+    links: [
+      { label: 'Servicios', url: 'servicios' },
+      { label: 'Promociones', url: 'promociones' },
+      { label: 'Horario', url: 'horario' },
+      { label: 'Planes', url: 'seguros' },
+      { label: 'Contacto', url: 'contacto' },
+    ],
     button: { label: 'Solicitar Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
   },
   sections: {

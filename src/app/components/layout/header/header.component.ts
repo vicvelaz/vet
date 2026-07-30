@@ -20,6 +20,7 @@ export class HeaderComponent {
   menuOpen = false;
 
   ngOnInit() {
+    console.log('HeaderComponent initialized with data:', this.data());
     this.data().button.url = `https://wa.me/${this.data().button.url}?text=${encodeURIComponent(this.data().button.message!)}`;
     this.data().button.url = this.sanitizer.bypassSecurityTrustUrl(this.data().button.url as string);
     this.data().logo = this.utilsService.resolveDialogImageSource(this.data().logo) ?? '';
