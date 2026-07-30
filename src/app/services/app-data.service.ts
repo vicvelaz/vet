@@ -314,6 +314,9 @@ export const APP_DEFAULTS: AppData = {
   },
   footer: {
     message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
-    links: [],
+    links: [
+      { label: 'Términos y Condiciones', url: '/terminos-condiciones' },
+      { label: 'Aviso legal', url: '/legal' },
+    ],
   },
 };
