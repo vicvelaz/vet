@@ -9,9 +9,11 @@
       fontIcon="close"
     ></mat-icon>
   </button>
-  <img
-    #preloadedImage
-    [src]="'img/' + data.imageName"
-    alt="Imagen de la oferta"
-  />
+  @if (imageSrc(); as src) {
+    <img
+      #preloadedImage
+      [src]="src"
+      alt="Imagen de la oferta"
+    />
+  }
 </div>

@@ -1,8 +1,8 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { UtilsService } from '../../../services/utils.service';
+import { DialogImageInput, UtilsService } from '../../../services/utils.service';
 
 @Component({
   selector: 'app-dialog-image',
@@ -11,16 +11,7 @@ import { UtilsService } from '../../../services/utils.service';
   styleUrl: './dialog-image.component.scss',
 })
 export class DialogImageComponent {
-  readonly data = inject<{ imageName: string }>(MAT_DIALOG_DATA);
-
   readonly utilsService = inject(UtilsService);
-
-  @ViewChild('preloadedImage', { static: true }) imageElement!: ElementRef<HTMLImageElement>;
-
-  ngAfterViewInit() {
-    const image = this.utilsService.getImage(this.data.imageName);
-    if (image) {
-      this.imageElement.nativeElement.src = image.src;
-    }
-  }
+  readonly data = inject<{ imageName: DialogImageInput }>(MAT_DIALOG_DATA);
+  readonly imageSrc = computed(() => this.utilsService.resolveDialogImageSource(this.data.imageName));
 }

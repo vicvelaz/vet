@@ -1,8 +1,17 @@
 <app-header
   class="sticky-header"
-  [data]="data()?.header!"
+  [data]="data().header!"
 ></app-header>
 
+@if(data().warning && !warningDismissed()){
+<div class="global-warning" role="alert">
+  <mat-icon fontIcon="info" class="global-warning__icon"></mat-icon>
+  <span>{{ data().warning }}</span>
+  <button class="global-warning__close" (click)="dismissWarning()" aria-label="Cerrar aviso">
+    <mat-icon fontIcon="close"></mat-icon>
+  </button>
+</div>
+}
 <main
   class="content"
   role="main"
@@ -10,4 +19,4 @@
   <router-outlet />
 </main>
 
-<app-footer [data]="data()?.footer!"></app-footer>
+<app-footer [data]="data().footer!"></app-footer>

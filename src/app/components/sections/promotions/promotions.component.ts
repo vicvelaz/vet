@@ -19,12 +19,18 @@ export class PromotionsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const images = this.data().items.map((promotion: PromotionItem) => 'img/' + promotion.image);
+    if (!this.data().items) {
+      return;
+    }
+    const images = this.data()
+      .items.map((promotion: PromotionItem) => this.utilsService.resolveDialogImageSource(promotion.image))
+      .filter((image): image is string => !!image);
+
     this.utilsService.preloadImages(images);
   }
 
-  openDialog(imageName: string) {
-    this.utilsService.openDialog('img/' + imageName);
+  openDialog(imageName: PromotionItem['image']): void {
+    this.utilsService.openDialog(imageName);
   }
 
   isPromotionAvaliable(promotion: PromotionItem): boolean {
