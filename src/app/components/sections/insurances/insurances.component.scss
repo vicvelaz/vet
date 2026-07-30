@@ -1,19 +1,121 @@
 .insurances {
-  padding: 60px 0;
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-block: 6rem;
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 720px) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-block: 3rem;
   }
+}
 
-  .container {
-    max-width: 1400px;
+.container {
+  max-width: 80rem;
+  width: 100%;
+  padding-inline: 1.5rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
   }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  .eyebrow {
+    margin-bottom: 1rem;
+  }
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 56ch;
+  margin-inline: auto;
+  color: var(--muted-foreground);
+}
+
+.insurances-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.insurances-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+
+  &:hover {
+    border-color: color-mix(in oklch, var(--primary) 40%, transparent);
+    background-color: color-mix(in oklch, var(--secondary) 40%, transparent);
+  }
+}
+
+.offer-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.875rem;
+  border-bottom-left-radius: var(--radius-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 1.5rem;
+  gap: 1.25rem;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.card-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.info-btn {
+  border-radius: 9999px !important;
+  width: 100%;
+  margin-top: auto;
 }
 
 .section-texts {

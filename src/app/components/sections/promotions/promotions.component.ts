@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, inject, input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { PromotionItem, PromotionsSection } from '../../../services/app-data.interface';
+import { RevealOnScrollDirective } from '../../ui/reveal-on-scroll.directive';
 import { UtilsService } from '../../../services/utils.service';
 
 @Component({
   selector: 'app-promotions',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, RevealOnScrollDirective],
   templateUrl: './promotions.component.html',
   styleUrl: './promotions.component.scss',
 })

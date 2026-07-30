@@ -1,50 +1,46 @@
-<section
-  id="inicio"
-  class="hero"
->
-  <div
-    class="container"
-    [style.backgroundImage]="getContainerBackground()"
-  >
-    <div class="hero-content">
-      <h1 class="hero-title">{{ data().title }}</h1>
-      <p class="hero-description">{{ data().subtitle }}</p>
-    </div>
-    <div class="actions">
-      <!-- <button mat-flat-button> -->
+<section id="inicio" class="hero">
+  <img
+    class="hero__bg"
+    [src]="'img/' + data().banner"
+    [alt]="data().title"
+    loading="eager"
+  />
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <p class="eyebrow hero__eyebrow" appReveal [delay]="0.2">Centro Veterinario Valdeoso</p>
+    <h1 class="hero__title" appReveal [delay]="0.45">
+      {{ data().title }}
+    </h1>
+    <p class="hero__subtitle" appReveal [delay]="0.65">{{ data().subtitle }}</p>
+    <div class="hero__actions" appReveal direction="none" [delay]="0.85">
       <a
-        mat-flat-button
+        class="btn-primary"
         [href]="data().button.primary.url"
         target="_blank"
         rel="noopener noreferrer"
       >
         {{ data().button.primary.label }}
       </a>
-      <!-- </button> -->
       <button
-        mat-stroked-button
-        class="secondary-button"
+        class="btn-secondary"
         (click)="scrollToSection(data().button.secondary.url)"
       >
         {{ data().button.secondary.label }}
       </button>
     </div>
-    <div
-      class="hero-link"
-      (click)="scrollToSection(data().button.moreInfo.url)"
-    >
-      {{ data().button.moreInfo.label }}
-      <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
-    </div>
   </div>
 
-  <div
-    class="banner"
-    [style.display]="getBannerDisplay()"
+  <a
+    class="hero__scroll-cue"
+    (click)="scrollToSection(data().button.moreInfo.url)"
+    appReveal
+    direction="none"
+    [delay]="1.1"
+    role="button"
+    tabindex="0"
+    [attr.aria-label]="data().button.moreInfo.label"
   >
-    <img
-      [src]="'img/' + data().banner"
-      [alt]="data().title"
-    />
-  </div>
+    {{ data().button.moreInfo.label }}&nbsp;<span class="bounce">&#8595;</span>
+  </a>
 </section>

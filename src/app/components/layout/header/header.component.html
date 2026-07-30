@@ -1,45 +1,55 @@
-<header
-  class="header"
-  role="banner"
->
-  <i class="ph-fill ph-airplane-takeoff"></i>
-  <i class="ph-fill ph-instagram-logo"></i>
-  <i
-    class="ph ph-paw-print"
-    style="font-size: 32px; color: #e74c3c"
-  ></i>
-
+<header class="header" [class.header--scrolled]="scrolled()" role="banner">
   <div class="container">
-    <div class="logo">
-      <img
-        class="logo-img"
-        [src]="data().logo"
-        alt="Logo"
-        (click)="scrollToSection('inicio')"
-      />
-      <h2
-        class="logo-text"
-        (click)="scrollToSection('inicio')"
-      >
-        {{ data().name }}
-      </h2>
+    <div class="logo" (click)="scrollToSection('inicio')" role="button" tabindex="0" aria-label="Ir al inicio">
+      <img class="logo-img" [src]="data().logo" alt="Logo" />
+      <span class="logo-text">{{ data().name }}</span>
     </div>
-    <nav
-      class="nav-links"
-      role="navigation"
-    >
+
+    <nav class="nav-links" role="navigation" aria-label="Navegación principal">
       @for (link of data().links; track link.label) {
-        <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
+        <a class="nav-link" (click)="scrollToSection(link.url)" role="button" tabindex="0">{{ link.label }}</a>
       }
     </nav>
+
     <a
-      mat-flat-button
       class="contact-btn"
       [href]="data().button.url"
       target="_blank"
       rel="noopener noreferrer"
+      [attr.aria-label]="data().button.label"
     >
-      {{ data().button.label }}</a
+      {{ data().button.label }}
+    </a>
+
+    <button
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir menú"
     >
+      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
+      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
+      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
+    </button>
   </div>
+
+  <!-- Mobile menu overlay -->
+  @if (menuOpen) {
+    <div class="mobile-nav" role="dialog" aria-modal="true">
+      @for (link of data().links; track link.label) {
+        <a class="mobile-nav__link" (click)="scrollToSection(link.url)" role="button" tabindex="0">
+          {{ link.label }}
+        </a>
+      }
+      <a
+        class="mobile-nav__cta"
+        [href]="data().button.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="closeMenu()"
+      >
+        {{ data().button.label }}
+      </a>
+    </div>
+  }
 </header>

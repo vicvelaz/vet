@@ -1,59 +1,55 @@
-<section
-  id="contacto"
-  class="contacto"
->
+<section id="contacto" class="contact">
   <div class="container">
-    <div class="left-content">
-      <h2>{{ data().title }}</h2>
-      <p class="subtitle">{{ data().subtitle }}</p>
-      <div>
-        <div class="items">
-          @for (item of data().items; track $index) {
-            <div class="item">
-              @if (item.icon !== '') {
-                <i
-                  class="fa-icon fa-solid"
-                  [ngClass]="item.icon"
-                ></i>
-              } @else {
-                <span class="fa-icon"></span>
-                <span class="fa-icon"></span>
-              }
-              @if (isPhoneNumber(item.value)) {
-                <a [href]="'tel:' + item.value">{{ item.value | phoneFormat }}</a>
-              } @else if (isEmail(item.value)) {
-                <a [href]="'mailto:' + item.value">{{ item.value }}</a>
-              } @else {
-                <span>{{ item.value }}</span>
-              }
-            </div>
-          }
-        </div>
+    <div class="contact-info" appReveal>
+      <p class="eyebrow">D&oacute;nde encontrarnos</p>
+      <h2 class="section-title">{{ data().title }}</h2>
+      @if (data().subtitle) {
+        <p class="section-description">{{ data().subtitle }}</p>
+      }
+
+      <div class="contact-items">
+        @for (item of data().items; track $index) {
+          <div class="contact-item">
+            @if (item.icon !== '') {
+              <span class="contact-item__icon">
+                <i class="fa-icon fa-solid" [ngClass]="item.icon"></i>
+              </span>
+            }
+            @if (isPhoneNumber(item.value)) {
+              <a class="contact-item__value" [href]="'tel:' + item.value">{{ item.value | phoneFormat }}</a>
+            } @else if (isEmail(item.value)) {
+              <a class="contact-item__value" [href]="'mailto:' + item.value">{{ item.value }}</a>
+            } @else {
+              <span class="contact-item__value">{{ item.value }}</span>
+            }
+          </div>
+        }
+      </div>
+
+      @if (data().socialMedia && data().socialMedia!.length > 0) {
         <div class="social-media">
           @for (item of data().socialMedia; track $index) {
             <button
-              mat-stroked-button
+              class="social-btn"
               [attr.aria-label]="item.icon"
               (click)="openUrl(item.url)"
             >
-              <i
-                class="fa-icon fa-solid fa-brands"
-                [ngClass]="item.icon"
-              ></i>
+              <i class="fa-icon fa-brands" [ngClass]="item.icon"></i>
             </button>
           }
         </div>
-      </div>
+      }
     </div>
-  </div>
-  <div class="right-content">
-    <iframe
-      title="Google Maps"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190.0557732592854!2d-3.7729857192407876!3d40.34473349934703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418997498ebf7f%3A0x6cae65546ba6b4dc!2sC.%20Anita%20Mart%C3%ADnez%2C%208%2C%2028918%20Legan%C3%A9s%2C%20Madrid!5e0!3m2!1ses!2ses!4v1744562497639!5m2!1ses!2ses"
-      style="border: 0"
-      allowfullscreen="true"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+
+    <div class="map-wrapper" appReveal direction="left" [delay]="0.2">
+      <iframe
+        title="Google Maps — Centro Veterinario Valdeoso"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190.0557732592854!2d-3.7729857192407876!3d40.34473349934703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418997498ebf7f%3A0x6cae65546ba6b4dc!2sC.%20Anita%20Mart%C3%ADnez%2C%208%2C%2028918%20Legan%C3%A9s%2C%20Madrid!5e0!3m2!1ses!2ses!4v1744562497639!5m2!1ses!2ses"
+        style="border: 0"
+        allowfullscreen="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   </div>
 </section>

@@ -1,33 +1,32 @@
 @if (data().items.length > 0) {
-  <section
-    id="promociones"
-    class="promotions"
-  >
+  <section id="promociones" class="promotions">
     <div class="container">
-      <div class="section-texts">
+      <div class="section-header" appReveal>
+        <p class="eyebrow">Ofertas y promociones</p>
         <h2 class="section-title">{{ data().title }}</h2>
-        <p class="section-description">{{ data().subtitle }}</p>
+        @if (data().subtitle) {
+          <p class="section-description">{{ data().subtitle }}</p>
+        }
       </div>
+
       <div class="promotions-cards">
-        @for (item of data().items; track $index) {
-          <!-- Check valid dates -->
+        @for (item of data().items; track $index; let i = $index) {
           @if (isPromotionAvaliable(item)) {
-            <div class="promotions-card">
+            <div class="promotions-card" appReveal [delay]="0.1 + i * 0.12">
               @if (item.offer) {
-                <div class="offer">{{ item.offer }}</div>
+                <div class="offer-badge">{{ item.offer }}</div>
               }
-              <div class="card">
+              <div class="card-body">
                 <div class="card-content">
-                  <h3>{{ item.title }}</h3>
-                  <p class="gray-text">{{ item.description }}</p>
+                  <h3 class="card-title">{{ item.title }}</h3>
+                  <p class="card-description">{{ item.description }}</p>
                 </div>
-                <div>
-                  <span class="gray-text">Válido hasta: {{ formatDate(item.endDate) }}</span>
+                <div class="card-footer">
+                  <span class="valid-until">V&aacute;lido hasta: {{ formatDate(item.endDate) }}</span>
                   @if (item.image) {
                     <button
-                      class="info-button"
+                      class="info-btn"
                       mat-flat-button
-                      [disabled]="!item.image"
                       (click)="openDialog(item.image)"
                     >
                       {{ item.label }}

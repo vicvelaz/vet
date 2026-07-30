@@ -14,41 +14,91 @@ html {
   );
 }
 
+/* ============================================================
+   DESIGN TOKENS — Centro Veterinario Valdeoso
+   ============================================================ */
 :root {
-  --primary-color: var(--mat-sys-primary);
-  --mat-sys-outline: var(--mat-sys-primary);
-  --primary-contrast-color: var(--mat-sys-on-primary);
-  --primary-darker-color: #731661;
-  --primary-soft-background: #f2f3f8;
-  --gray-background: #f1f1f1;
-  --text-color-footer: #424c5c;
-  --mdc-outlined-button-outline-color: var(--mat-sys-primary);
+  color-scheme: light;
+
+  /* Color base */
+  --background: oklch(0.98 0.007 190);
+  --foreground: oklch(0.22 0.025 200);
+  --card: oklch(0.995 0.004 190);
+  --card-foreground: oklch(0.22 0.025 200);
+
+  /* Marca — teal/verde salud */
+  --primary: oklch(0.50 0.10 185);
+  --primary-foreground: oklch(0.98 0.01 95);
+  --secondary: oklch(0.93 0.025 180);
+  --secondary-foreground: oklch(0.30 0.04 185);
+  --accent: oklch(0.38 0.07 185);
+  --accent-foreground: oklch(0.97 0.012 95);
+  --muted: oklch(0.95 0.010 185);
+  --muted-foreground: oklch(0.50 0.025 185);
+  --destructive: oklch(0.577 0.18 27);
+  --border: oklch(0.88 0.018 185);
+  --ring: oklch(0.50 0.10 185);
+
+  /* Radios */
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  /* Tipografía */
+  --font-heading: 'Fraunces', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Animación */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 300ms;
+  --duration-base: 600ms;
+  --duration-slow: 900ms;
+  --duration-hero: 1100ms;
+
+  /* Compatibilidad con Angular Material y código heredado */
+  --primary-color: var(--primary);
+  --mat-sys-outline: var(--primary);
+  --primary-contrast-color: var(--primary-foreground);
+  --primary-darker-color: oklch(0.30 0.07 185);
+  --primary-soft-background: var(--secondary);
+  --gray-background: var(--muted);
+  --text-color-footer: var(--muted-foreground);
+  --mdc-outlined-button-outline-color: var(--primary);
   --mdc-outlined-button-container-color: white;
-  --mat-icon-color: var(--mat-sys-primary);
-  --border-color: #119aad3b;
-  --border-radius: 0.5rem;
+  --mat-icon-color: var(--primary);
+  --border-color: oklch(0.88 0.018 185 / 50%);
+  --border-radius: var(--radius);
   --dialog-width: 500px;
-  --mat-button-filled-container-color: var(--mat-sys-primary);
+  --mat-button-filled-container-color: var(--primary);
 }
 
-* {
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html,
 body {
-  margin: 0;
-  font-family:
-    Inter,
-    Inter Fallback;
+  font-family: var(--font-sans);
   font-size: 16px;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 app-root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; // Ocupa el alto de la pantalla
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -57,6 +107,80 @@ a {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.eyebrow {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--primary);
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity var(--duration-slow) var(--ease-standard),
+    transform var(--duration-slow) var(--ease-standard);
+}
+
+.reveal--up {
+  transform: translateY(28px);
+}
+
+.reveal--down {
+  transform: translateY(-28px);
+}
+
+.reveal--left {
+  transform: translateX(28px);
+}
+
+.reveal--right {
+  transform: translateX(-28px);
+}
+
+.reveal--none {
+  transform: none;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   LEGAL PAGES
+   ============================================================ */
 .legal-container {
   max-width: 800px;
   margin: 0 auto;
@@ -65,7 +189,7 @@ a {
 
   h1,
   h2 {
-    color: var(--primary-color);
+    color: var(--primary);
     margin-top: 1.5rem;
   }
 

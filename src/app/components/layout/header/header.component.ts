@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Header } from '../../../services/app-data.interface';
@@ -18,9 +18,14 @@ export class HeaderComponent {
   readonly sanitizer = inject(DomSanitizer);
   readonly utilsService = inject(UtilsService);
   menuOpen = false;
+  scrolled = signal(false);
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled.set(window.scrollY > 20);
+  }
 
   ngOnInit() {
-    console.log('HeaderComponent initialized with data:', this.data());
     this.data().button.url = `https://wa.me/${this.data().button.url}?text=${encodeURIComponent(this.data().button.message!)}`;
     this.data().button.url = this.sanitizer.bypassSecurityTrustUrl(this.data().button.url as string);
     this.data().logo = this.utilsService.resolveDialogImageSource(this.data().logo) ?? '';
@@ -30,7 +35,12 @@ export class HeaderComponent {
     this.menuOpen = !this.menuOpen;
   }
 
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
   scrollToSection(sectionId: string) {
+    this.closeMenu();
     this.utilsService.navigateToFragment(sectionId);
   }
 }

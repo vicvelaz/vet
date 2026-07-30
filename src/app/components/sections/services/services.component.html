@@ -1,23 +1,21 @@
-<section
-  id="servicios"
-  class="services"
->
+<section id="servicios" class="services">
   <div class="container">
-    <div class="section-texts">
+    <div class="section-header" appReveal>
+      <p class="eyebrow">Qu&eacute; cuidados ofrecemos</p>
       <h2 class="section-title">{{ data().title }}</h2>
-      <p class="section-description">{{ data().subtitle }}</p>
+      @if (data().subtitle) {
+        <p class="section-description">{{ data().subtitle }}</p>
+      }
     </div>
+
     <div class="service-cards">
-      @for (item of data().items; track item.title) {
-        <div class="service-card">
-          <div class="icon">
-            <i
-              class="fa-icon fa-solid"
-              [ngClass]="item.icon"
-            ></i>
+      @for (item of data().items; track item.title; let i = $index) {
+        <div class="service-card" appReveal [delay]="0.1 + i * 0.12">
+          <div class="card-icon">
+            <i class="fa-icon fa-solid" [ngClass]="item.icon"></i>
           </div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+          <h3 class="card-title">{{ item.title }}</h3>
+          <p class="card-description">{{ item.description }}</p>
         </div>
       }
     </div>

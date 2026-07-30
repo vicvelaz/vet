@@ -1,12 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBone, faCut, faHeartPulse, faShieldDog, faStethoscope, faSyringe } from '@fortawesome/free-solid-svg-icons';
 import { ServicesSection } from '../../../services/app-data.interface';
+import { RevealOnScrollDirective } from '../../ui/reveal-on-scroll.directive';
 
 @Component({
   selector: 'app-services',
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, RevealOnScrollDirective],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss',
 })
