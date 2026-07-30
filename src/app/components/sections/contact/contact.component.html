@@ -29,23 +29,17 @@
             </div>
           }
         </div>
-        <!-- TODO: Hardcode social media icons -->
         <div class="social-media">
           @for (item of data().socialMedia; track $index) {
             <button
               mat-stroked-button
               [attr.aria-label]="item.icon"
+              (click)="openUrl(item.url)"
             >
-              <a
-                [href]="item.url"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i
-                  class="fa-icon fa-solid fa-brands"
-                  [ngClass]="item.icon"
-                ></i>
-              </a>
+              <i
+                class="fa-icon fa-solid fa-brands"
+                [ngClass]="item.icon"
+              ></i>
             </button>
           }
         </div>

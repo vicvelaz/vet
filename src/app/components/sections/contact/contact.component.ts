@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhoneFormatPipe } from '../../../pipes/phone-format.pipe';
 import { ContactSection, SocialMediaItem } from '../../../services/app-data.interface';
@@ -23,7 +23,7 @@ export class ContactComponent {
         if (item.icon.includes('whatsapp')) {
           item.url = `https://wa.me/${item.url}?text=${encodeURIComponent(item.message!)}`;
         }
-        item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);
+        // item.url = this.sanitizer.bypassSecurityTrustUrl(item.url as string);
       });
     });
   }
@@ -34,5 +34,9 @@ export class ContactComponent {
 
   isEmail(value: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  openUrl(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 }

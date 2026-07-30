@@ -91,7 +91,7 @@ export interface ContactItem {
 
 export interface SocialMediaItem {
   icon: string;
-  url: string | SafeUrl;
+  url: string;
   message?: string;
 }
 
