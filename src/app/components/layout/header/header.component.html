@@ -1,13 +1,38 @@
-<header class="header" [class.header--scrolled]="scrolled()" role="banner">
+<header
+  class="header"
+  [class.header--scrolled]="scrolled()"
+  role="banner"
+>
   <div class="container">
-    <div class="logo" (click)="scrollToSection('inicio')" role="button" tabindex="0" aria-label="Ir al inicio">
-      <img class="logo-img" [src]="data().logo" alt="Logo" />
+    <div
+      class="logo"
+      (click)="scrollToSection('inicio')"
+      role="button"
+      tabindex="0"
+      aria-label="Ir al inicio"
+    >
+      <img
+        class="logo-img"
+        [class.logo--scrolled]="scrolled()"
+        [src]="data().logo"
+        alt="Logo"
+      />
       <span class="logo-text">{{ data().name }}</span>
     </div>
 
-    <nav class="nav-links" role="navigation" aria-label="Navegación principal">
+    <nav
+      class="nav-links"
+      role="navigation"
+      aria-label="Navegación principal"
+    >
       @for (link of data().links; track link.label) {
-        <a class="nav-link" (click)="scrollToSection(link.url)" role="button" tabindex="0">{{ link.label }}</a>
+        <a
+          class="nav-link"
+          (click)="scrollToSection(link.url)"
+          role="button"
+          tabindex="0"
+          >{{ link.label }}</a
+        >
       }
     </nav>
 
@@ -27,17 +52,35 @@
       [attr.aria-expanded]="menuOpen"
       aria-label="Abrir menú"
     >
-      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
-      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
-      <span class="menu-toggle__bar" [class.open]="menuOpen"></span>
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
     </button>
   </div>
 
   <!-- Mobile menu overlay -->
   @if (menuOpen) {
-    <div class="mobile-nav" role="dialog" aria-modal="true">
+    <div
+      class="mobile-nav"
+      role="dialog"
+      aria-modal="true"
+    >
       @for (link of data().links; track link.label) {
-        <a class="mobile-nav__link" (click)="scrollToSection(link.url)" role="button" tabindex="0">
+        <a
+          class="mobile-nav__link"
+          (click)="scrollToSection(link.url)"
+          role="button"
+          tabindex="0"
+        >
           {{ link.label }}
         </a>
       }

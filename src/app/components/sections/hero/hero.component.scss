@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: calc(100vh - 4rem);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -22,7 +22,7 @@
   background: linear-gradient(
     to top,
     oklch(0.18 0.02 200 / 0.85) 0%,
-    oklch(0.18 0.02 200 / 0.40) 55%,
+    oklch(0.18 0.02 200 / 0.4) 55%,
     oklch(0.18 0.02 200 / 0.22) 100%
   );
 }
@@ -138,8 +138,13 @@
 }
 
 @keyframes bounce-anim {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 mat-icon {
@@ -152,7 +157,7 @@ mat-icon {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 0;
   padding-bottom: 3rem;
   gap: 1.5rem;
   width: 100%;
@@ -162,7 +167,7 @@ mat-icon {
   text-shadow: 0 0 5px rgb(0 0 0 / 80%);
 
   @media (max-width: 899px) {
-    padding-top: 3rem;
+    padding-top: 0;
     padding-bottom: 1rem;
     gap: 1rem;
     min-height: 300px;
