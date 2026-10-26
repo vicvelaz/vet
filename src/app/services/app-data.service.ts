@@ -15,6 +15,7 @@ export class AppDataService {
         { label: 'Promociones', url: 'promociones' },
         { label: 'Horario', url: 'horario' },
         { label: 'Planes', url: 'seguros' },
+        { label: 'Reseñas', url: 'resenas' },
         { label: 'Contacto', url: 'contacto' },
       ],
       button: {
@@ -253,6 +254,13 @@ export class AppDataService {
           },
         ],
       },
+      reviews: {
+        title: 'Lo que dicen nuestros clientes',
+        subtitle: 'Opiniones reales de quienes confían en nosotros',
+        items: [],
+        googleReviewsUrl:
+          'https://www.google.com/maps/search/?api=1&query=Centro+Veterinario+Valdeoso%2C+C%2F+Anita+Mart%C3%ADnez+8%2C+Legan%C3%A9s',
+      },
     },
     footer: {
       message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
@@ -274,6 +282,7 @@ export const APP_DEFAULTS: AppData = {
       { label: 'Promociones', url: 'promociones' },
       { label: 'Horario', url: 'horario' },
       { label: 'Planes', url: 'seguros' },
+      { label: 'Reseñas', url: 'resenas' },
       { label: 'Contacto', url: 'contacto' },
     ],
     button: { label: 'Solicitar Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
@@ -310,6 +319,13 @@ export const APP_DEFAULTS: AppData = {
     insurances: {
       title: 'Planes de salud anuales',
       items: [],
+    },
+    reviews: {
+      title: 'Lo que dicen nuestros clientes',
+      subtitle: 'Opiniones reales de quienes confían en nosotros',
+      items: [],
+      googleReviewsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Centro+Veterinario+Valdeoso%2C+C%2F+Anita+Mart%C3%ADnez+8%2C+Legan%C3%A9s',
     },
   },
   footer: {

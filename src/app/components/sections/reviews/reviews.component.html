@@ -1,0 +1,56 @@
+@if (data().items.length > 0) {
+  <section id="resenas" class="reviews">
+    <div class="container">
+      <div class="section-header" appReveal>
+        <p class="eyebrow">Experiencias de nuestros clientes</p>
+        <h2 class="section-title">{{ data().title }}</h2>
+        @if (data().subtitle) {
+          <p class="section-description">{{ data().subtitle }}</p>
+        }
+      </div>
+
+      <div class="reviews-cards">
+        @for (item of data().items; track trackByAuthorAndDate($index, item); let i = $index) {
+          <article class="review-card" appReveal [delay]="0.1 + i * 0.08">
+            <div class="review-header">
+              <div class="avatar" aria-hidden="true">{{ getInitial(item.author) }}</div>
+              <div class="author-info">
+                <h3 class="author-name">{{ item.author }}</h3>
+                <time class="review-date" [attr.datetime]="item.date">{{ getRelativeDate(item.date) }}</time>
+              </div>
+            </div>
+
+            <div class="stars" [attr.aria-label]="item.rating + ' de 5 estrellas'">
+              @for (filled of getStars(item.rating); track $index) {
+                <i
+                  class="fa-star star"
+                  [class.fa-solid]="filled"
+                  [class.fa-regular]="!filled"
+                  [class.star--filled]="filled"
+                  [class.star--empty]="!filled"
+                  aria-hidden="true"
+                ></i>
+              }
+            </div>
+
+            <p class="review-text">{{ item.text }}</p>
+          </article>
+        }
+      </div>
+
+      @if (data().googleReviewsUrl) {
+        <div class="reviews-cta" appReveal [delay]="0.2">
+          <a
+            mat-stroked-button
+            class="google-reviews-btn"
+            [href]="data().googleReviewsUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver todas las opiniones en Google
+          </a>
+        </div>
+      }
+    </div>
+  </section>
+}

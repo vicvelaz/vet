@@ -191,8 +191,26 @@ export class UtilsService {
           ...defaults.sections.insurances,
           items: sanity.insurances ?? defaults.sections.insurances.items,
         },
+        reviews: {
+          ...defaults.sections.reviews,
+          items: this.pickRandomReviews(sanity.reviews ?? [], 10),
+        },
       },
       footer: defaults.footer,
     };
+  }
+
+  private pickRandomReviews<T>(items: readonly T[], count: number): T[] {
+    if (items.length <= count) {
+      return [...items];
+    }
+
+    const pool = [...items];
+    for (let index = 0; index < count; index++) {
+      const randomIndex = index + Math.floor(Math.random() * (pool.length - index));
+      [pool[index], pool[randomIndex]] = [pool[randomIndex], pool[index]];
+    }
+
+    return pool.slice(0, count);
   }
 }

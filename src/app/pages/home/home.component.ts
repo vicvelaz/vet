@@ -5,6 +5,7 @@ import {
   HeroComponent,
   InsurancesComponent,
   PromotionsComponent,
+  ReviewsComponent,
   ServicesComponent,
   TimetableComponent,
 } from '../../components/sections';
@@ -13,7 +14,15 @@ import { SanityService } from '../../services/sanity.service';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, ServicesComponent, TimetableComponent, ContactComponent, PromotionsComponent, InsurancesComponent],
+  imports: [
+    HeroComponent,
+    ServicesComponent,
+    TimetableComponent,
+    ContactComponent,
+    PromotionsComponent,
+    InsurancesComponent,
+    ReviewsComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true,

@@ -15,6 +15,7 @@ interface SanityContent {
   contact?: Pick<AppData['sections']['contact'], 'items' | 'socialMedia'> | null;
   promotions?: AppData['sections']['promotions']['items'] | null;
   insurances?: AppData['sections']['insurances']['items'] | null;
+  reviews?: AppData['sections']['reviews']['items'] | null;
 }
 
 const SANITY_QUERY = `{
@@ -26,6 +27,7 @@ const SANITY_QUERY = `{
   "contact":     *[_type == "contactSection"][0]{ items, socialMedia },
   "promotions":  *[_type == "promotionsSection"][0].items,
   "insurances":  *[_type == "insurancesSection"][0].items,
+  "reviews":     *[_type == "review" && published == true]{ author, rating, text, date },
 }`;
 
 @Injectable({ providedIn: 'root' })
