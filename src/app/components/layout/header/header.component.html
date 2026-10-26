@@ -1,14 +1,14 @@
 <header
   class="header"
   [class.header--scrolled]="scrolled()"
+  [class.header--hidden]="hidden()"
   role="banner"
 >
   <div class="container">
-    <div
+    <button
       class="logo"
+      type="button"
       (click)="scrollToSection('inicio')"
-      role="button"
-      tabindex="0"
       aria-label="Ir al inicio"
     >
       <img
@@ -18,7 +18,7 @@
         alt="Logo"
       />
       <span class="logo-text">{{ data().name }}</span>
-    </div>
+    </button>
 
     <nav
       class="nav-links"
@@ -28,9 +28,8 @@
       @for (link of data().links; track link.label) {
         <a
           class="nav-link"
+          [href]="'#' + link.url"
           (click)="scrollToSection(link.url)"
-          role="button"
-          tabindex="0"
           >{{ link.label }}</a
         >
       }
@@ -47,10 +46,13 @@
     </a>
 
     <button
+      #menuToggle
       class="menu-toggle"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen"
-      aria-label="Abrir menú"
+      aria-controls="mobile-navigation"
+      [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+      type="button"
     >
       <span
         class="menu-toggle__bar"
@@ -69,17 +71,17 @@
 
   <!-- Mobile menu overlay -->
   @if (menuOpen) {
-    <div
+    <nav
+      id="mobile-navigation"
       class="mobile-nav"
-      role="dialog"
-      aria-modal="true"
+      aria-label="Navegación móvil"
     >
       @for (link of data().links; track link.label) {
         <a
           class="mobile-nav__link"
+          #firstMobileLink
+          [href]="'#' + link.url"
           (click)="scrollToSection(link.url)"
-          role="button"
-          tabindex="0"
         >
           {{ link.label }}
         </a>
@@ -93,6 +95,6 @@
       >
         {{ data().button.label }}
       </a>
-    </div>
+    </nav>
   }
 </header>

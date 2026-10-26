@@ -11,4 +11,17 @@ import { RevealOnScrollDirective } from '../../ui/reveal-on-scroll.directive';
 })
 export class ServicesComponent {
   data = input.required<ServicesSection>({});
+
+  iconClass(icon: string): string {
+    const legacyIcons: Record<string, string> = {
+      stethoscope: 'fa-stethoscope',
+      syringe: 'fa-syringe',
+      bone: 'fa-bone',
+      heartPulse: 'fa-heart-pulse',
+      faCut: 'fa-scissors',
+      'shield-dog': 'fa-shield-heart',
+    };
+
+    return legacyIcons[icon] ?? icon;
+  }
 }

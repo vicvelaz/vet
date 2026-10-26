@@ -12,7 +12,7 @@
       @for (item of data().items; track $index; let i = $index) {
         <div class="insurances-card" appReveal [delay]="0.1 + i * 0.12">
           @if (item.offer) {
-            <div class="offer-badge">{{ item.offer }}</div>
+            <div class="plan-tag">{{ item.offer }}</div>
           }
           <div class="card-body">
             <div>

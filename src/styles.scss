@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @use './app/styles/theme-colors' as my-theme; // location of generated file
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
 html {
   @include mat.theme(
@@ -55,6 +56,7 @@ html {
   /* Animación */
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 300ms;
+  --duration-hover: 420ms;
   --duration-base: 600ms;
   --duration-slow: 900ms;
   --duration-hero: 1100ms;
@@ -105,6 +107,11 @@ app-root {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
 }
 
 h1,
@@ -162,10 +169,19 @@ h3,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
   .reveal {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+
+  :where(a, button, .service-card, .promotions-card, .insurances-card) {
+    transition: none !important;
+    transform: none !important;
   }
 
   *,

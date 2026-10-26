@@ -28,4 +28,8 @@ export class HeroComponent {
   scrollToSection(sectionId: string) {
     this.utilsService.navigateToFragment(sectionId);
   }
+
+  imageSource(): string {
+    return this.utilsService.resolveDialogImageSource(this.data().banner) ?? '';
+  }
 }

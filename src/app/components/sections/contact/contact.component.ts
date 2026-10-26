@@ -36,6 +36,19 @@ export class ContactComponent {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
+  iconClass(icon: string): string {
+    const legacyIcons: Record<string, string> = {
+      place: 'fa-location-dot',
+      phone: 'fa-phone',
+      email: 'fa-envelope',
+      clock: 'fa-clock',
+      instagram: 'fa-instagram',
+      whatsapp: 'fa-whatsapp',
+    };
+
+    return legacyIcons[icon] ?? icon;
+  }
+
   openUrl(url: string): void {
     window.open(url, '_blank', 'noopener,noreferrer');
   }

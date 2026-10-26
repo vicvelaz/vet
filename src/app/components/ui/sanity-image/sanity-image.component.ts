@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
-import { Component, computed, inject, input, PLATFORM_ID } from '@angular/core';
-import { SanityService } from '../../../services/sanity.service';
+import { Component, computed, inject, input } from '@angular/core';
+import { DialogImageInput, UtilsService } from '../../../services/utils.service';
 
 export interface SanityImageConfig {
   width?: number;
@@ -29,12 +29,11 @@ export interface SanityImageConfig {
   `,
 })
 export class SanityImageComponent {
-  private readonly sanity = inject(SanityService);
-  private readonly platformId = inject(PLATFORM_ID);
+  private readonly utilsService = inject(UtilsService);
 
   // ── Inputs ──────────────────────────────────────────────────────────
   /** Sanity image object (con asset._ref) */
-  readonly image = input.required<any | null | undefined>();
+  readonly image = input.required<DialogImageInput>();
 
   /** Alt text. Si no se pasa, usa image.alt del schema de Sanity */
   readonly alt = input<string | undefined>(undefined);
@@ -66,14 +65,7 @@ export class SanityImageComponent {
   // ── Computed signals ─────────────────────────────────────────────────
 
   /** URL base con los parámetros de transformación */
-  readonly src = computed(() => {
-    // const img = this.image();
-    // if (!img?.asset?._ref) return null;
-    // let builder = this.sanity.imageUrl(img).quality(this.quality()).fit(this.fit()).auto('format'); // sirve webp a browsers que lo soportan
-    // if (this.width()) builder = builder.width(this.width()!);
-    // if (this.height()) builder = builder.height(this.height()!);
-    // return builder.url();
-  });
+  readonly src = computed(() => this.utilsService.resolveDialogImageSource(this.image()));
 
   /**
    * srcset responsivo automático.

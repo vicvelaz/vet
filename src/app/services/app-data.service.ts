@@ -9,7 +9,7 @@ export class AppDataService {
     // warning: 'Permaneceremos cerrados desde el 14 de agosto y reabriremos el 1 de septiembre.',
     header: {
       name: 'Valdeoso',
-      logo: 'logo_pride.webp',
+      logo: 'logo.webp',
       links: [
         { label: 'Servicios', url: 'servicios' },
         { label: 'Promociones', url: 'promociones' },
@@ -49,34 +49,34 @@ export class AppDataService {
         subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
         items: [
           {
-            icon: 'stethoscope',
+            icon: 'fa-stethoscope',
             title: 'Medicina interna',
             description:
               'Servicio de consulta, diagnóstico, tratamiento y seguimiento de las patologías que afectan a nuestras mascotas.',
           },
           {
-            icon: 'syringe',
+            icon: 'fa-syringe',
             title: 'Medicina preventiva',
             description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP.',
           },
           {
-            icon: 'bone',
+            icon: 'fa-bone',
             title: 'Asesoría nutricional',
             description:
               'Recomendaciones dietéticas personalizadas en función de edad, metabolismo, condición corporal y estado de salud.',
           },
           {
-            icon: 'heartPulse',
+            icon: 'fa-heart-pulse',
             title: 'Diagnóstico por imagen',
             description: 'Pruebas radiológicas y ecográficas interpretadas por especialistas en imagen.',
           },
           {
-            icon: 'faCut',
+            icon: 'fa-scissors',
             title: 'Cirugía',
             description: 'Procedimientos quirúrgicos de rutina en clínica colaboradora y de urgencias en hospital colaborador.',
           },
           {
-            icon: 'shield-dog',
+            icon: 'fa-shield-heart',
             title: 'Seguros',
             description: 'Planes de salud anuales para perros y gatos cachorros, adultos, senior y con patologías crónicas.',
           },

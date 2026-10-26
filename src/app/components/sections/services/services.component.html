@@ -12,7 +12,7 @@
       @for (item of data().items; track item.title; let i = $index) {
         <div class="service-card" appReveal [delay]="0.1 + i * 0.12">
           <div class="card-icon">
-            <i class="fa-icon fa-solid" [ngClass]="item.icon"></i>
+            <i class="fa-solid" [ngClass]="iconClass(item.icon)" aria-hidden="true"></i>
           </div>
           <h3 class="card-title">{{ item.title }}</h3>
           <p class="card-description">{{ item.description }}</p>

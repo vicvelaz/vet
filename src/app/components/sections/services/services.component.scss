@@ -48,49 +48,50 @@
 
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
   }
 }
 
 .service-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--card);
+  min-height: 14rem;
+  padding: 1.5rem 1.5rem 1.75rem;
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-2xl);
-  padding: 1.75rem;
+  border-top: 3px solid var(--primary);
   transition:
-    border-color var(--duration-base) var(--ease-standard),
-    background-color var(--duration-base) var(--ease-standard);
+    transform var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard),
+    background-color var(--duration-hover) var(--ease-standard);
 
   &:hover {
-    border-color: color-mix(in oklch, var(--primary) 40%, transparent);
-    background-color: color-mix(in oklch, var(--secondary) 40%, transparent);
-
-    .card-icon {
-      background-color: color-mix(in oklch, var(--primary) 18%, transparent);
-    }
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    background-color: color-mix(in oklch, var(--secondary) 35%, var(--card));
   }
 }
 
 .card-icon {
-  width: 3.25rem;
-  height: 3.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--secondary);
-  border-radius: 50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.5rem;
   color: var(--primary);
-  margin-bottom: 1.25rem;
-  transition: background-color var(--duration-base) var(--ease-standard);
+  border-bottom: 1px solid var(--border);
 
   .fa-icon {
-    font-size: 1.375rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -106,74 +107,4 @@
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--muted-foreground);
-}
-
-.section-texts {
-  text-align: center;
-
-  .section-title {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1;
-    font-weight: 700;
-  }
-
-  .section-description {
-    font-size: clamp(0.5rem, 4vw, 1.25rem);
-    line-height: 1.75rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-color-footer);
-    margin-top: 2rem;
-
-    @media (max-width: 720px) {
-      margin-top: 1rem;
-    }
-  }
-}
-
-.service-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: calc(3rem * calc(1 - 0));
-}
-
-.service-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  border: 1px solid var(--border-color);
-
-  .icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-soft-background);
-    border-radius: 50%;
-    color: var(--primary-color);
-  }
-
-  .icon i {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin-top: 0.5rem;
-    color: var(--text-color-footer);
-    font-size: 16px;
-  }
 }

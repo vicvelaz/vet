@@ -1,7 +1,7 @@
 <section id="inicio" class="hero">
   <img
     class="hero__bg"
-    [src]="'img/' + data().banner"
+    [src]="imageSource()"
     [alt]="data().title"
     loading="eager"
   />
@@ -33,12 +33,11 @@
 
   <a
     class="hero__scroll-cue"
+    [href]="'#' + data().button.moreInfo.url"
     (click)="scrollToSection(data().button.moreInfo.url)"
     appReveal
     direction="none"
     [delay]="1.1"
-    role="button"
-    tabindex="0"
     [attr.aria-label]="data().button.moreInfo.label"
   >
     {{ data().button.moreInfo.label }}&nbsp;<span class="bounce">&#8595;</span>

@@ -14,7 +14,7 @@
           @if (isPromotionAvaliable(item)) {
             <div class="promotions-card" appReveal [delay]="0.1 + i * 0.12">
               @if (item.offer) {
-                <div class="offer-badge">{{ item.offer }}</div>
+                <div class="offer-tag">{{ item.offer }}</div>
               }
               <div class="card-body">
                 <div class="card-content">
@@ -22,7 +22,7 @@
                   <p class="card-description">{{ item.description }}</p>
                 </div>
                 <div class="card-footer">
-                  <span class="valid-until">V&aacute;lido hasta: {{ formatDate(item.endDate) }}</span>
+                  <span class="validity-tag">V&aacute;lido hasta {{ formatDate(item.endDate) }}</span>
                   @if (item.image) {
                     <button
                       class="info-btn"
