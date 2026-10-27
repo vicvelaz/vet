@@ -28,7 +28,7 @@ export class AppDataService {
       hero: {
         title: 'Centro Veterinario Valdeoso',
         subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner.webp',
+        banner: 'vecteezy_veterinarian-examining-dog-clinic-with-woman-background.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -291,7 +291,7 @@ export const APP_DEFAULTS: AppData = {
     hero: {
       title: 'Tu clínica veterinaria de confianza',
       subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
-      banner: 'banner.webp',
+      banner: 'vecteezy_veterinarian-examining-dog-clinic-with-woman-background.webp',
       button: {
         primary: { label: 'Pedir Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
         secondary: { label: 'Nuestros Servicios', url: 'servicios' },
