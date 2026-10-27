@@ -9,12 +9,13 @@ export class AppDataService {
     // warning: 'Permaneceremos cerrados desde el 14 de agosto y reabriremos el 1 de septiembre.',
     header: {
       name: 'Valdeoso',
-      logo: 'logo_pride.webp',
+      logo: 'logo.webp',
       links: [
         { label: 'Servicios', url: 'servicios' },
         { label: 'Promociones', url: 'promociones' },
         { label: 'Horario', url: 'horario' },
         { label: 'Planes', url: 'seguros' },
+        { label: 'Reseñas', url: 'resenas' },
         { label: 'Contacto', url: 'contacto' },
       ],
       button: {
@@ -27,7 +28,7 @@ export class AppDataService {
       hero: {
         title: 'Centro Veterinario Valdeoso',
         subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
-        banner: 'banner.webp',
+        banner: 'vecteezy_veterinarian-examining-dog-clinic-with-woman-background.webp',
         button: {
           primary: {
             label: 'Pedir Cita',
@@ -49,34 +50,34 @@ export class AppDataService {
         subtitle: 'Atención profesional y especializada para el bienestar de tu mascota.',
         items: [
           {
-            icon: 'stethoscope',
+            icon: 'fa-stethoscope',
             title: 'Medicina interna',
             description:
               'Servicio de consulta, diagnóstico, tratamiento y seguimiento de las patologías que afectan a nuestras mascotas.',
           },
           {
-            icon: 'syringe',
+            icon: 'fa-syringe',
             title: 'Medicina preventiva',
             description: 'Protocolos vacunales y antiparasitarios completos siguiendo las directrices de AVEPA y ESCCAP.',
           },
           {
-            icon: 'bone',
+            icon: 'fa-bone',
             title: 'Asesoría nutricional',
             description:
               'Recomendaciones dietéticas personalizadas en función de edad, metabolismo, condición corporal y estado de salud.',
           },
           {
-            icon: 'heartPulse',
+            icon: 'fa-heart-pulse',
             title: 'Diagnóstico por imagen',
             description: 'Pruebas radiológicas y ecográficas interpretadas por especialistas en imagen.',
           },
           {
-            icon: 'faCut',
+            icon: 'fa-scissors',
             title: 'Cirugía',
             description: 'Procedimientos quirúrgicos de rutina en clínica colaboradora y de urgencias en hospital colaborador.',
           },
           {
-            icon: 'shield-dog',
+            icon: 'fa-shield-heart',
             title: 'Seguros',
             description: 'Planes de salud anuales para perros y gatos cachorros, adultos, senior y con patologías crónicas.',
           },
@@ -253,6 +254,13 @@ export class AppDataService {
           },
         ],
       },
+      reviews: {
+        title: 'Lo que dicen nuestros clientes',
+        subtitle: 'Opiniones reales de quienes confían en nosotros',
+        items: [],
+        googleReviewsUrl:
+          'https://www.google.com/maps/search/?api=1&query=Centro+Veterinario+Valdeoso%2C+C%2F+Anita+Mart%C3%ADnez+8%2C+Legan%C3%A9s',
+      },
     },
     footer: {
       message: '© 2025 Centro Veterinario Valdeoso. Todos los derechos reservados.',
@@ -274,6 +282,7 @@ export const APP_DEFAULTS: AppData = {
       { label: 'Promociones', url: 'promociones' },
       { label: 'Horario', url: 'horario' },
       { label: 'Planes', url: 'seguros' },
+      { label: 'Reseñas', url: 'resenas' },
       { label: 'Contacto', url: 'contacto' },
     ],
     button: { label: 'Solicitar Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
@@ -282,7 +291,7 @@ export const APP_DEFAULTS: AppData = {
     hero: {
       title: 'Tu clínica veterinaria de confianza',
       subtitle: 'Donde clínica de barrio significa cercanía y calidad médica',
-      banner: 'banner.webp',
+      banner: 'vecteezy_veterinarian-examining-dog-clinic-with-woman-background.webp',
       button: {
         primary: { label: 'Pedir Cita', url: '34667357720', message: 'Hola, me gustaría pedir una cita.' },
         secondary: { label: 'Nuestros Servicios', url: 'servicios' },
@@ -310,6 +319,13 @@ export const APP_DEFAULTS: AppData = {
     insurances: {
       title: 'Planes de salud anuales',
       items: [],
+    },
+    reviews: {
+      title: 'Lo que dicen nuestros clientes',
+      subtitle: 'Opiniones reales de quienes confían en nosotros',
+      items: [],
+      googleReviewsUrl:
+        'https://www.google.com/maps/search/?api=1&query=Centro+Veterinario+Valdeoso%2C+C%2F+Anita+Mart%C3%ADnez+8%2C+Legan%C3%A9s',
     },
   },
   footer: {

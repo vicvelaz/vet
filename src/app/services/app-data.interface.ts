@@ -32,6 +32,7 @@ export interface Sections {
   contact: ContactSection;
   promotions: PromotionsSection;
   insurances: InsurancesSection;
+  reviews: ReviewsSection;
 }
 
 export interface HeroSection {
@@ -123,6 +124,20 @@ export interface InsuranceItem {
   offer?: string;
   label?: string;
   image?: string;
+}
+
+export interface ReviewsSection {
+  title: string;
+  subtitle?: string;
+  items: ReviewItem[];
+  googleReviewsUrl?: string;
+}
+
+export interface ReviewItem {
+  author: string;
+  rating: number;
+  text: string;
+  date: string;
 }
 
 export interface Footer {

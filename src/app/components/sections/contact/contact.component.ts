@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, effect, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RevealOnScrollDirective } from '../../ui/reveal-on-scroll.directive';
 import { PhoneFormatPipe } from '../../../pipes/phone-format.pipe';
 import { ContactSection, SocialMediaItem } from '../../../services/app-data.interface';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FontAwesomeModule, MatButtonModule, PhoneFormatPipe],
+  imports: [CommonModule, MatButtonModule, PhoneFormatPipe, RevealOnScrollDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -34,6 +34,19 @@ export class ContactComponent {
 
   isEmail(value: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  iconClass(icon: string): string {
+    const legacyIcons: Record<string, string> = {
+      place: 'fa-location-dot',
+      phone: 'fa-phone',
+      email: 'fa-envelope',
+      clock: 'fa-clock',
+      instagram: 'fa-instagram',
+      whatsapp: 'fa-whatsapp',
+    };
+
+    return legacyIcons[icon] ?? icon;
   }
 
   openUrl(url: string): void {

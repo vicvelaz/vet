@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import { SANITY_CONFIG } from './sanity.constants'
+import {reviewSchema} from './schemaTypes/review'
 
 import {
   appConfigSchema,
@@ -44,6 +45,7 @@ export default defineConfig({
       contactSchema,
       promotionsSchema,
       insurancesSchema,
+      reviewSchema,
     ],
   },
   plugins: [
@@ -74,6 +76,14 @@ export default defineConfig({
             S.listItem()
               .title('🛡️ Seguros')
               .child(S.document().schemaType('insurancesSection').documentId('insurancesSection')),
+            S.divider(),
+            S.listItem()
+              .title('⭐ Reseñas')
+              .child(
+                S.documentTypeList('review')
+                  .title('Reseñas')
+                  .defaultOrdering([{field: 'date', direction: 'desc'}]),
+              ),
           ]),
     }),
   ],

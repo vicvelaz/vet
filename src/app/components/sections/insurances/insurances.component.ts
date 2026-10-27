@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { InsurancesSection } from '../../../services/app-data.interface';
+import { RevealOnScrollDirective } from '../../ui/reveal-on-scroll.directive';
 import { DialogImageInput, UtilsService } from '../../../services/utils.service';
 
 @Component({
   selector: 'app-insurances',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, RevealOnScrollDirective],
   templateUrl: './insurances.component.html',
   styleUrl: './insurances.component.scss',
 })

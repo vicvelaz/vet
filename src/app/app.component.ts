@@ -4,7 +4,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/ro
 import { injectSpeedInsights } from '@vercel/speed-insights';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent, HeaderComponent } from './components/layout';
-import { APP_DEFAULTS } from './services/app-data.service';
+import { AppDataService } from './services/app-data.service';
 import { SanityService } from './services/sanity.service';
 import { CommonModule } from '@angular/common';
 
@@ -15,10 +15,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  private readonly appDataService = inject(AppDataService);
   private readonly sanityService = inject(SanityService);
   readonly route = inject(ActivatedRoute);
   readonly router = inject(Router);
-  data = toSignal(this.sanityService.appData$, { initialValue: APP_DEFAULTS });
+  data = toSignal(this.sanityService.appData$, { initialValue: this.appDataService.data() });
   warningDismissed = signal(false);
 
   dismissWarning() {

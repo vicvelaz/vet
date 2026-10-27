@@ -1,45 +1,100 @@
 <header
   class="header"
+  [class.header--scrolled]="scrolled()"
+  [class.header--hidden]="hidden()"
   role="banner"
 >
-  <i class="ph-fill ph-airplane-takeoff"></i>
-  <i class="ph-fill ph-instagram-logo"></i>
-  <i
-    class="ph ph-paw-print"
-    style="font-size: 32px; color: #e74c3c"
-  ></i>
-
   <div class="container">
-    <div class="logo">
+    <button
+      class="logo"
+      type="button"
+      (click)="scrollToSection('inicio')"
+      aria-label="Ir al inicio"
+    >
       <img
         class="logo-img"
+        [class.logo--scrolled]="scrolled()"
         [src]="data().logo"
         alt="Logo"
-        (click)="scrollToSection('inicio')"
       />
-      <h2
-        class="logo-text"
-        (click)="scrollToSection('inicio')"
-      >
-        {{ data().name }}
-      </h2>
-    </div>
+      <span class="logo-text">{{ data().name }}</span>
+    </button>
+
     <nav
       class="nav-links"
       role="navigation"
+      aria-label="Navegación principal"
     >
       @for (link of data().links; track link.label) {
-        <a (click)="scrollToSection(link.url)"> {{ link.label }}</a>
+        <a
+          class="nav-link"
+          [href]="'#' + link.url"
+          (click)="scrollToSection(link.url)"
+          >{{ link.label }}</a
+        >
       }
     </nav>
+
     <a
-      mat-flat-button
       class="contact-btn"
       [href]="data().button.url"
       target="_blank"
       rel="noopener noreferrer"
+      [attr.aria-label]="data().button.label"
     >
-      {{ data().button.label }}</a
+      {{ data().button.label }}
+    </a>
+
+    <button
+      #menuToggle
+      class="menu-toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="mobile-navigation"
+      [attr.aria-label]="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
+      type="button"
     >
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
+      <span
+        class="menu-toggle__bar"
+        [class.open]="menuOpen"
+      ></span>
+    </button>
   </div>
+
+  <!-- Mobile menu overlay -->
+  @if (menuOpen) {
+    <nav
+      id="mobile-navigation"
+      class="mobile-nav"
+      aria-label="Navegación móvil"
+    >
+      @for (link of data().links; track link.label) {
+        <a
+          class="mobile-nav__link"
+          #firstMobileLink
+          [href]="'#' + link.url"
+          (click)="scrollToSection(link.url)"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a
+        class="mobile-nav__cta"
+        [href]="data().button.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="closeMenu()"
+      >
+        {{ data().button.label }}
+      </a>
+    </nav>
+  }
 </header>
