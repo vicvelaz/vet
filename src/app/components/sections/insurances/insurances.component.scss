@@ -1,111 +1,129 @@
 .insurances {
-  padding: 60px 0;
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-block: 6rem;
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 720px) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .container {
-    max-width: 1400px;
+    padding-block: 3rem;
   }
 }
 
-.section-texts {
+.container {
+  max-width: 80rem;
+  width: 100%;
+  padding-inline: 1.5rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+.section-header {
   text-align: center;
+  margin-bottom: 3.5rem;
 
-  .section-title {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1;
-    font-weight: 700;
+  .eyebrow {
+    margin-bottom: 1rem;
   }
+}
 
-  .section-description {
-    font-size: clamp(0.5rem, 4vw, 1.25rem);
-    line-height: 1.75rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-color-footer);
-    margin-top: calc(2rem);
-  }
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 56ch;
+  margin-inline: auto;
+  color: var(--muted-foreground);
 }
 
 .insurances-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: calc(3rem * calc(1 - 0));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .insurances-card {
-  display: flex;
-  flex-direction: row;
-  background-color: #ffffff;
-  width: 300px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  border: 1px solid var(--border-color);
-  overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition:
+    transform var(--duration-hover) var(--ease-standard),
+    border-color var(--duration-hover) var(--ease-standard),
+    background-color var(--duration-hover) var(--ease-standard);
 
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .gray-text {
-    color: var(--text-color-footer);
-    font-size: 1rem;
-  }
-
-  p {
-    margin-top: 0.5rem;
-  }
-
-  span {
-    margin-top: 1rem;
+  &:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
   }
 }
 
-.info-button {
-  border-radius: calc(0.5rem - 2px);
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.offer {
+.plan-tag {
   position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  background-color: var(--primary-color);
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  color: var(--secondary-foreground);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  max-width: calc(100% - 2rem);
+  text-align: center;
 }
 
-@media (max-width: 720px) {
-  .insurances-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 4rem 1.5rem 1.5rem;
+  gap: 1.25rem;
 }
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  overflow-wrap: anywhere;
+}
+
+.card-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+.info-btn {
+  border-radius: 9999px !important;
+  width: 100%;
+  margin-top: auto;
+}
+

@@ -5,24 +5,30 @@ import {
   HeroComponent,
   InsurancesComponent,
   PromotionsComponent,
+  ReviewsComponent,
   ServicesComponent,
   TimetableComponent,
 } from '../../components/sections';
-import { APP_DEFAULTS } from '../../services/app-data.service';
+import { AppDataService } from '../../services/app-data.service';
 import { SanityService } from '../../services/sanity.service';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroComponent, ServicesComponent, TimetableComponent, ContactComponent, PromotionsComponent, InsurancesComponent],
+  imports: [
+    HeroComponent,
+    ServicesComponent,
+    TimetableComponent,
+    ContactComponent,
+    PromotionsComponent,
+    InsurancesComponent,
+    ReviewsComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   standalone: true,
 })
 export class HomeComponent {
+  private readonly appDataService = inject(AppDataService);
   private readonly sanityService = inject(SanityService);
-  data = toSignal(this.sanityService.appData$, { initialValue: APP_DEFAULTS });
-
-  ngOnInit() {
-    this.sanityService.appData$.subscribe();
-  }
+  data = toSignal(this.sanityService.appData$, { initialValue: this.appDataService.data() });
 }

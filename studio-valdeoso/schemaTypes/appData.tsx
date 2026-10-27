@@ -133,7 +133,7 @@ export const servicesSchema = defineType({
           },
           components: {
             preview: (props: any) => {
-              const found = ICONS.find((i) => i.value === props?.icon)
+              const found = ICONS.find((i) => i.value === props?.value?.icon)
               return (
                 <div style={{display: 'flex', alignItems: 'center', gap: 12, padding: '8px'}}>
                   {found ? (
@@ -142,8 +142,8 @@ export const servicesSchema = defineType({
                     <span style={{width: 24}}>?</span>
                   )}
                   <div>
-                    <div style={{fontWeight: 600}}>{props?.title ?? 'Sin título'}</div>
-                    <div style={{fontSize: 12, color: '#6b7280'}}>{props?.subtitle}</div>
+                    <div style={{fontWeight: 600}}>{props?.value?.title ?? 'Sin título'}</div>
+                    <div style={{fontSize: 12, color: '#6b7280'}}>{props?.value?.description}</div>
                   </div>
                 </div>
               )
@@ -230,7 +230,7 @@ export const contactSchema = defineType({
           },
           components: {
             preview: (props: any) => {
-              const found = ICONS.find((i) => i.value === props?.icon)
+              const found = ICONS.find((i) => i.value === props?.value?.icon)
               return (
                 <div style={{display: 'flex', alignItems: 'center', gap: 12, padding: '8px'}}>
                   {found ? (
@@ -238,7 +238,7 @@ export const contactSchema = defineType({
                   ) : (
                     <span style={{width: 24}}>?</span>
                   )}
-                  <div style={{fontWeight: 600}}>{props?.title ?? 'Sin valor'}</div>
+                  <div style={{fontWeight: 600}}>{props?.value?.value ?? 'Sin valor'}</div>
                 </div>
               )
             },
@@ -274,7 +274,7 @@ export const contactSchema = defineType({
           },
           components: {
             preview: (props: any) => {
-              const found = ICONS.find((i) => i.value === props?.icon)
+              const found = ICONS.find((i) => i.value === props?.value?.icon)
               return (
                 <div style={{display: 'flex', alignItems: 'center', gap: 12, padding: '8px'}}>
                   {found ? (
@@ -282,7 +282,7 @@ export const contactSchema = defineType({
                   ) : (
                     <span style={{width: 24}}>?</span>
                   )}
-                  <div style={{fontWeight: 600}}>{props?.title ?? 'Sin URL'}</div>
+                  <div style={{fontWeight: 600}}>{props?.value?.url ?? 'Sin URL'}</div>
                 </div>
               )
             },
@@ -316,25 +316,47 @@ export const promotionsSchema = defineType({
               type: 'string',
               validation: (Rule) => Rule.required(),
             }),
-            defineField({name: 'description', title: 'Descripción', type: 'text'}),
+            defineField({
+              name: 'description',
+              title: 'Descripción',
+              type: 'text',
+              rows: 4,
+              description: 'Explica qué incluye la promoción y a quién va dirigida.',
+            }),
             defineField({
               name: 'offer',
               title: 'Oferta',
               type: 'string',
               description: 'Ej: 20% descuento',
             }),
-            defineField({name: 'initDate', title: 'Fecha de inicio', type: 'date'}),
-            defineField({name: 'endDate', title: 'Fecha de fin', type: 'date'}),
+            defineField({
+              name: 'initDate',
+              title: 'Fecha de inicio',
+              type: 'date',
+              description: 'Déjalo vacío si la promoción ya está disponible.',
+            }),
+            defineField({
+              name: 'endDate',
+              title: 'Fecha de fin',
+              type: 'date',
+              description: 'La promoción dejará de mostrarse después de esta fecha.',
+            }),
             defineField({
               name: 'label',
               title: 'Etiqueta',
               type: 'string',
               description: 'Ej: Nuevo, Limitado...',
             }),
-            defineField({name: 'image', title: 'Imagen', type: 'image', options: {hotspot: true}}),
+            defineField({
+              name: 'image',
+              title: 'Imagen de la promoción',
+              type: 'image',
+              options: {hotspot: true},
+              description: 'Selecciona una imagen clara del servicio o beneficio. Se abrirá al pulsar Más información.',
+            }),
           ],
           preview: {
-            select: {title: 'title', subtitle: 'offer'},
+            select: {title: 'title', subtitle: 'offer', media: 'image'},
           },
         }),
       ],
@@ -365,13 +387,25 @@ export const insurancesSchema = defineType({
               type: 'string',
               validation: (Rule) => Rule.required(),
             }),
-            defineField({name: 'description', title: 'Descripción', type: 'text'}),
+            defineField({
+              name: 'description',
+              title: 'Descripción',
+              type: 'text',
+              rows: 4,
+              description: 'Resume las coberturas y ventajas del plan en lenguaje sencillo.',
+            }),
             defineField({name: 'offer', title: 'Oferta', type: 'string'}),
             defineField({name: 'label', title: 'Etiqueta', type: 'string'}),
-            defineField({name: 'image', title: 'Imagen', type: 'image', options: {hotspot: true}}),
+            defineField({
+              name: 'image',
+              title: 'Imagen del plan',
+              type: 'image',
+              options: {hotspot: true},
+              description: 'Imagen representativa del plan. Se abrirá al pulsar Más información.',
+            }),
           ],
           preview: {
-            select: {title: 'title', subtitle: 'offer'},
+            select: {title: 'title', subtitle: 'offer', media: 'image'},
           },
         }),
       ],
