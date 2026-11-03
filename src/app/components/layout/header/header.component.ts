@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, inject, input, signal, ViewChild } from '@angular/core';
+import { Component, computed, ElementRef, HostListener, inject, input, signal, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Header } from '../../../services/app-data.interface';
@@ -14,11 +14,13 @@ import { UtilsService } from '../../../services/utils.service';
 })
 export class HeaderComponent {
   data = input.required<Header>({});
+  alwaysScrolled = input(false);
 
   readonly sanitizer = inject(DomSanitizer);
   readonly utilsService = inject(UtilsService);
   menuOpen = false;
   scrolled = signal(false);
+  isScrolled = computed(() => this.scrolled() || this.alwaysScrolled());
   hidden = signal(false);
   private isMobile = false;
   private lastScrollY = 0;

@@ -1,6 +1,6 @@
 <header
   class="header"
-  [class.header--scrolled]="scrolled()"
+  [class.header--scrolled]="isScrolled()"
   [class.header--hidden]="hidden()"
   role="banner"
 >
@@ -13,7 +13,7 @@
     >
       <img
         class="logo-img"
-        [class.logo--scrolled]="scrolled()"
+        [class.logo--scrolled]="isScrolled()"
         [src]="data().logo"
         alt="Logo"
       />
