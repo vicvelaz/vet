@@ -21,6 +21,7 @@ export class AppComponent {
   readonly router = inject(Router);
   data = toSignal(this.sanityService.appData$, { initialValue: this.appDataService.data() });
   warningDismissed = signal(false);
+  isLegalPage = signal(false);
 
   dismissWarning() {
     this.warningDismissed.set(true);
@@ -28,8 +29,10 @@ export class AppComponent {
 
   ngOnInit() {
     injectSpeedInsights();
+    this.updateHeaderAppearance();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        this.updateHeaderAppearance();
         const fragment = this.route.snapshot.fragment;
         if (fragment) {
           setTimeout(() => {
@@ -38,5 +41,10 @@ export class AppComponent {
         }
       }
     });
+  }
+
+  private updateHeaderAppearance(): void {
+    const path = this.router.url.split(/[?#]/, 1)[0];
+    this.isLegalPage.set(path === '/legal' || path === '/terminos-condiciones');
   }
 }
